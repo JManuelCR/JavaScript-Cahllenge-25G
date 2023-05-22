@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="container-lg d-flex justify-content-center align-items-center">
+    <div class="main-container container-lg d-flex justify-content-center align-items-center">
         <div class="row col-8 formWrapper">
             <div class="d-flex align-items-center g-3">
                 <span>
@@ -21,9 +21,9 @@
                     <h2 class="postTitle">Create Post</h2>
                 </div>
             </div>
-            <div class="d-flex border rounded justify-content-center align-items-center">  
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="col-md-6">
+            <div class="col-12 d-flex  justify-content-center align-items-center">  
+            <form class="row g-2 needs-validation" novalidate>
+                <div class="col-md-6 ">
                         <label for="validationCustom01" class="form-label">Primer nombre</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" placeholder="Juan" required>
                     <div class="valid-feedback">
@@ -52,7 +52,7 @@
                     <textarea class="form-control" placeholder="Escribe tu post" id="validationCustom04" style="height: 150px" required></textarea>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img src="https://picsum.photos/400" class="card-img-top" alt="...">
+                    <img src="https://picsum.photos/450" class="card-img-top img-rounded" alt="...">
                     <div class="card-body">
                         <label class="form-label" for=""> Titulo de la imagen
                             <input type="text" class="form-control" placeholder="" required>
@@ -73,7 +73,7 @@
                     Debes ingresar al menos 1 hashtag
                 </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 post-button">
                 <button class="btn btn-outline-primary" type="submit">Postear</button>
                 </div>
             </form>
