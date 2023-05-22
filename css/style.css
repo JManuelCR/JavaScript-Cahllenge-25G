@@ -301,4 +301,17 @@ html {
   width: fit-content;
   text-decoration: none;
   color: black;
+}
+
+.tags-reacts .buttom-reactions .emojis-reaction a {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+.tags-reacts .buttom-reactions .comment-box .text-container img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.tags-reacts .buttom-reactions .minutes-read-box .minutes-anc img {
+  height: 1.3rem;
+  width: 1.3rem;
 }/*# sourceMappingURL=style.css.map */

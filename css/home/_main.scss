@@ -60,3 +60,24 @@
         }
     }
 }
+
+.tags-reacts .buttom-reactions {
+    .emojis-reaction {
+        a {
+            height:1.3rem;
+            width:1.3rem;
+        }
+    }
+    .comment-box .text-container{
+        img {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+    .minutes-read-box .minutes-anc {
+        img {
+            height: 1.3rem;
+            width: 1.3rem;
+        }
+    }
+}
