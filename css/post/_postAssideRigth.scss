@@ -1,0 +1,142 @@
+.container {
+    background-color: #F5F5F5;
+    padding-top: 1rem;
+}
+
+.cardUserFollow {
+    background-color:  #FFFFFF;
+    border-radius: 7px;
+    border-top: 2rem solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    .cardUserDate{
+        align-items: end;
+        display: flex;
+        gap:5px ;
+        position: absolute;
+        top: 1.75rem;
+        margin-bottom: 1rem;
+        &__image {
+            border-radius: 50%;
+            max-width: 20%;
+        }
+        &__name {
+            color: #404040;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+    }
+    &__body {
+        margin-top: 2rem;
+        &--btn {
+            background-color: #3B49DF;
+            border-radius: 7px;
+            border-style: none;
+            color: #F9F9F9;
+            display: flex;
+            font-size: 1rem;
+            font-weight: 600;
+            justify-content: center;
+            padding: 7px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        &--description {
+            font-size: 1rem;
+            color: #575757;
+            margin-bottom: 1rem;
+        }
+        &--informationUser {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            list-style: none;
+            }
+            span {
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: #525252;
+            }
+            p {
+                font-size: 1rem;
+                color: #404040;
+            }
+        }    
+}
+
+.cardMoreUser {
+    &__list {
+        border-radius: 7px;
+        margin-bottom: 1rem;
+        &--title {
+            color: #404040;
+            font-size: 1.3rem;
+            a {
+                color: #3B49DF;
+                text-decoration: none;
+            }
+        }
+        &--text {
+            font-size: 0.875rem;
+            color: #717171;
+            a {
+                color: #404040;
+                font-size: 1rem;
+                text-decoration: none;
+            }
+            span {
+                font-size: 0.875rem;
+                color: #717171;
+            }
+        }    
+    }
+}
+
+.cardCategory {
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    padding: 1rem;
+    &__body {
+        background-color: #FFFFFF;
+        &--link {
+            display: flex;
+            color: #595959;
+            font-size: 0.9rem;
+            justify-content: space-between;
+            img {
+                width: 50%;
+            }
+        }    
+        &--title {
+            color: #404040;
+            font-size : 1.5rem ;
+        }   
+        &--description {
+            color: #404040;
+            font-size: 1rem;
+        } 
+        &--subTitle {
+            color: #404040;
+            font-size: 1rem;
+        }
+        &--list {
+            color: #404040;
+            font-size: 1rem;
+        }
+        &--btn {
+            background-color: transparent;
+            border: solid 1px #3B49DF;
+            display: flex;
+            color: #3B49DF;
+            font-size: 1rem;
+            justify-content: center;
+        }
+        
+    }
+}
+
+    
+
+
