@@ -30,7 +30,110 @@
     <main class="container">
         <div class="row">
             <div class="col-md-3 d-none d-md-block"></div>
-            <div class="col-12 col-md-9 col-lg-6"></div>
+            <div class="col-12 col-md-9 col-lg-6">
+              <div class="pills-nav-container nav-pill-container d-flex justify-content-center p-2">
+                <ul name="li-container" class="nav nav-pills">
+                  <li name="toHover" class="nav-item">
+                    <a class="nav-link fw-bolder text-black rounded-2" aria-current="page" href="#">Relevant</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-light text-black rounded-2" href="#">Latest</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-light text-black rounded-2" href="#">Top</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="cardCont d-flex justify-content-center">
+                <div class="imgContainer card mb-3 d-flex">
+                  <a href="#">
+                    <img
+                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRoiBBgn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ktesxigi964m1u8lyqi0.png"
+                      class="card-img-top " alt="img del post">
+                  </a>
+                  <div class="userDataSpace d-flex p-2">
+                    <div class="userDataMini d-flex gap-3 align-items-center">
+                      <a href="#">
+                        <img class="user-profile-pic rounded-circle " src="https://randomuser.me/api/portraits/men/0.jpg">
+                      </a>
+                    </div>
+                    <div class="userName p-2">
+                      <a class="aUserName text-decoration-none text-black" href="#">
+                        <p class="author-name fw-bolder">Thomas Alger</p>
+                      </a>
+                      <a class="text-decoration-none text-black" href="#">
+                        <p class="reation-date">May 6 (10 days ago)</p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="tags-reacts card-body">
+                    <h2 class="card-title fw-bolder ">
+                      <a class="text-decoration-none text-dark " href="#">7 secrets TypeScript Tricks Pros Use</a>
+                    </h2>
+                    <div class="tagsContainer d-flex gap-3 text-decoration-none">
+                      <a href="#">
+                        <p>#TypeScript</p>
+                      </a>
+                      <a href="#">
+                        <p>#JavaScript</p>
+                      </a>
+                      <a href="#">
+                        <p>#Programming</p>
+                      </a>
+                      <a href="#">
+                        <p>#Beginners</p>
+                      </a>
+                    </div>
+                    <div class="buttom-reactions d-flex justify-content-between mt-2">
+                      <div class="emojis-reaction d-flex">
+                        <a class="d-flex text-decoration-none text-black" href="#">
+                          <a><img src="./assets/icons/folders_Icon.svg"></a>
+                          <box-icon type='logo' name='postgresql'></box-icon>
+                          <box-icon name='baguette' type='solid'></box-icon>
+                          <box-icon name='invader' type='solid'></box-icon>
+                          <span class="ms-2">
+                            <p>240 reactions</p>
+                          </span>
+                        </a>
+                      </div>
+                      <div class="comment-box d-flex">
+                        <a class="d-flex text-decoration-none text-black" href="#">
+                          <box-icon name='chat'></box-icon>
+                          <p>23 comments</p>
+                        </a>
+                      </div>
+                      <div class="d-flex">
+                        <a class="d-flex text-decoration-none text-black" href="#">
+                          <p class="card-text"><small class="text-body-secondary">5 minutes read</small></p>
+                          <box-icon name='bookmark'></box-icon>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="comment-section mt-3 d-flex">
+                      <div class="comment-picture">
+                        <img src="https://randomuser.me/api/portraits/women/34.jpg" class="rounded-circle">
+                      </div>
+                      <div class="comment-rectangle ms-3 p-2 d-flex flex-column">
+                        <div class="username">
+                          <a class="d-flex gap-2 text-decoration-none text-black" href="#">
+                            <h6>Jess Harper</h6>
+                            <p>(3 days ago)</p>
+                          </a>
+                        </div>
+                        <div class="comment-text">
+                          <a href="#">
+                            <p>Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the
+                              strict options and still manage to avoid as like the plague because they know a ton of tools like
+                              these
+                              to avoid it.</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-3 d-none d-lg-block g-3">
                 <div class="cardCommunity p-3" >
                     <div class="cardCommunity__head d-flex align-items-center justify-content-between pb-3">

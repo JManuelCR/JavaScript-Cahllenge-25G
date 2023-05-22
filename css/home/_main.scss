@@ -1,0 +1,62 @@
+.userDataSpace .userDataMini{
+    a{
+        .user-profile-pic {
+            width: 2.5rem;
+            height: 2.5;
+        }
+    } 
+}
+.userName {
+    a {
+        p {
+            margin: 0;
+            color:black
+        }
+    }
+
+}
+.cardCont .tags-reacts {
+    .tagsContainer {
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: lighter;
+        }
+    }
+}
+
+.cardCont .comment-section {
+    width: fit-content;
+    .comment-picture {
+        img {
+            width:2rem;
+            margin-top: .5rem;
+        }
+    }
+    .comment-rectangle {
+        background: #f5f5f5;
+        border-radius: 1rem;
+        .username {
+            font-weight: lighter;
+        }
+        .time-edit {
+            font-weight: lighter;
+            font-size: .9rem;
+        }
+    }
+}
+
+.tags-reacts .comment-section {
+    .comment-rectangle{
+        a {
+            width: fit-content;
+        }
+        .comment-text {
+            a {
+                width: fit-content;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
