@@ -30,7 +30,115 @@
     <main class="container">
         <div class="row">
             <div class="col-md-3 d-none d-md-block"></div>
-            <div class="col-12 col-md-9 col-lg-6"></div>
+            <div class="col-12 col-md-9 col-lg-6">
+              <div class="pills-nav-container nav-pill-container d-flex justify-content-center p-2">
+                <ul class="pills-nav-container__ulList nav nav-pills">
+                  <li class="pills-nav-container__ulList--bold nav-item">
+                    <a class="nav-link rounded-2" aria-current="page" href="#">Relevant</a>
+                  </li>
+                  <li class="pills-nav-container__ulList--lighter nav-item">
+                    <a class="nav-link rounded-2" href="#">Latest</a>
+                  </li>
+                  <li class="pills-nav-container__ulList--lighter nav-item ">
+                    <a class="nav-link rounded-2" href="#">Top</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-cont d-flex justify-content-center">
+                <div class="img-container card mb-3 d-flex">
+                  <a href="#">
+                    <img
+                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRoiBBgn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ktesxigi964m1u8lyqi0.png"
+                      class="card-img-top " alt="img del post">
+                  </a>
+                  <div class="user-data-space d-flex ps-2">
+                    <div class="user-data-space__mini">
+                      <a href="#">
+                        <img class="rounded-circle " src="https://randomuser.me/api/portraits/men/0.jpg">
+                      </a>
+                    </div>
+                    <div class="user-data-space__name">
+                      <a class="user-data-space__name--bold" href="#">
+                        <p class="author-name">Thomas Alger</p>
+                      </a>
+                      <a class="text-decoration-none text-black" href="#">
+                        <p class="reation-date">May 6 (10 days ago)</p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="user-data-space__tags card-body">
+                    <h3 class="card-title">
+                      <a href="#">7 secrets TypeScript Tricks Pros Use</a>
+                    </h3>
+                    <div class="user-data-space__tags--lighter">
+                      <a href="#">
+                        <p>#TypeScript</p>
+                      </a>
+                      <a href="#">
+                        <p>#JavaScript</p>
+                      </a>
+                      <a href="#">
+                        <p>#Programming</p>
+                      </a>
+                      <a href="#">
+                        <p>#Beginners</p>
+                      </a>
+                    </div>
+                    <div class="user-data-space__tags--emojis">
+                    <div class="emojisReaction">
+                      <div class="emojisReaction__icons">
+                        <a class="text-decoration-none" href="#">
+                          <img src="./assets/icons/red-Heart-Icon.svg" alt="icon">
+                          <img src="./assets/icons/unicorn-Icon.svg" alt="icon">
+                          <img src="./assets/icons/crazy-Man-Icon.svg" alt="icon">
+                          <img src="./assets/icons/raise-.svg" alt="icon">
+                          <img src="./assets/icons/fire-Icon.svg" alt="icon">
+                          <span>
+                            <p>240 reactions</p>
+                          </span> 
+                        </a>
+                      </div>
+                      <div class="emojisReaction__comments">
+                        <a class="text-container" href="#">
+                          <img src="./assets/icons/black-Flat-Icon.svg">
+                          <p>23 comments</p>
+                        </a>
+                      </div>
+                    </div>
+                      <div class="minutes-read">
+                        <a class="minutes-read__anc" href="#">
+                          <p class="card-text"><small class="text-body-secondary">5 minutes read</small></p>
+                          <img src="./assets/icons/book-Icon.svg" class="mt-1">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="comment-section">
+                      <div class="comment-section__picture">
+                        <a href="#">
+                          <img src="https://randomuser.me/api/portraits/women/34.jpg" class="rounded-circle">
+                        </a>
+                      </div>
+                      <div class="comment-section__rectangle">
+                        <div class="comment-section__rectangle--username">
+                          <a href="#">
+                            <h6>Jess Harper</h6>
+                            <p>(3 days ago)</p>
+                          </a>
+                        </div>
+                        <div class="comment-section__rectangle--comment">
+                          <a href="#">
+                            <p>Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the
+                              strict options and still manage to avoid as like the plague because they know a ton of tools like
+                              these
+                              to avoid it.</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-3 d-none d-lg-block g-3">
                 <div class="cardCommunity p-3" >
                     <div class="cardCommunity__head d-flex align-items-center justify-content-between pb-3">
@@ -62,7 +170,7 @@
                 </div>
                   <div class="cardDiscuss">
                     <div class="cardDiscuss__header">
-                     <h3 class="cardDiscuss__header--title" >#discuss</h3> 
+                      <h3 class="cardDiscuss__header--title" >#discuss</h3> 
                     </div>
                     <ul class="cardDiscuss__list list-group list-group-flush">
                       <a class="cardDiscuss__list--relevant" href="">What Qualities Do You Seek in Your Work Enviroment?
