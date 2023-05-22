@@ -1,0 +1,117 @@
+.container{
+    background-color: #F5F5F5;
+}
+.cardCommunity {
+    background-color:  #FFFFFF;
+    border-radius: 7px;
+  &__head {
+    &--title {
+        margin: 0;
+        font-size:0.9rem ;
+        color: #595959
+    }
+    &--btnCommunity { 
+        display: flex;
+        flex-direction: row-reverse;
+        &--icon {       
+        padding-left: 5px;    
+        width: 50%;
+        }
+    }
+  }
+  &__image {
+    max-width: 100%;
+    padding-bottom: 1rem;
+  }  
+  &__body {
+    &--subTitle {
+        color: #3B49DF;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    &--text {
+        color: #404040;
+        font-size: 0.9rem;
+    }
+  }
+}
+
+.cardListings {
+    background-color:  #FFFFFF;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-top: 1rem;
+    &__header{
+        border-bottom: solid 1px #e9e7e7e8;
+        padding: 1rem;
+        &--Title {
+            color: #242424;
+            font-size: 1.3rem;
+        }
+        &--link {
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+    }
+    &__list {
+        border-bottom: solid 1px #e9e7e7e8;
+        padding: 1rem;
+        &--trend {
+            color: #404040;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        &--trend-text {
+            color: #717171;
+            font-size: 0.9rem;
+            margin: 0;
+            text-decoration: none;
+        }
+    }
+}
+
+.btnListing {
+    background-color:  #FFFFFF;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    margin: 0;
+    &__link{
+        display: flex;
+        color: #404040;
+        font-size: 1rem;
+        padding-left: 30%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-decoration: none;
+    }
+}
+
+.cardDiscuss {
+    background-color:  #FFFFFF;
+    border-radius: 7px;
+    margin-top: 1rem;
+    &__header{
+        border-bottom: solid 1px #e9e7e7e8;
+        padding: 1rem;
+        &--title {
+            color: #242424;
+            font-size: 1.3rem; 
+        }
+    }
+    &__list {
+        border-bottom: solid 1px #e9e7e7e8;
+        padding: 1rem;
+        &--relevant {
+            color: #404040;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        &--relevantText {
+            color: #717171;
+            font-size: 0.9rem;
+            margin: 0;
+            text-decoration: none;
+        }
+    }
+}

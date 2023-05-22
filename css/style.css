@@ -1,1 +1,250 @@
-/*# sourceMappingURL=style.css.map */
+.container {
+  background-color: #F5F5F5;
+}
+
+.cardCommunity {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+}
+.cardCommunity__head--title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #595959;
+}
+.cardCommunity__head--btnCommunity {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.cardCommunity__head--btnCommunity--icon {
+  padding-left: 5px;
+  width: 50%;
+}
+.cardCommunity__image {
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+.cardCommunity__body--subTitle {
+  color: #3B49DF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.cardCommunity__body--text {
+  color: #404040;
+  font-size: 0.9rem;
+}
+
+.cardListings {
+  background-color: #FFFFFF;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 1rem;
+}
+.cardListings__header {
+  border-bottom: solid 1px rgba(233, 231, 231, 0.9098039216);
+  padding: 1rem;
+}
+.cardListings__header--Title {
+  color: #242424;
+  font-size: 1.3rem;
+}
+.cardListings__header--link {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.cardListings__list {
+  border-bottom: solid 1px rgba(233, 231, 231, 0.9098039216);
+  padding: 1rem;
+}
+.cardListings__list--trend {
+  color: #404040;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.cardListings__list--trend-text {
+  color: #717171;
+  font-size: 0.9rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+.btnListing {
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin: 0;
+}
+.btnListing__link {
+  display: flex;
+  color: #404040;
+  font-size: 1rem;
+  padding-left: 30%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+}
+
+.cardDiscuss {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  margin-top: 1rem;
+}
+.cardDiscuss__header {
+  border-bottom: solid 1px rgba(233, 231, 231, 0.9098039216);
+  padding: 1rem;
+}
+.cardDiscuss__header--title {
+  color: #242424;
+  font-size: 1.3rem;
+}
+.cardDiscuss__list {
+  border-bottom: solid 1px rgba(233, 231, 231, 0.9098039216);
+  padding: 1rem;
+}
+.cardDiscuss__list--relevant {
+  color: #404040;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.cardDiscuss__list--relevantText {
+  color: #717171;
+  font-size: 0.9rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+.container {
+  background-color: #F5F5F5;
+  padding-top: 1rem;
+}
+
+.cardUserFollow {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  border-top: 2rem solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.cardUserFollow .cardUserDate {
+  align-items: end;
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 1.75rem;
+  margin-bottom: 1rem;
+}
+.cardUserFollow .cardUserDate__image {
+  border-radius: 50%;
+  max-width: 20%;
+}
+.cardUserFollow .cardUserDate__name {
+  color: #404040;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.cardUserFollow__body {
+  margin-top: 2rem;
+}
+.cardUserFollow__body--btn {
+  background-color: #3B49DF;
+  border-radius: 7px;
+  border-style: none;
+  color: #F9F9F9;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  padding: 7px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.cardUserFollow__body--description {
+  font-size: 1rem;
+  color: #575757;
+  margin-bottom: 1rem;
+}
+.cardUserFollow__body--informationUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  list-style: none;
+}
+.cardUserFollow__body span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #525252;
+}
+.cardUserFollow__body p {
+  font-size: 1rem;
+  color: #404040;
+}
+
+.cardMoreUser__list {
+  border-radius: 7px;
+  margin-bottom: 1rem;
+}
+.cardMoreUser__list--title {
+  color: #404040;
+  font-size: 1.3rem;
+}
+.cardMoreUser__list--title a {
+  color: #3B49DF;
+  text-decoration: none;
+}
+.cardMoreUser__list--text {
+  font-size: 0.875rem;
+  color: #717171;
+}
+.cardMoreUser__list--text a {
+  color: #404040;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.cardMoreUser__list--text span {
+  font-size: 0.875rem;
+  color: #717171;
+}
+
+.cardCategory {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  padding: 1rem;
+}
+.cardCategory__body {
+  background-color: #FFFFFF;
+}
+.cardCategory__body--link {
+  display: flex;
+  color: #595959;
+  font-size: 0.9rem;
+  justify-content: space-between;
+}
+.cardCategory__body--link img {
+  width: 50%;
+}
+.cardCategory__body--title {
+  color: #404040;
+  font-size: 1.5rem;
+}
+.cardCategory__body--description {
+  color: #404040;
+  font-size: 1rem;
+}
+.cardCategory__body--subTitle {
+  color: #404040;
+  font-size: 1rem;
+}
+.cardCategory__body--list {
+  color: #404040;
+  font-size: 1rem;
+}
+.cardCategory__body--btn {
+  background-color: transparent;
+  border: solid 1px #3B49DF;
+  display: flex;
+  color: #3B49DF;
+  font-size: 1rem;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */
