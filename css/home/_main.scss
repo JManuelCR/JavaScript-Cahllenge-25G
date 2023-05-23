@@ -1,4 +1,7 @@
 .pills-nav-container {
+    display: flex;
+    justify-content: start;
+    padding: 1rem;
     &__ulList {
         &--bold {
             a {

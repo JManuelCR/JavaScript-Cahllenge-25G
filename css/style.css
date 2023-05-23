@@ -256,6 +256,11 @@ html {
   justify-content: center;
 }
 
+.pills-nav-container {
+  display: flex;
+  justify-content: start;
+  padding: 1rem;
+}
 .pills-nav-container__ulList--bold a {
   font-weight: bolder;
   color: black;
