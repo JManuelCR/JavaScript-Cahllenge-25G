@@ -157,6 +157,39 @@ body {
   background-color: transparent;
   border: none;
 }
+.navbar .custom-container .emergentOffCanvas .offcanvas {
+  max-width: 350px;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-header {
+  word-break: break-word;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body {
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body .list-group .list-group-item {
+  border: none;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body .list-group .list-group-item a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body .list-group .list-group-item a:hover {
+  color: rgb(59, 73, 223);
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body .list-group .list-group-item a img {
+  height: 24px;
+}
+.navbar .custom-container .emergentOffCanvas .offcanvas .offcanvas-body .offcanvas-body_networks a span img {
+  height: 1rem;
+}
 .navbar .custom-container .navbar-brand .devto-home-logo {
   display: inline-block;
   height: 2.75rem;
@@ -172,7 +205,7 @@ body {
   border: 2px solid #e3e3e3;
   flex: 1 1 0%;
   height: 2.5rem;
-  max-width: 25.5rem;
+  max-width: 22rem;
   position: relative;
 }
 .navbar .custom-container .searchContainer__searchForm .searchInput {
@@ -180,9 +213,6 @@ body {
   font-weight: 400;
   outline: 0px;
   padding: 0.375rem 0.5rem;
-}
-.navbar .custom-container .searchContainer__searchForm .searchInput::focus {
-  background-color: #e00606;
 }
 .navbar .custom-container .searchContainer__searchForm .buttonSearch {
   background-color: transparent;
@@ -207,9 +237,26 @@ body {
   position: relative;
   width: 22px;
 }
+@media screen and (min-width: 992px) {
+  .navbar .custom-container .searchContainer {
+    max-width: 25.5rem;
+  }
+}
 .navbar .custom-container .buttonsContainer {
   height: 100%;
   margin-left: auto;
+}
+.navbar .custom-container .buttonsContainer .searchLuopeMobileButton {
+  margin: 0px 0.5rem;
+}
+.navbar .custom-container .buttonsContainer .searchLuopeMobileButton:hover {
+  background-color: rgba(121, 132, 255, 0.248);
+  border: 1px solid rgba(121, 132, 255, 0.248);
+}
+.navbar .custom-container .buttonsContainer .searchLuopeMobileButton span img {
+  position: relative;
+  bottom: 1px;
+  height: 1.675rem;
 }
 .navbar .custom-container .buttonsContainer .createPost {
   border: 1px solid rgb(47, 58, 178);
@@ -587,6 +634,44 @@ html {
   color: #171717;
 }
 
+.searchContainer {
+  border-radius: 8px;
+  border: 2px solid #e3e3e3;
+  flex: 1 1 0%;
+  height: 2.5rem;
+  max-width: 25.5rem;
+  position: relative;
+}
+.searchContainer__searchForm .searchInput {
+  font-family: inherit;
+  font-weight: 400;
+  outline: 0px;
+  padding: 0.375rem 0.5rem;
+}
+.searchContainer__searchForm .buttonSearch {
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  height: 100%;
+  padding: 0px 0.5rem;
+  position: absolute;
+  right: 0px;
+  width: 40px;
+}
+.searchContainer__searchForm .buttonSearch:hover {
+  background-color: rgba(44, 107, 224, 0.1725490196);
+}
+.searchContainer__searchForm .buttonSearch:hover svg {
+  color: rgba(46, 106, 217, 0.8980392157);
+}
+.searchContainer__searchForm .buttonSearch span svg {
+  bottom: 2px;
+  height: 22px;
+  left: 1px;
+  position: relative;
+  width: 22px;
+}
+
 .containerFooter {
   background-color: #e5e5e5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -614,4 +699,61 @@ html {
   width: 0.25rem;
   display: inline-block;
   margin-left: 0.5rem;
+}
+
+.assideLeftFirstNav .list-group .list-group-item {
+  background-color: transparent;
+  border: none;
+}
+.assideLeftFirstNav .list-group .list-group-item a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+.assideLeftFirstNav .list-group .list-group-item a:hover {
+  color: rgb(59, 73, 223);
+}
+.assideLeftFirstNav .list-group .list-group-item a img {
+  height: 24px;
+}
+.assideLeftFirstNav .listTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.assideLeftFirstNav .tagsListTitle .listTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.assideLeftFirstNav .tagsList {
+  max-height: 12rem;
+  overflow-y: auto;
+}
+.assideLeftFirstNav .tagsList li .tagItem {
+  color: rgb(77, 77, 77);
+  font-size: 1rem;
+}
+.assideLeftFirstNav .assideLeftNetworks a span img {
+  height: 1.25rem;
+}
+@media screen and (min-width: 992px) {
+  .assideLeftFirstNav .assideLeftNetworks a span img {
+    height: 1.75rem;
+  }
+}
+
+.cardComunityAsideLeft {
+  font-size: 1rem;
+}
+.cardComunityAsideLeft .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.cardComunityAsideLeft a {
+  font-size: inherit;
+}
+.cardComunityAsideLeft strong {
+  font-size: inherit;
+}
+.cardComunityAsideLeft__body--text a {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
