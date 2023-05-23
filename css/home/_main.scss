@@ -1,24 +1,43 @@
+@use "../variables";
 .pills-nav-container {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: start;
     &__ulList {
         &--bold {
+            &:hover {
+                background-color: white;
+                border-radius: .5rem;
+            }
             a {
+                font-family: variables.$sans-serif;
                 font-weight: bolder;
-                color:black
+                font-size: variables.$font-size-1;
+                color:black;
             }
         }
         &--lighter {
+            &:hover {
+                background-color: white;
+                border-radius: .5rem;
+            }
             a {
+                font-family: variables.$sans-serif;
+                font-size: variables.$font-size-1;
                 color: black;
-                font-weight: lighter;
+                font-weight: variables.$font-200;
             }
         }
     }
 }
 
 .user-data-space{
+    padding-left: 1.25rem;
+    padding-top: 1.25rem;
+    display: flex;
     &__mini {
         display: flex;
-        gap: 1rem;
+        gap: variables.$standGap;
         align-items: center; 
         a {
             img {
@@ -29,58 +48,90 @@
     }
     &__name {
         padding-left: .2rem;
-        padding-top: 1rem;
         &--bold {
             text-decoration: none;
             color: black;
             font-weight: bolder;
             p {
+                font-size:0.875rem;
+                margin: 0;
+            }
+        }
+        &--lighter {
+            padding-top:1rem;
+            text-decoration: none;
+            color: black;
+            p {
+                font-size:0.75rem;
                 margin: 0;
             }
         }
     }
     &__tags {
         margin-left: 1rem;
-        h3 {
-            font-weight: bolder;
+        h2 {
+        font-weight: bolder;
             a {
                 text-decoration: none;
                 color: #171717;
-                font-size: 1.6rem;
+                font-size: variables.$font-size-2;
+                &:hover {
+                    color:variables.$navbarBlueCreatePostBorder
+                }
             }
         }
         &--lighter {
+            @media screen and (max-width:variables.$small) {
+                flex-wrap: wrap;
+            }
             display: flex;
-            gap: 1rem;
+            gap:variables.$standGap;
             a {
                 font-weight: lighter;
                 text-decoration: none;
                 color: #171717;
+                p {
+                    margin:0;
+                    &:hover {
+                        background-color:#f5f5f5 ;
+                        border-radius: .4rem;
+                    }
+                }
             }
         }
         &--emojis {
             display: flex;
-            margin-top: .5rem;
+            margin-top: variables.$mediumMargin;
             justify-content: space-between;
         }
     }
 }
 .emojisReaction {
     display: flex;
-    gap: 1rem;
+    gap: variables.$standGap;
     justify-content: space-between; 
     &__icons {
+        &:hover {
+            background-color:#f5f5f5 ;
+            border-radius: .4rem;
+        }
         display: flex;
         a {
             text-decoration: none;
             color:#171717;
             display: flex;
             img {
+                @media screen and (max-width:variables.$small) {
+                    width: 1rem; 
+                }
                 width: 1.5rem;
             }
             span {
-                margin-left: .5rem;
-                margin-top: .8rem;
+                @media screen and (max-width:variables.$small) {
+                    display: none;
+                }
+                margin-left: variables.$mediumMargin;
+                margin-top: 1.1rem;
                 p {
                     font-size: 0.87rem;
                     margin: 0;
@@ -90,18 +141,29 @@
     }
     &__comments {
         a {
+            @media secreen and (max-width:310px) {
+                flex-direction: column;
+            }
             display: flex;
-            align-items: center;
+            align-items: end;
             text-decoration: none;
             color: #171717;
+            &:hover {
+                background-color:#f5f5f5 ;
+                border-radius: .4rem;
+            }
             img {
-                width: 1.5rem;
-                margin-top: .8rem;
+                width: 1rem;
+                height: fit-content;
+                margin-top: 1.3rem;
             }
             p {
+                @media screen and (max-width:variables.$small){
+                    align-items: center;
+                }
                 font-size: 0.87rem;
                 margin: 0;
-                margin-top: .5rem;
+                margin-top: variables.$mediumMargin;
             }
         }
     }
@@ -112,28 +174,39 @@
         display: flex;
         text-decoration: none;
         color: #171717;
-        gap: .5rem;
-        margin-top: .5rem;
+        gap: variables.$halfGap;
+        margin-top: variables.$mediumMargin;
+        padding-top: .5rem;
+        p {
+            @media screen and (max-width:variables.$small) {
+                font-size: .875rem;
+            }
+        }
     }
     img {
-        height: 1.3rem;
-        width: 1.3rem;
+        &:hover {
+            background-color:variables.$navbarBlueCreatePostBorder ;
+            border-radius: .4rem;
+            border-width: 1rem;
+        }
+        height: 1.5rem;
+        width: 1.5rem;
     }
 }
 
 .comment-section {
-    margin-top: 1rem;
+    margin-top: variables.$standarMargin;
     width: fit-content;
     display: flex;
     &__picture {
         img {
             width:2rem;
-            margin-top: .5rem;
+            margin-top: variables.$mediumMargin;
         }
     }
     &__rectangle {
-        margin-left: 1rem;
-        padding: .5rem;
+        margin-left: variables.$standarMargin;
+        padding: variables.$paddingHalfRem;
         display: flex;
         flex-direction: column;
         background: #f5f5f5;
@@ -141,7 +214,7 @@
         &--username {
             a {
                 display: flex;
-                gap: .5rem;
+                gap: variables.$halfGap;
                 text-decoration: none;
                 color: #171717;
             }
@@ -156,5 +229,3 @@
         }
     }
 }
-
-
