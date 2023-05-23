@@ -37,7 +37,9 @@ $percentage-medium:50%;
 $percentage-full:100%;
 
 // Breakpoints
-$small: 576px;
+$xxsmall:320px;
+$xsmall: 375px;
+$small: 425px;
 $medium: 768px;
 $large: 992px;
 $extra-large: 1200px;
@@ -57,6 +59,7 @@ $halfGap:0.5rem;
 //margin de standard 1rem
 $standarMargin: 1rem;
 $mediumMargin:0.5rem;
+$standarRem: 1rem;
 $paddingHalfRem: 0.5rem;
 
 
