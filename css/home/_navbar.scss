@@ -3,7 +3,7 @@
 
 html,
 body {
-  background-color: #e3e3e3;
+  background-color: #f5f5f5;
 }
 
 .navbar {
@@ -121,9 +121,47 @@ body {
             }
             span{
                 img{
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    border-radius: 50%;
+                    width: 2.25rem;
+                    height: 2.25rem;
                 }
+            }
+        }
+        .dropUserInfo{
+            width: variables.$xxsmall;
+            padding: variables.$standarRem variables.$paddingHalfRem;
+            & > li{
+                margin: 4px 0px;
+            }
+            li{
+                &:first-child{
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.533);
+                    padding-bottom: variables.$paddingHalfRem;
+                }
+                &:last-child{
+                    padding-top: variables.$paddingHalfRem;
+                    border-top: 1px solid rgba(128, 128, 128, 0.533);
+                }
+                a{
+                    .userLogedName{
+
+                    }
+                }
+                    .userLogedIdentifier{
+                        position: relative;
+                        bottom: variables.$paddingHalfRem;
+                    }
+            }
+            @include responsive(variables.$xsmall){
+                width: variables.$xsmall;
+            }
+            @include responsive(variables.$small){
+                width: variables.$small;
+            }
+            @include responsive(variables.$medium){
+                margin-right: calc(variables.$paddingHalfRem * -1);
+                max-width: 260px;
+                
             }
         }
       }

@@ -9,6 +9,16 @@
 }
 
 @mixin responsive($breakpoint) {
+    @if ($breakpoint == variables.$xxsmall) {
+        @media screen and (min-width: variables.$xxsmall) {
+          @content;
+        }
+      }
+      @if ($breakpoint == variables.$xsmall) {
+        @media screen and (min-width: variables.$xsmall) {
+          @content;
+        }
+      }
       @if ($breakpoint == variables.$small) {
         @media screen and (min-width: variables.$small) {
           @content;

@@ -115,7 +115,7 @@
 
 html,
 body {
-  background-color: #e3e3e3;
+  background-color: #f5f5f5;
 }
 
 .navbar {
@@ -229,19 +229,48 @@ body {
   border: none;
 }
 .navbar .custom-container .buttonsContainer .userSessionButton .buttonDropdown span img {
-  width: 2.5rem;
-  height: 2.5rem;
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo {
+  width: 320px;
+  padding: 1rem 0.5rem;
+}
+.navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo > li {
+  margin: 4px 0px;
+}
+.navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo li:first-child {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.533);
+  padding-bottom: 0.5rem;
+}
+.navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo li:last-child {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.533);
+}
+.navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo li .userLogedIdentifier {
+  position: relative;
+  bottom: 0.5rem;
+}
+@media screen and (min-width: 375px) {
+  .navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo {
+    width: 375px;
+  }
+}
+@media screen and (min-width: 425px) {
+  .navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo {
+    width: 425px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar .custom-container .buttonsContainer .userSessionButton .dropUserInfo {
+    margin-right: -0.5rem;
+    max-width: 260px;
+  }
 }
 
 .dropdown-toggle::after {
   display: none;
-}
-
-html {
-  padding: 0;
-  margin: 0;
-  background-color: aqua;
-  box-sizing: border-box;
 }
 
 .container {
@@ -519,8 +548,8 @@ html {
   color: #171717;
 }
 
-.container-fluid {
-  background-color: rgb(235, 228, 228);
+.containerFooter {
+  background-color: #e5e5e5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: small;
   margin-top: 0px;
