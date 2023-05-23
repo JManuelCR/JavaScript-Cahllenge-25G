@@ -1,52 +1,55 @@
+@use"../variables";
+
 .container {
-    background-color: #F5F5F5;
-    padding-top: 1rem;
+    background-color:variables.$whiteSmoke;
+    padding-top:variables.$size-standar;
+    font-family: variables.$sans-serif;
 }
 
 .cardUserFollow {
-    background-color:  #FFFFFF;
-    border-radius: 7px;
-    border-top: 2rem solid black;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    background-color:variables.$whiteBrigth;
+    border-radius:variables.$borderStandar;
+    border-top:variables.$borderSpecialF;
+    padding:variables.$size-standar;
+    margin-bottom:variables.$size-standar;
     .cardUserDate{
         align-items: end;
         display: flex;
         gap:5px ;
         position: absolute;
-        top: 1.75rem;
-        margin-bottom: 1rem;
+        top:variables.$size-large-x;
         &__image {
-            border-radius: 50%;
-            max-width: 20%;
+            border-radius:variables.$percentage-medium;
+            max-width:variables.$percentaje-small-s;
         }
         &__name {
-            color: #404040;
-            font-size: 1.3rem;
+            color:variables.$GreeyPearl;
+            font-size:variables.$size-medium-x;
+            font-weight: variables.$font-700;
             text-decoration: none;
         }
     }
     &__body {
-        margin-top: 2rem;
+        margin-top:variables.$size-large-x;
         &--btn {
-            background-color: #3B49DF;
-            border-radius: 7px;
+            background-color:variables.$blueKing;
+            border-radius:variables.$borderStandar;
             border-style: none;
-            color: #F9F9F9;
+            color:variables.$witheGeneric;
             display: flex;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size:variables.$size-medium;
+            font-weight:variables.$font-600;
             justify-content: center;
-            padding: 7px;
+            padding:variables.$borderStandar;
             text-decoration: none;
             text-align: center;
-            width: 100%;
-            margin-bottom: 1rem;
+            width:variables.$percentage-full;
+            margin-bottom:variables.$size-standar;
         }
         &--description {
-            font-size: 1rem;
-            color: #575757;
-            margin-bottom: 1rem;
+            font-size:variables.$size-medium;
+            color:variables.$greyGraphite;
+            margin-bottom:variables.$size-standar;
         }
         &--informationUser {
             display: flex;
@@ -55,82 +58,87 @@
             list-style: none;
             }
             span {
-                font-size: 0.8rem;
-                font-weight: 700;
-                color: #525252;
+                font-size:variables.$padding-small;
+                font-weight:variables.$font-700;
+                color:variables.$greeyLigth-s;
             }
             p {
-                font-size: 1rem;
-                color: #404040;
+                font-size:variables.$padding-small;
+                color:variables.$GreeyPearl;
             }
         }    
 }
 
 .cardMoreUser {
     &__list {
-        border-radius: 7px;
-        margin-bottom: 1rem;
+        border-radius:variables.$borderStandar;
+        margin-bottom:variables.$size-standar;
         &--title {
-            color: #404040;
-            font-size: 1.3rem;
+            color:variables.$GreeyPearl;
+            font-size:variables.$size-medium-x;
+            font-weight: variables.$font-700;
             a {
-                color: #3B49DF;
+                color:variables.$blueKing;
                 text-decoration: none;
             }
         }
         &--text {
-            font-size: 0.875rem;
-            color: #717171;
+            font-size:variables.$padding-small;
+            color:variables.$greeyLigth;
             a {
-                color: #404040;
-                font-size: 1rem;
+                color:variables.$GreeyPearl;
+                font-size:variables.$size-standar;
                 text-decoration: none;
             }
             span {
-                font-size: 0.875rem;
-                color: #717171;
+                font-size:variables.$padding-small;
+                color:variables.$greeyLigth;
             }
         }    
     }
 }
-
+.asside-left{
+    height:1800px;
+}
 .cardCategory {
-    background-color: #FFFFFF;
-    border-radius: 7px;
-    padding: 1rem;
+    background-color:variables.$whiteBrigth;
+    border-radius:variables.$borderStandar;
+    padding:variables.$size-standar;
+    position: sticky;
+    top: variables.$size-standar;
     &__body {
-        background-color: #FFFFFF;
+        background-color:variables.$whiteBrigth;
         &--link {
             display: flex;
-            color: #595959;
-            font-size: 0.9rem;
+            color:variables.$greeyS;
+            font-size:variables.$size-medium;
             justify-content: space-between;
             img {
-                width: 50%;
+                width:variables.$percentage-medium;
             }
         }    
         &--title {
-            color: #404040;
-            font-size : 1.5rem ;
+            color:variables.$GreeyPearl;
+            font-size :variables.$size-large;
         }   
         &--description {
-            color: #404040;
-            font-size: 1rem;
+            color:variables.$GreeyPearl;
+            font-size:variables.$size-standar;
         } 
         &--subTitle {
-            color: #404040;
-            font-size: 1rem;
+            color: variables.$GreeyPearl;
+            font-size: variables.$size-standar;
         }
         &--list {
-            color: #404040;
-            font-size: 1rem;
+            color:variables.$GreeyPearl;
+            font-size:variables.$size-standar;
         }
         &--btn {
             background-color: transparent;
-            border: solid 1px #3B49DF;
+            border:variables.$borderButton;
             display: flex;
-            color: #3B49DF;
-            font-size: 1rem;
+            color:variables.$blueKing;
+            font-size:variables.$size-standar;
             justify-content: center;
         }
         
