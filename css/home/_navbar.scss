@@ -1,0 +1,136 @@
+@use "../variables";
+@import "../mixings";
+
+html,
+body {
+  background-color: #e3e3e3;
+}
+
+.navbar {
+  font-family: variables.$sans-serif;
+  .custom-container {
+    height: variables.$headerHeight;
+    @include make-container();
+    .burguerButtonSpan{
+        .burguerbutton{
+            background-color: transparent;
+            border: none;
+        }
+    }
+    .navbar-brand {
+      .devto-home-logo {
+        display: inline-block;
+        height: calc(variables.$headerHeight - variables.$logoHeightPrevent * 2);
+        max-width: 100%;
+        object-fit: contain;
+        outline: 0px;
+        vertical-align: middle;
+        width: auto;
+      }
+    }
+    .searchContainer {
+      border-radius: 8px;
+      border: 2px solid #e3e3e3;
+      flex: 1 1 0%;
+      height: 2.5rem;
+      max-width: 25.5rem;
+      position: relative;
+      &__searchForm {
+        .searchInput {
+          font-family: inherit;
+          font-weight: 400;
+          outline: 0px;
+          padding: 0.375rem 0.5rem;
+          &::focus {
+            background-color: #e00606;
+          }
+        }
+        .buttonSearch {
+          background-color: transparent;
+          border-radius: 4px;
+          border: none;
+          height: 100%;
+          padding: 0px variables.$logoHeightPrevent;
+          position: absolute;
+          right: 0px;
+          width: 40px;
+
+          &:hover {
+            background-color: #2c6be02c;
+            svg {
+              color: #2e6ad9e5;
+            }
+          }
+          span {
+            svg {
+              bottom: 2px;
+              height: 22px;
+              left: 1px;
+              position: relative;
+              width: 22px;
+            }
+          }
+        }
+      }
+    }
+    .buttonsContainer {
+      height: 100%;
+      margin-left: auto;
+      .createPost {
+        border: 1px solid variables.$navbarBlueCreatePostBorder;
+        border-radius: 0.375rem;
+        font-family: variables.$sans-serif;
+        height: 2.4rem;
+        margin-right: variables.$createPostMargin;
+        padding: calc(0.5rem - 1px) calc(1rem - 1px);
+        &:hover {
+          background-color: variables.$navbarBlueCreatePost;
+          a {
+            color: variables.$whiteColor;
+            text-decoration: underline;
+          }
+        }
+        a {
+          font-size: 1rem;
+          font-weight: 600;
+          white-space: nowrap;
+          text-decoration: none;
+          z-index: 1;
+          color: variables.$createPostText;
+        }
+      }
+      .notifications {
+        color: black;
+        font-size: 2rem;
+        svg {
+          bottom: 6px;
+          height: 1.5rem;
+          position: relative;
+          width: 2rem;
+        }
+      }
+      .userSessionButton{
+        .buttonDropdown{
+            margin-right: 1rem;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: transparent;
+            border: none;
+            &::focus{
+            }
+            span{
+                img{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+            }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle::after{
+    display: none;
+}
