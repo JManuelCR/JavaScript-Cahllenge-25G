@@ -381,19 +381,36 @@ html {
 }
 
 .pills-nav-container {
+  margin-bottom: 0.5rem;
   display: flex;
   justify-content: start;
-  padding: 1rem;
+}
+.pills-nav-container__ulList--bold:hover {
+  background-color: white;
+  border-radius: 0.5rem;
 }
 .pills-nav-container__ulList--bold a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: bolder;
+  font-size: 1.125rem;
   color: black;
+}
+.pills-nav-container__ulList--lighter:hover {
+  background-color: white;
+  border-radius: 0.5rem;
 }
 .pills-nav-container__ulList--lighter a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.125rem;
   color: black;
-  font-weight: lighter;
+  font-weight: 200;
 }
 
+.user-data-space {
+  padding-left: 1.25rem;
+  padding-top: 1.25rem;
+  display: flex;
+}
 .user-data-space__mini {
   display: flex;
   gap: 1rem;
@@ -405,7 +422,6 @@ html {
 }
 .user-data-space__name {
   padding-left: 0.2rem;
-  padding-top: 1rem;
 }
 .user-data-space__name--bold {
   text-decoration: none;
@@ -413,18 +429,31 @@ html {
   font-weight: bolder;
 }
 .user-data-space__name--bold p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+.user-data-space__name--lighter {
+  padding-top: 1rem;
+  text-decoration: none;
+  color: black;
+}
+.user-data-space__name--lighter p {
+  font-size: 0.75rem;
   margin: 0;
 }
 .user-data-space__tags {
   margin-left: 1rem;
 }
-.user-data-space__tags h3 {
+.user-data-space__tags h2 {
   font-weight: bolder;
 }
-.user-data-space__tags h3 a {
+.user-data-space__tags h2 a {
   text-decoration: none;
   color: #171717;
-  font-size: 1.6rem;
+  font-size: 1.875rem;
+}
+.user-data-space__tags h2 a:hover {
+  color: rgb(47, 58, 178);
 }
 .user-data-space__tags--lighter {
   display: flex;
@@ -434,6 +463,13 @@ html {
   font-weight: lighter;
   text-decoration: none;
   color: #171717;
+}
+.user-data-space__tags--lighter a p {
+  margin: 0;
+}
+.user-data-space__tags--lighter a p:hover {
+  background-color: #f5f5f5;
+  border-radius: 0.4rem;
 }
 .user-data-space__tags--emojis {
   display: flex;
@@ -448,6 +484,10 @@ html {
 }
 .emojisReaction__icons {
   display: flex;
+}
+.emojisReaction__icons:hover {
+  background-color: #f5f5f5;
+  border-radius: 0.4rem;
 }
 .emojisReaction__icons a {
   text-decoration: none;
@@ -467,13 +507,19 @@ html {
 }
 .emojisReaction__comments a {
   display: flex;
-  align-items: center;
+  align-items: end;
   text-decoration: none;
   color: #171717;
 }
+.emojisReaction__comments a:hover {
+  background-color: #f5f5f5;
+  border-radius: 0.4rem;
+}
 .emojisReaction__comments a img {
   width: 1.5rem;
-  margin-top: 0.8rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 0.9rem;
 }
 .emojisReaction__comments a p {
   font-size: 0.87rem;
@@ -489,8 +535,13 @@ html {
   margin-top: 0.5rem;
 }
 .minutes-read img {
-  height: 1.3rem;
-  width: 1.3rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.minutes-read img:hover {
+  background-color: rgb(47, 58, 178);
+  border-radius: 0.4rem;
+  border-width: 1rem;
 }
 
 .comment-section {

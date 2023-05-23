@@ -18,9 +18,13 @@ $headerHeight: 3.75rem;
 $logoHeightPrevent: 0.5rem;
 $createPostMargin: 0.5rem;
 
+// gap standard 1rem
+$standGap:1rem;
+$halfGap:0.5rem;
 
 //margin de standard 1rem
 $standarMargin: 1rem;
+$mediumMargin:0.5rem;
 $paddingHalfRem: 0.5rem;
 
 
@@ -35,4 +39,8 @@ $comic: 'Comic Sans MS', cursive, sans-serif;
 $font-100: 100;
 $font-200: 200;
 $font-300: 300;
+$font-700: 700;
 
+//fontSizes
+$font-size-1:1.125rem;
+$font-size-2:1.875rem;
