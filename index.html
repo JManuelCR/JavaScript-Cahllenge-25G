@@ -32,45 +32,45 @@
             <div class="col-md-3 d-none d-md-block"></div>
             <div class="col-12 col-md-9 col-lg-6">
               <div class="pills-nav-container nav-pill-container d-flex justify-content-center p-2">
-                <ul name="li-container" class="nav nav-pills">
-                  <li name="toHover" class="nav-item">
-                    <a class="nav-link fw-bolder text-black rounded-2" aria-current="page" href="#">Relevant</a>
+                <ul class="pills-nav-container__ulList nav nav-pills">
+                  <li class="pills-nav-container__ulList--bold nav-item">
+                    <a class="nav-link rounded-2" aria-current="page" href="#">Relevant</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link fw-light text-black rounded-2" href="#">Latest</a>
+                  <li class="pills-nav-container__ulList--lighter nav-item">
+                    <a class="nav-link rounded-2" href="#">Latest</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link fw-light text-black rounded-2" href="#">Top</a>
+                  <li class="pills-nav-container__ulList--lighter nav-item ">
+                    <a class="nav-link rounded-2" href="#">Top</a>
                   </li>
                 </ul>
               </div>
-              <div class="cardCont d-flex justify-content-center">
-                <div class="imgContainer card mb-3 d-flex">
+              <div class="card-cont d-flex justify-content-center">
+                <div class="img-container card mb-3 d-flex">
                   <a href="#">
                     <img
                       src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRoiBBgn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ktesxigi964m1u8lyqi0.png"
                       class="card-img-top " alt="img del post">
                   </a>
-                  <div class="userDataSpace d-flex p-2">
-                    <div class="userDataMini d-flex gap-3 align-items-center">
+                  <div class="user-data-space d-flex ps-2">
+                    <div class="user-data-space__mini">
                       <a href="#">
-                        <img class="user-profile-pic rounded-circle " src="https://randomuser.me/api/portraits/men/0.jpg">
+                        <img class="rounded-circle " src="https://randomuser.me/api/portraits/men/0.jpg">
                       </a>
                     </div>
-                    <div class="userName p-2">
-                      <a class="aUserName text-decoration-none text-black" href="#">
-                        <p class="author-name fw-bolder">Thomas Alger</p>
+                    <div class="user-data-space__name">
+                      <a class="user-data-space__name--bold" href="#">
+                        <p class="author-name">Thomas Alger</p>
                       </a>
                       <a class="text-decoration-none text-black" href="#">
                         <p class="reation-date">May 6 (10 days ago)</p>
                       </a>
                     </div>
                   </div>
-                  <div class="tags-reacts card-body">
-                    <h2 class="card-title fw-bolder ">
-                      <a class="text-decoration-none text-dark " href="#">7 secrets TypeScript Tricks Pros Use</a>
-                    </h2>
-                    <div class="tagsContainer d-flex gap-3 text-decoration-none">
+                  <div class="user-data-space__tags card-body">
+                    <h3 class="card-title">
+                      <a href="#">7 secrets TypeScript Tricks Pros Use</a>
+                    </h3>
+                    <div class="user-data-space__tags--lighter">
                       <a href="#">
                         <p>#TypeScript</p>
                       </a>
@@ -84,43 +84,48 @@
                         <p>#Beginners</p>
                       </a>
                     </div>
-                    <div class="buttom-reactions d-flex justify-content-between mt-2">
-                      <div class="emojis-reaction d-flex">
-                        <a class="d-flex text-decoration-none text-black" href="#">
-                          <a><img src="./assets/icons/folders_Icon.svg"></a>
-                          <box-icon type='logo' name='postgresql'></box-icon>
-                          <box-icon name='baguette' type='solid'></box-icon>
-                          <box-icon name='invader' type='solid'></box-icon>
-                          <span class="ms-2">
+                    <div class="user-data-space__tags--emojis">
+                    <div class="emojisReaction">
+                      <div class="emojisReaction__icons">
+                        <a class="text-decoration-none" href="#">
+                          <img src="./assets/icons/red-Heart-Icon.svg" alt="icon">
+                          <img src="./assets/icons/unicorn-Icon.svg" alt="icon">
+                          <img src="./assets/icons/crazy-Man-Icon.svg" alt="icon">
+                          <img src="./assets/icons/raise-.svg" alt="icon">
+                          <img src="./assets/icons/fire-Icon.svg" alt="icon">
+                          <span>
                             <p>240 reactions</p>
-                          </span>
+                          </span> 
                         </a>
                       </div>
-                      <div class="comment-box d-flex">
-                        <a class="d-flex text-decoration-none text-black" href="#">
-                          <box-icon name='chat'></box-icon>
+                      <div class="emojisReaction__comments">
+                        <a class="text-container" href="#">
+                          <img src="./assets/icons/black-Flat-Icon.svg">
                           <p>23 comments</p>
                         </a>
                       </div>
-                      <div class="d-flex">
-                        <a class="d-flex text-decoration-none text-black" href="#">
+                    </div>
+                      <div class="minutes-read">
+                        <a class="minutes-read__anc" href="#">
                           <p class="card-text"><small class="text-body-secondary">5 minutes read</small></p>
-                          <box-icon name='bookmark'></box-icon>
+                          <img src="./assets/icons/book-Icon.svg" class="mt-1">
                         </a>
                       </div>
                     </div>
-                    <div class="comment-section mt-3 d-flex">
-                      <div class="comment-picture">
-                        <img src="https://randomuser.me/api/portraits/women/34.jpg" class="rounded-circle">
+                    <div class="comment-section">
+                      <div class="comment-section__picture">
+                        <a href="#">
+                          <img src="https://randomuser.me/api/portraits/women/34.jpg" class="rounded-circle">
+                        </a>
                       </div>
-                      <div class="comment-rectangle ms-3 p-2 d-flex flex-column">
-                        <div class="username">
-                          <a class="d-flex gap-2 text-decoration-none text-black" href="#">
+                      <div class="comment-section__rectangle">
+                        <div class="comment-section__rectangle--username">
+                          <a href="#">
                             <h6>Jess Harper</h6>
                             <p>(3 days ago)</p>
                           </a>
                         </div>
-                        <div class="comment-text">
+                        <div class="comment-section__rectangle--comment">
                           <a href="#">
                             <p>Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the
                               strict options and still manage to avoid as like the plague because they know a ton of tools like
@@ -165,7 +170,7 @@
                 </div>
                   <div class="cardDiscuss">
                     <div class="cardDiscuss__header">
-                     <h3 class="cardDiscuss__header--title" >#discuss</h3> 
+                      <h3 class="cardDiscuss__header--title" >#discuss</h3> 
                     </div>
                     <ul class="cardDiscuss__list list-group list-group-flush">
                       <a class="cardDiscuss__list--relevant" href="">What Qualities Do You Seek in Your Work Enviroment?

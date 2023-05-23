@@ -256,49 +256,141 @@ html {
   justify-content: center;
 }
 
-.userDataSpace .userDataMini a .user-profile-pic {
+.pills-nav-container__ulList--bold a {
+  font-weight: bolder;
+  color: black;
+}
+.pills-nav-container__ulList--lighter a {
+  color: black;
+  font-weight: lighter;
+}
+
+.user-data-space__mini {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.user-data-space__mini a img {
   width: 2.5rem;
   height: 2.5;
 }
-
-.userName a p {
-  margin: 0;
-  color: black;
+.user-data-space__name {
+  padding-left: 0.2rem;
+  padding-top: 1rem;
 }
-
-.cardCont .tags-reacts .tagsContainer a {
+.user-data-space__name--bold {
   text-decoration: none;
   color: black;
+  font-weight: bolder;
+}
+.user-data-space__name--bold p {
+  margin: 0;
+}
+.user-data-space__tags {
+  margin-left: 1rem;
+}
+.user-data-space__tags h3 {
+  font-weight: bolder;
+}
+.user-data-space__tags h3 a {
+  text-decoration: none;
+  color: #171717;
+  font-size: 1.6rem;
+}
+.user-data-space__tags--lighter {
+  display: flex;
+  gap: 1rem;
+}
+.user-data-space__tags--lighter a {
   font-weight: lighter;
+  text-decoration: none;
+  color: #171717;
+}
+.user-data-space__tags--emojis {
+  display: flex;
+  margin-top: 0.5rem;
+  justify-content: space-between;
 }
 
-.cardCont .comment-section {
+.emojisReaction {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.emojisReaction__icons {
+  display: flex;
+}
+.emojisReaction__icons a {
+  text-decoration: none;
+  color: #171717;
+  display: flex;
+}
+.emojisReaction__icons a img {
+  width: 1.5rem;
+}
+.emojisReaction__icons a span {
+  margin-left: 0.5rem;
+  margin-top: 0.8rem;
+}
+.emojisReaction__icons a span p {
+  font-size: 0.87rem;
+  margin: 0;
+}
+.emojisReaction__comments a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #171717;
+}
+.emojisReaction__comments a img {
+  width: 1.5rem;
+  margin-top: 0.8rem;
+}
+.emojisReaction__comments a p {
+  font-size: 0.87rem;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.minutes-read__anc {
+  display: flex;
+  text-decoration: none;
+  color: #171717;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.minutes-read img {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.comment-section {
+  margin-top: 1rem;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
 }
-.cardCont .comment-section .comment-picture img {
+.comment-section__picture img {
   width: 2rem;
   margin-top: 0.5rem;
 }
-.cardCont .comment-section .comment-rectangle {
+.comment-section__rectangle {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
   background: #f5f5f5;
   border-radius: 1rem;
 }
-.cardCont .comment-section .comment-rectangle .username {
-  font-weight: lighter;
-}
-.cardCont .comment-section .comment-rectangle .time-edit {
-  font-weight: lighter;
-  font-size: 0.9rem;
-}
-
-.tags-reacts .comment-section .comment-rectangle a {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.tags-reacts .comment-section .comment-rectangle .comment-text a {
-  width: -moz-fit-content;
-  width: fit-content;
+.comment-section__rectangle--username a {
+  display: flex;
+  gap: 0.5rem;
   text-decoration: none;
-  color: black;
+  color: #171717;
+}
+.comment-section__rectangle--comment a {
+  text-decoration: none;
+}
+.comment-section__rectangle--comment a p {
+  color: #171717;
 }/*# sourceMappingURL=style.css.map */
