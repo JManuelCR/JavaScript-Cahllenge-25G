@@ -3,6 +3,38 @@ $navbarBlueCreatePost: rgb(59, 73, 223);
 $navbarBlueCreatePostBorder: rgb(47, 58, 178);
 $whiteColor: rgb(254, 254, 254);
 $createPostText: rgb(116,126,232);
+$newPostBg:rgb(245,245,245);
+
+//global-colors
+$smothGreey: #828282;
+$GreeyPearl: #404040;
+$greeyS : #595959;
+$greyGraphite:#575757;
+$greeyLigth: #717171;
+$greeyLigth-s:#525252;
+$whiteSmoke: #f5f5f5;
+$whiteBrigth: #ffffff;
+$witheGeneric:#f9f9f9;
+$blackBrigth: #242424;
+$blueKing: #3B49DF;
+
+//globalElementsAssideRigth
+$borderStandar: 0.5rem;
+$borderUnderline: solid 1px #e9e7e7e8;
+$borderSpecialF: 2rem solid black;
+$borderButton:solid 1px #3B49DF;
+$padding-small: 0.8rem;
+$padding-small-x: 0.6rem;
+$size-standar: 1rem;
+$size-medium: 0.9rem;
+$size-large: 1.3rem;
+$size-medium-x:1.25rem;
+$size-large-x:1.75rem;
+$size-extra-small:0.3rem;
+$percentaje-small-s:20%;
+$percentaje-small:30%;
+$percentage-medium:50%;
+$percentage-full:100%;
 
 // Breakpoints
 $xxsmall:320px;
@@ -38,4 +70,5 @@ $comic: 'Comic Sans MS', cursive, sans-serif;
 $font-100: 100;
 $font-200: 200;
 $font-300: 300;
-
+$font-600: 600;
+$font-700: 700;
