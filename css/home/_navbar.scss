@@ -174,8 +174,6 @@ body {
             height: 2.5rem;
             background-color: transparent;
             border: none;
-            &::focus{
-            }
             span{
                 img{
                     border-radius: 50%;
@@ -198,11 +196,6 @@ body {
                 &:last-child{
                     padding-top: variables.$paddingHalfRem;
                     border-top: 1px solid rgba(128, 128, 128, 0.533);
-                }
-                a{
-                    .userLogedName{
-
-                    }
                 }
                     .userLogedIdentifier{
                         position: relative;
