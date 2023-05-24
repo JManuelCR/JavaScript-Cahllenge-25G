@@ -344,17 +344,40 @@ body {
   display: none;
 }
 
-.createNavWrapper {
-  background-color: red;
+.newpostWrapper {
+  background-color: rgb(249, 249, 249);
 }
-.createNavWrapper .imgBrand a img {
-  display: inline-block;
+.newpostWrapper .createNavWrapper .titleAndBrandWrapper .imgBrand a img {
   height: 2.75rem;
   max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   outline: 0px;
   vertical-align: middle;
+  width: auto;
+}
+.newpostWrapper .createNavWrapper .close .closeButton {
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+}
+.newpostWrapper .createNavWrapper .close .closeButton:hover {
+  background-color: rgba(121, 132, 255, 0.248);
+}
+.newpostWrapper .createNavWrapper .close .closeButton span {
+  font-size: 1.5rem;
+}
+
+.description__text {
+  margin-top: 8rem;
+  margin-left: 1rem;
+}
+.description__text h2 {
+  font-weight: 700;
+}
+
+.cardImgTop {
+  max-height: 15rem;
   width: auto;
 }
 
