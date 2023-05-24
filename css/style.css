@@ -364,8 +364,9 @@ body {
 .newpostWrapper .createNavWrapper .close .closeButton:hover {
   background-color: rgba(121, 132, 255, 0.248);
 }
-.newpostWrapper .createNavWrapper .close .closeButton span {
+.newpostWrapper .createNavWrapper .close .closeButton span a {
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .description__text {
@@ -790,33 +791,29 @@ body {
   width: 22px;
 }
 
-.containerFooter {
-  background-color: #e5e5e5;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: small;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.listItem {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.container-footer__DEV {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
   text-align: center;
-  margin-right: 30px;
-  padding: 0px;
-  list-style: none;
-  gap: 6px;
+  justify-content: center;
 }
-
-.circle {
-  background: #575757;
-  border-radius: 50%;
-  height: 0.25rem;
-  width: 0.25rem;
-  display: inline-block;
-  margin-left: 0.5rem;
+.container-footer__DEV p a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.container-footer__DEV ul li a {
+  text-decoration: none;
+}
+.container-footer__DEV ul {
+  margin: 0rem;
+}
+.container-footer__DEV--li {
+  margin-top: 1rem;
+}
+.container-footer__DEV--li p {
+  gap: 0;
+  margin-bottom: 0;
 }
 
 html {
