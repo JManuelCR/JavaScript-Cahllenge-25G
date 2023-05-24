@@ -55,7 +55,6 @@
                     </div>
                 </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <label for="floatingTextarea2 validationCustom04" class="form-label"></label>
                     <textarea class="form-control" placeholder="Escribe tu post" id="postContend" required></textarea>
@@ -72,20 +71,24 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <section class="col-md-4">
                             <label for="validationCustom03" class="form-label">Tiempo de lectura</label>
                             <input type="text" class="form-control" id="lectureTime" placeholder="Ej. 5min" required>
                         <div class="invalid-feedback">
                             Ingresa el tiempo de lectura estimado
                         </div>
                         <div>
-                            <label for="validationCustom05" class="form-label">Tus tags</label>
-                            <input type="text" class="form-control" id="postTags" placeholder="#123, #tema" required>
+                            <label for="validationCustom05" class="form-label">Tag</label>
+                            <input type="text" class="form-control" id="postTags" placeholder="tema" required>
                             <div class="invalid-feedback">
                             Debes ingresar al menos 1 hashtag
                         </div>
-                        </div>   
-                    </div>                 
+                        </div>
+                        <button class="btn btn-primary mb-4 mt-3" type="submit" onclick="addTagsButton()">Crear tag</button>
+                        <p>Tus tags</p>
+                        <ul id="tagsTable" class="list-group mt-1">
+                        </ul>
+                    </section>                 
                 </div>
                 <div class="col-12 post-button">
                 <button class="btn btn-outline-primary mb-4" type="submit" onclick="addPostButton()">Postear</button>
