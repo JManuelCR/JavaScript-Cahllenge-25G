@@ -1,6 +1,18 @@
-html{
-    padding: 0;
-    margin: 0;
-    background-color: rgb(245,245,245);
-    box-sizing: border-box;
+@use '../variables';
+
+.createNavWrapper{
+    background-color: red;
+    .imgBrand{
+        a{
+            img{
+                display: inline-block;
+                height: calc(variables.$headerHeight - variables.$logoHeightPrevent * 2);
+                max-width: 100%;
+                object-fit: contain;
+                outline: 0px;
+                vertical-align: middle;
+                width: auto;
+            }
+        }
+    }
 }
