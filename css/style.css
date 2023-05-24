@@ -791,19 +791,28 @@ body {
   width: 22px;
 }
 
+.container-footer {
+  font-size: 0.9rem;
+}
 .container-footer__DEV {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5rem;
-  text-align: center;
   justify-content: center;
 }
 .container-footer__DEV p a {
+  color: #3B49DF;
   text-decoration: none;
   font-weight: 600;
 }
+.container-footer__DEV ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
 .container-footer__DEV ul li a {
   text-decoration: none;
+  color: #3B49DF;
 }
 .container-footer__DEV ul {
   margin: 0rem;
@@ -1044,31 +1053,6 @@ html {
 .reactions__container--dots a p {
   text-align: center;
   color: black;
-}
-
-.container-footer__DEV {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
-  text-align: center;
-  justify-content: center;
-}
-.container-footer__DEV p a {
-  text-decoration: none;
-  font-weight: 600;
-}
-.container-footer__DEV ul li a {
-  text-decoration: none;
-}
-.container-footer__DEV ul {
-  margin: 0rem;
-}
-.container-footer__DEV--li {
-  margin-top: 1rem;
-}
-.container-footer__DEV--li p {
-  gap: 0;
-  margin-bottom: 0;
 }
 
 .assideLeftFirstNav .list-group .list-group-item {
