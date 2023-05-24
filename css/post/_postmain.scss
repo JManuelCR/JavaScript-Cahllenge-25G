@@ -1,0 +1,33 @@
+@use"../variables";
+
+.article__contentMain {
+    padding-top:variables.$size-large-x ;
+    padding-bottom:variables.$size-large-x;
+    padding-left:variables.$size-xx;
+    padding-right:variables.$size-xx;
+    p{
+        color: variables.$blackGreey;
+        font-size:variables.$size-standar;
+        padding: 0;
+        margin-bottom:variables.$size-large ;
+    }
+    h3{
+        margin-bottom:variables.$padding-small-x;
+        margin-top:variables.$padding-small-x;
+        padding: 0;
+        line-height:variables.$percentage-mfull;
+        a{
+            color:variables.$blackGreey ;
+            font-size:variables.$size-medium-x;
+            text-decoration: none;
+            font-weight:variables.$font-700;
+        }
+    }
+    img{
+        border-radius:variables.$borderStandar ;
+        margin-bottom: variables.$size-standar;
+    }
+}
+
+
+
