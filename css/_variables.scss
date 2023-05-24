@@ -3,7 +3,13 @@ $navbarBlueCreatePost: rgb(59, 73, 223);
 $navbarBlueCreatePostBorder: rgb(47, 58, 178);
 $whiteColor: rgb(254, 254, 254);
 $createPostText: rgb(116,126,232);
+$searchHover: rgba(121, 132, 255, 0.248);
 $newPostBg:rgb(245,245,245);
+$colorTagTitle: rgb(77,77,77);
+$colorCardTitle: rgb(74,74,74);
+$colorNewPostForm: rgb(249,249,249);
+//socialNetworks
+$blackSocialNetwork: rgb(64,64,64);
 
 //global-colors
 $smothGreey: #828282;
@@ -17,6 +23,9 @@ $whiteBrigth: #ffffff;
 $witheGeneric:#f9f9f9;
 $blackBrigth: #242424;
 $blueKing: #3B49DF;
+$pink:rgb(255,132,238);
+$purple:rgb(187,78,245);
+$green:rgb(48,147,78);
 $blackGreey:#171717;
 
 //globalElementsAssideRigth
@@ -43,22 +52,31 @@ $percentage-mfull:80%;
 $percentage-full:100%;
 
 // Breakpoints
-$small: 576px;
+$xxsmall:320px;
+$xsmall: 375px;
+$small: 425px;
 $medium: 768px;
 $large: 992px;
 $extra-large: 1200px;
 $extra-extra-large: 1400px;
 $extra-4k: 2560px;
+$size-xx: 3rem;
 
 //dimentions
 $headerPadding: 0.5rem;
 $headerHeight: 3.75rem;
 $logoHeightPrevent: 0.5rem;
 $createPostMargin: 0.5rem;
+$percentage-mfull:80%;
 
+// gap standard 1rem
+$standGap:1rem;
+$halfGap:0.5rem;
 
 //margin de standard 1rem
 $standarMargin: 1rem;
+$mediumMargin:0.5rem;
+$standarRem: 1rem;
 $paddingHalfRem: 0.5rem;
 
 
@@ -75,3 +93,6 @@ $font-200: 200;
 $font-300: 300;
 $font-600: 600;
 $font-700: 700;
+
+$font-size-1: 1.125rem;
+$font-size-2: 1.875rem;
