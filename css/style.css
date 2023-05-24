@@ -827,6 +827,11 @@ html {
   margin-left: 2rem;
   align-items: center;
 }
+@media screen and (max-width: 425px) {
+  .user-data-space {
+    margin-left: 0rem;
+  }
+}
 .user-data-space__name {
   display: inline-block;
   margin-left: 1rem;
@@ -838,6 +843,14 @@ html {
   display: flex;
   flex-direction: row;
 }
+@media screen and (max-width: 425px) {
+  .emojis-colection__icons {
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 0.5rem;
+    margin-left: 0rem;
+  }
+}
 .emojis-colection__icons span {
   display: flex;
   margin-right: 1.5rem;
@@ -848,7 +861,12 @@ html {
 }
 .emojis-colection h1 {
   display: flex;
-  width: 500px;
+}
+@media screen and (max-width: 425px) {
+  .emojis-colection h1 {
+    flex-wrap: wrap;
+    width: 20rem;
+  }
 }
 .emojis-colection h1 a {
   text-decoration: none;
@@ -857,10 +875,24 @@ html {
   width: 75%;
   font-weight: 700;
 }
+@media screen and (max-width: 425px) {
+  .emojis-colection h1 a {
+    flex-wrap: wrap;
+    margin-left: 0rem;
+  }
+}
 .emojis-colection__tags {
   display: flex;
   gap: 1rem;
   margin-left: 2.5rem;
+}
+@media screen and (max-width: 425px) {
+  .emojis-colection__tags {
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 0.5rem;
+    margin-left: 0rem;
+  }
 }
 .emojis-colection__tags--blue {
   height: 1.8rem;
@@ -925,6 +957,12 @@ html {
   padding-left: 3rem;
   padding-right: 3rem;
 }
+@media screen and (max-width: 425px) {
+  .article__contentMain {
+    flex-wrap: wrap;
+    padding: 0rem;
+  }
+}
 .article__contentMain p {
   color: #171717;
   font-size: 1rem;
@@ -947,9 +985,14 @@ html {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 425px) {
+  .article__contentMain img {
+    width: 100%;
+  }
+}
 
 .reactions {
-  padding-top: 4.38rem;
+  padding-top: 4.5rem;
 }
 .reactions__container {
   display: flex;
@@ -998,33 +1041,29 @@ html {
   color: black;
 }
 
-.containerFooter {
-  background-color: #e5e5e5;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: small;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.listItem {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.container-footer__DEV {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
   text-align: center;
-  margin-right: 30px;
-  padding: 0px;
-  list-style: none;
-  gap: 6px;
+  justify-content: center;
 }
-
-.circle {
-  background: #575757;
-  border-radius: 50%;
-  height: 0.25rem;
-  width: 0.25rem;
-  display: inline-block;
-  margin-left: 0.5rem;
+.container-footer__DEV p a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.container-footer__DEV ul li a {
+  text-decoration: none;
+}
+.container-footer__DEV ul {
+  margin: 0rem;
+}
+.container-footer__DEV--li {
+  margin-top: 1rem;
+}
+.container-footer__DEV--li p {
+  gap: 0;
+  margin-bottom: 0;
 }
 
 .assideLeftFirstNav .list-group .list-group-item {
