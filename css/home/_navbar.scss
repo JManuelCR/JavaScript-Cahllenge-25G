@@ -17,6 +17,49 @@ body {
             border: none;
         }
     }
+    .emergentOffCanvas{
+        .offcanvas{
+          max-width: 350px;
+          .offcanvas-header{
+            word-break: break-word;
+            font-weight: variables.$font-700;
+            font-size: 1.125rem;
+          }
+            .offcanvas-body{
+                padding-left: 0px;
+                padding-top: 0px;
+                h5{
+                  font-size: 1rem;
+                  font-weight: variables.$font-700;
+                }
+                .list-group{
+                    .list-group-item{
+                        border: none;
+                        a{
+                            color: black;
+                            cursor: pointer;
+                            text-decoration: none;
+                            &:hover{
+                                color: variables.$navbarBlueCreatePost;
+                            }
+                            img{
+                                height: 24px;
+                            }
+                        }
+                    }
+                }
+                .offcanvas-body_networks{
+                  a{
+                    span{
+                      img{
+                        height: 1rem;
+                      }
+                    }
+                  }
+                }
+            }
+        }
+    }
     .navbar-brand {
       .devto-home-logo {
         display: inline-block;
@@ -33,7 +76,7 @@ body {
       border: 2px solid #e3e3e3;
       flex: 1 1 0%;
       height: 2.5rem;
-      max-width: 25.5rem;
+      max-width: 22rem;
       position: relative;
       &__searchForm {
         .searchInput {
@@ -41,9 +84,6 @@ body {
           font-weight: 400;
           outline: 0px;
           padding: 0.375rem 0.5rem;
-          &::focus {
-            background-color: #e00606;
-          }
         }
         .buttonSearch {
           background-color: transparent;
@@ -72,10 +112,27 @@ body {
           }
         }
       }
+      @include responsive(variables.$large){
+        max-width: 25.5rem;
+      }
     }
     .buttonsContainer {
       height: 100%;
       margin-left: auto;
+      .searchLuopeMobileButton{
+        margin: 0px 0.5rem;
+        &:hover{
+          background-color: variables.$searchHover;
+          border: 1px solid variables.$searchHover;
+        }
+        span{
+          img{
+            position: relative;
+            bottom: 1px;
+            height: 1.675rem;
+          }
+        }
+      }
       .createPost {
         border: 1px solid variables.$navbarBlueCreatePostBorder;
         border-radius: 0.375rem;
@@ -117,8 +174,6 @@ body {
             height: 2.5rem;
             background-color: transparent;
             border: none;
-            &::focus{
-            }
             span{
                 img{
                     border-radius: 50%;
@@ -141,11 +196,6 @@ body {
                 &:last-child{
                     padding-top: variables.$paddingHalfRem;
                     border-top: 1px solid rgba(128, 128, 128, 0.533);
-                }
-                a{
-                    .userLogedName{
-
-                    }
                 }
                     .userLogedIdentifier{
                         position: relative;

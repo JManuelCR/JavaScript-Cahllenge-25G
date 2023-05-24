@@ -1,4 +1,5 @@
-@use "../variables";
+@use '../variables';
+
 .pills-nav-container {
     margin-bottom: .5rem;
     display: flex;
@@ -229,3 +230,45 @@
         }
     }
 }
+.searchContainer {
+    border-radius: 8px;
+    border: 2px solid #e3e3e3;
+    flex: 1 1 0%;
+    height: 2.5rem;
+    max-width: 25.5rem;
+    position: relative;
+    &__searchForm {
+      .searchInput {
+        font-family: inherit;
+        font-weight: 400;
+        outline: 0px;
+        padding: 0.375rem 0.5rem;
+      }
+      .buttonSearch {
+        background-color: transparent;
+        border-radius: 4px;
+        border: none;
+        height: 100%;
+        padding: 0px variables.$logoHeightPrevent;
+        position: absolute;
+        right: 0px;
+        width: 40px;
+  
+        &:hover {
+          background-color: #2c6be02c;
+          svg {
+            color: #2e6ad9e5;
+          }
+        }
+        span {
+          svg {
+            bottom: 2px;
+            height: 22px;
+            left: 1px;
+            position: relative;
+            width: 22px;
+          }
+        }
+      }
+    }
+  }
