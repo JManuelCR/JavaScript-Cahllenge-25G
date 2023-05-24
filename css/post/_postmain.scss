@@ -4,6 +4,9 @@ html{
     font-family: variables.$sans-serif;
 }
 .user-data-space {
+    @media screen and (max-width:variables.$small) {
+        margin-left: 0rem;
+    }
     margin-left: 2rem;
     align-items: center;
     &__name {
@@ -18,6 +21,12 @@ html{
         margin-left: 2.5rem;
         display: flex;
         flex-direction: row;
+        @media screen and (max-width:variables.$small) {
+            flex-wrap: wrap;
+            margin-top: 0;
+            gap: .5rem;
+            margin-left: 0rem;
+        }
         span {
             display: flex;
             margin-right: 1.5rem;
@@ -29,19 +38,32 @@ html{
     }
     h1 {
         display: flex;
-        width: 500px;
+        @media screen and (max-width:variables.$small) {
+            flex-wrap: wrap;
+            width: 20rem;
+        }
         a{
             text-decoration: none;
             color: black;
             margin-left: 2.5rem;
             width: 75%;
             font-weight: variables.$font-700;
+            @media screen and (max-width:variables.$small) {
+                flex-wrap: wrap;
+                margin-left: 0rem;
+            }
         }
     }
     &__tags {
         display: flex;
         gap: 1rem;
         margin-left: 2.5rem;
+        @media screen and (max-width:variables.$small) {
+            flex-wrap: wrap;
+            margin-top: 0;
+            gap: .5rem;
+            margin-left: 0rem;
+        }
         &--blue {
             height: 1.8rem;
             text-decoration: none;
@@ -106,11 +128,15 @@ html{
     padding-bottom:variables.$size-large-x;
     padding-left:variables.$size-xx;
     padding-right:variables.$size-xx;
+    @media screen and (max-width:variables.$small) {
+        flex-wrap: wrap;
+        padding: 0rem;
+    }
     p{
         color: variables.$blackGreey;
         font-size:variables.$size-standar;
         padding: 0;
-        margin-bottom:variables.$size-large ;
+        margin-bottom:variables.$size-large;
     }
     h3{
         margin-bottom:variables.$padding-small-x;
@@ -127,10 +153,13 @@ html{
     img{
         border-radius:variables.$borderStandar ;
         margin-bottom: variables.$size-standar;
+        @media screen and (max-width:variables.$small) {
+            width: variables.$percentage-full;
+        }
     }
 }
 .reactions {
-    padding-top: 4.38rem;
+    padding-top: 4.50rem;
     &__container {
         display: flex;
         flex-direction: column;
@@ -184,7 +213,39 @@ html{
                     color: black;
                 }  
             }
+        }
+    }
+}
 
+.container-footer {
+    &__DEV {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5rem;
+        text-align: center;
+        justify-content: center;
+        p{
+            a{
+                text-decoration: none;
+                font-weight: variables.$font-600;
+            }
+        }
+        ul {
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+        ul {
+            margin: 0rem;
+        }
+        &--li {
+            margin-top: 1rem;
+            p {
+                gap: 0;
+                margin-bottom: 0;
+            }
         }
     }
 }
