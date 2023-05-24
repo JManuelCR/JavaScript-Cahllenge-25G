@@ -364,8 +364,9 @@ body {
 .newpostWrapper .createNavWrapper .close .closeButton:hover {
   background-color: rgba(121, 132, 255, 0.248);
 }
-.newpostWrapper .createNavWrapper .close .closeButton span {
+.newpostWrapper .createNavWrapper .close .closeButton span a {
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .description__text {
