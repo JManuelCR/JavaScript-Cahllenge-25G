@@ -128,9 +128,10 @@ let emojisColection = () => {
 let emojisIcons = (postToView) => {
     let classCardBody = emojisColection()
     let divContainer = document.createElement("div")
-    divContainer.classList.add("emojisReaction__icons")
+    divContainer.classList.add("emojisReaction__icons","newParamsDiv")
 
             let heartSpan = document.createElement("span")
+                
                 let iconHeart = document.createElement("img")
                     iconHeart.setAttribute("src","../assets/icons/red-Heart-Icon.svg")
                     iconHeart.setAttribute("alt","icono de corazon")
