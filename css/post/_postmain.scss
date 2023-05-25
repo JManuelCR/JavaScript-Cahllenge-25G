@@ -224,4 +224,24 @@ html{
     }
 }
 
+.newParamsDiv {
+    gap:3rem;
+    width: fit-content;
+    margin-left: 7%;
+    @media screen and (max-width:variables.$laptop) {
+        flex-wrap: wrap;
+        row-gap: 0;
+    }
+    span {
+        display: flex;
+        align-items: center;
+        gap: .5rem; 
+            img {
+                width: 30px;
+            }
+            p {
+                margin-top: .5rem;
+            }
+    }
+}
 

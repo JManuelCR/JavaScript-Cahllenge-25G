@@ -28,6 +28,7 @@ let commentSection = () => {
         divUserName.classList.add("comment-section__rectangle--username")
 
             let userNameAncor = document.createElement("a")
+            userNameAncor.classList.add("anchorsFinals")
             userNameAncor.setAttribute("href","#")
 
                 let userName = document.createElement("h6")
@@ -45,6 +46,7 @@ let commentSection = () => {
         divCommentText.classList.add("comment-section__rectangle--comment")
 
             let commentAncor = document.createElement("a")
+            commentAncor.classList.add("anchorsFinals")
             commentAncor.setAttribute("href","#")
 
                 let commentP = document.createElement("p")
@@ -66,6 +68,7 @@ let commentImg = (postToView) => {
         divPicture.classList.add("comment-section__picture")
 
             let imgAncor = document.createElement("a")
+            imgAncor.classList.add("anchorsFinals")
             imgAncor.setAttribute("href","#")
 
                 let userImg = document.createElement("img")
@@ -84,7 +87,7 @@ let minutesRead = (postToView) => {
         let minutes = document.createElement("div")
         minutes.classList.add("minutes-read")
             let anchorMins = document.createElement("a")
-            anchorMins.classList.add("minutes-read__anc")
+            anchorMins.classList.add("minutes-read__anc","anchorsFinals")
             anchorMins.setAttribute("href","#")
                 let parrafMins= document.createElement("p")
                 parrafMins.classList.add("card-text")
@@ -125,9 +128,10 @@ let emojisColection = () => {
 let emojisIcons = (postToView) => {
     let classCardBody = emojisColection()
     let divContainer = document.createElement("div")
-    divContainer.classList.add("emojisReaction__icons")
+    divContainer.classList.add("emojisReaction__icons","newParamsDiv")
 
             let heartSpan = document.createElement("span")
+                
                 let iconHeart = document.createElement("img")
                     iconHeart.setAttribute("src","../assets/icons/red-Heart-Icon.svg")
                     iconHeart.setAttribute("alt","icono de corazon")
@@ -183,6 +187,7 @@ let postBodyWrapper = (postToView) => {
             postH2.classList.add("card-title")
 
                 let titleAncor = document.createElement("a")
+                    titleAncor.classList.add("anchorsFinals")
                     titleAncor.setAttribute("href","./html/post.html")
 
                     let titleText = document.createTextNode(postToView.postTitle)
@@ -197,7 +202,7 @@ let userDataOnPost = (postToView) => {
         userNameSpace.classList.add("user-data-space__name")
     
         let ancoreBold = document.createElement("a")
-            ancoreBold.classList.add("user-data-space__name--bold")
+            ancoreBold.classList.add("user-data-space__name--bold","anchorsFinals")
             ancoreBold.setAttribute("href","./html/post.html")
 
                 let ancoreP = document.createElement("p")
@@ -208,7 +213,7 @@ let userDataOnPost = (postToView) => {
     userNameSpace.append(ancoreBold)
 
         let creationAncor = document.createElement("a")
-            creationAncor.classList.add("text-decoration-none","text-black")
+            creationAncor.classList.add("text-decoration-none","text-black","anchorsFinals")
             creationAncor.setAttribute("href","./html/post.html")
 
                 let creationP = document.createElement("p")
@@ -229,6 +234,7 @@ let creatorProfilePicture = (postToView) => {
             imgOnMini.classList.add("user-data-space__mini")
 
                 let pictureAncor = document.createElement("a")
+                    pictureAncor.classList.add("anchorsFinals")
                     pictureAncor.setAttribute("href","./html/post.html")
                 
                         let picture = document.createElement("img")
@@ -245,6 +251,7 @@ let imageCardPost = (postToView) => {
     imgContainer.classList.add("img-container", "card","d-flex")
     
         let imgContainerAncor = document.createElement("a")
+        imgContainerAncor.classList.add("anchorsFinals")
         imgContainerAncor.setAttribute("href","#")
 
             let image = document.createElement("img")
@@ -262,7 +269,7 @@ let createDynamicTags = (postToView) => {
     divContainer.classList.add("emojis-colection__tags")
 
         let ancorTag = document.createElement("a")
-        ancorTag.classList.add("emojis-colection__tags--blue")
+        ancorTag.classList.add("emojis-colection__tags--blue","anchorsFinals")
         ancorTag.setAttribute("href","#")
 
             let tagInP = document.createElement("p")
@@ -287,6 +294,7 @@ let postTextDynamic = (postToView) => {
 
             let h3Subtitle = document.createElement("h3")
                 let ancorInH3 = document.createElement("a")
+                    ancorInH3.classList.add("anchorsFinals")
                     ancorInH3.setAttribute("href","#")
                         let textInAnc = document.createTextNode("1. Address the reasons why you want to come back to coding")
                     ancorInH3.append(textInAnc)
