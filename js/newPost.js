@@ -180,3 +180,4 @@ const clearForm = () => {
   let postInput = document.getElementById("postTags");
   postInput.value = "";
 }
+
