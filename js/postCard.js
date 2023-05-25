@@ -56,8 +56,6 @@ let commentImg = (post) => {
     divComment.append(commentRectangle)
     return divComment
 }
-
-
 // tiene el tiempo de lectura y el icono
 let minutesRead = (post) => { 
         let minutes = document.createElement("div")
