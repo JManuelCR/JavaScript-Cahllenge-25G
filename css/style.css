@@ -818,6 +818,10 @@ body {
   width: 22px;
 }
 
+.anchorsFinals {
+  text-decoration: none;
+}
+
 .container-footer {
   font-size: 0.9rem;
 }

@@ -7,6 +7,7 @@ let commentSection = () => {
         divUserName.classList.add("comment-section__rectangle--username")
 
             let userNameAncor = document.createElement("a")
+            userNameAncor.classList.add("anchorsFinals")
             userNameAncor.setAttribute("href","#")
 
                 let userName = document.createElement("h6")
@@ -24,6 +25,7 @@ let commentSection = () => {
         divCommentText.classList.add("comment-section__rectangle--comment")
 
             let commentAncor = document.createElement("a")
+            commentAncor.classList.add("anchorsFinals")
             commentAncor.setAttribute("href","#")
 
 
@@ -46,6 +48,7 @@ let commentImg = (post) => {
         divPicture.classList.add("comment-section__picture")
 
             let imgAncor = document.createElement("a")
+            imgAncor.classList.add("anchorsFinals")
             imgAncor.setAttribute("href","#")
 
                 let userImg = document.createElement("img")
@@ -62,7 +65,7 @@ let minutesRead = (post) => {
         let minutes = document.createElement("div")
         minutes.classList.add("minutes-read")
             let anchorMins = document.createElement("a")
-            anchorMins.classList.add("minutes-read__anc")
+            anchorMins.classList.add("minutes-read__anc","anchorsFinals")
             anchorMins.setAttribute("href","#")
                 let parrafMins= document.createElement("p")
                 parrafMins.classList.add("card-text")
@@ -84,7 +87,7 @@ let emojisReaction = (post) => {
     divEmoji.classList.add("emojisReaction__comments")
 
         let emojisAncor = document.createElement("a")
-        emojisAncor.classList.add("text-container")
+        emojisAncor.classList.add("text-container","anchorsFinals")
         emojisAncor.setAttribute("href","#")
 
             let iconComment = document.createElement("img")
@@ -109,7 +112,7 @@ let emojisIcons = () => {
     divContainer.classList.add("emojisReaction__icons")
 
         let iconsAncor = document.createElement("a")
-        iconsAncor.classList.add("text-decoration-none")
+        iconsAncor.classList.add("text-decoration-none","anchorsFinals")
         iconsAncor.setAttribute("href","#")
 
             let iconHeart = document.createElement("img")
@@ -187,6 +190,7 @@ let liListAll = () => {
 
 let tagsLighter = (item) => {
             let firstAncor = document.createElement("a")
+                firstAncor.classList.add("anchorsFinals")
                 firstAncor.setAttribute("href","#")
                     let firstAncorP = document.createElement("p")
                         let firstAncorText = document.createTextNode(item)
@@ -203,6 +207,7 @@ let postBodyWrapper = (post) => {
             postH2.classList.add("card-title")
 
                 let titleAncor = document.createElement("a")
+                titleAncor.classList.add("anchorsFinals")
                     titleAncor.setAttribute("href","./html/post.html")
 
                     let titleText = document.createTextNode(post.postTitle)
@@ -217,7 +222,7 @@ let userDataOnPost = (post) => {
         userNameSpace.classList.add("user-data-space__name")
     
         let ancoreBold = document.createElement("a")
-            ancoreBold.classList.add("user-data-space__name--bold")
+            ancoreBold.classList.add("user-data-space__name--bold","anchorsFinals")
             ancoreBold.setAttribute("href","./html/post.html")
 
     //             let ancoreP = document.createElement("p")
@@ -228,7 +233,7 @@ let userDataOnPost = (post) => {
     // userNameSpace.append(ancoreBold)
 
         let creationAncor = document.createElement("a")
-            creationAncor.classList.add("text-decoration-none","text-black")
+            creationAncor.classList.add("text-decoration-none","text-black","anchorsFinals")
             creationAncor.setAttribute("href","./html/post.html")
 
                 let creationP = document.createElement("p")
@@ -249,7 +254,7 @@ let creatorProfilePicture = (post) => {
             imgOnMini.classList.add("user-data-space__mini")
 
                 let pictureAncor = document.createElement("a")
-                    pictureAncor.setAttribute("href","./html/post.html")
+                    pictureAncor.setAttribute("href","./html/post.html","anchorsFinals")
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
@@ -265,6 +270,7 @@ let imageCardPost = (post) => {
     imgContainer.classList.add("img-container", "card", "mb-3","d-flex")
     
         let imgContainerAncor = document.createElement("a")
+        imgContainerAncor.classList.add("anchorsFinals")
         imgContainerAncor.setAttribute("href","#")
 
             let image = document.createElement("img")
@@ -293,7 +299,7 @@ let cardWrapper = (post,key) => {
         imgContainer.append(contenTags)
         
         let containerCard = document.createElement("a")
-        containerCard.classList.add("card-cont","d-flex","justify-content-center")
+        containerCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
         containerCard.addEventListener("click", () => {
             window.open(`/html/post.html?post=${key}`)});
 
