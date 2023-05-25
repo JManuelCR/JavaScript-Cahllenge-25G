@@ -1,19 +1,4 @@
-let postInformation = {
-    userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
-    userName: "Ana",
-    postTitle: "7 tricks in typescript",
-    postContend: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
-    postImage: "https://picsum.photos/200",
-    postImageTitle: "una imagen random",
-    postlectureTime: "5 minutos",
-    postTags: "#typescript #randomtag2 #randomtag1",
-    date: "05-04-1586",
-    heartReactions : "24",
-    unicornReactions: "25",
-    crazyManReactions: "25",
-    hansReactions: "25",
-    fireReactions: "25"
-};
+
 
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = (postInformation) => {
@@ -203,7 +188,7 @@ let postBodyWrapper = (postInformation) => {
                 let titleAncor = document.createElement("a")
                     titleAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(postlectureTime.postTitle)
+                    let titleText = document.createTextNode(postinformation.postTitle)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
         postBody.append(postH2,emojisComent,hashTags)
@@ -240,7 +225,6 @@ let userDataOnPost = (postInformation) => {
 // almacena la imagen del creador del post con su nombre y fecha de creacion
 let creatorProfilePicture = (postInformation) => {
     let userNameDate = userDataOnPost()
-    
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space","d-flex")
 
@@ -252,7 +236,7 @@ let creatorProfilePicture = (postInformation) => {
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",postInformation.userProfileImg)
+                            picture.setAttribute("src",`${postInformation.userProfileImg}`)
                 pictureAncor.append(picture)
             imgOnMini.append(pictureAncor)
         creatorPicture.append(imgOnMini,userNameDate)
@@ -268,9 +252,9 @@ let imageCardPost = (postInformation) => {
         let imgContainerAncor = document.createElement("a")
         imgContainerAncor.setAttribute("href","#")
 
-            let imageContainer = document.createElement("img")
-            imageContainer.classList.add("card-img-top")    
-            imageContainer.setAttribute("src",postInformation.postImage)
+            let image = document.createElement("img")
+            image.classList.add("card-img-top")    
+            image.setAttribute("src",`${postInformation.postImage}`)
             imgContainer.setAttribute("alt","img del post")
 
         imgContainerAncor.append(imageContainer)
@@ -287,3 +271,10 @@ let cardWrapper = () => {
     containerCard.append(imgContainer)
 return containerCard
 }
+
+const targetDinamic = () => {
+    let target = document.getElementById("card-container")
+    let card = cardWrapper()
+}
+
+export { cardWrapper };
