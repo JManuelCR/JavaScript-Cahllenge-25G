@@ -1,5 +1,3 @@
-
-
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = (postInformation) => {
     let divComment = document.createElement("div")
@@ -262,8 +260,8 @@ let imageCardPost = (postInformation) => {
         return imgContainer
 }
 // almacena el contenido completo de la card post principal del main
-let cardWrapper = () => {
-    let imgContainer = imageCardPost()
+let cardWrapper = (postInformation) => {
+    let imgContainer = imageCardPost(postInformation)
     
     let containerCard = document.createElement("div")
     containerCard.classList.add("card-cont","d-flex", "justify-content-center")
