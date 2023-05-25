@@ -26,6 +26,7 @@ let commentSection = () => {
             let commentAncor = document.createElement("a")
             commentAncor.setAttribute("href","#")
 
+
                 let commentP = document.createElement("p")
                     let commentPText = document.createTextNode("Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the strict options and still manage to avoid as like the plague because they know a ton of tools like these to avoid it.")
                 commentP.appendChild(commentPText)
@@ -56,8 +57,6 @@ let commentImg = (post) => {
     divComment.append(commentRectangle)
     return divComment
 }
-
-
 // tiene el tiempo de lectura y el icono
 let minutesRead = (post) => { 
         let minutes = document.createElement("div")
@@ -196,7 +195,7 @@ let tagsLighter = (item) => {
             firstAncor.appendChild(firstAncorP)
         return firstAncor
 }
-// almacena el titulo de la publicacion con los iconos de la parte de abajo
+// almacena el titulo de la publicacion
 let postBodyWrapper = (post) => {
     let postBody = document.createElement("div")
         postBody.classList.add("user-data-space__tags","card-body")
@@ -213,7 +212,7 @@ let postBodyWrapper = (post) => {
         postBody.append(postH2)
     return postBody
 }
-// jala de la BD el nombre completo del usuario que creo el post y la fecha de creacion
+// jala de la BD la fecha de creacion del post
 let userDataOnPost = (post) => {
     let userNameSpace = document.createElement("div")
         userNameSpace.classList.add("user-data-space__name")
@@ -222,12 +221,12 @@ let userDataOnPost = (post) => {
             ancoreBold.classList.add("user-data-space__name--bold")
             ancoreBold.setAttribute("href","./html/post.html")
 
-                let ancoreP = document.createElement("p")
-                    ancoreP.classList.add("author-name")
-                    let ancoreText = document.createTextNode(post.userName)
-                ancoreP.append(ancoreText)
-        ancoreBold.append(ancoreP)
-    userNameSpace.append(ancoreBold)
+    //             let ancoreP = document.createElement("p")
+    //                 ancoreP.classList.add("author-name")
+    //                 let ancoreText = document.createTextNode(post.userName)
+    //             ancoreP.append(ancoreText)
+    //     ancoreBold.append(ancoreP)
+    // userNameSpace.append(ancoreBold)
 
         let creationAncor = document.createElement("a")
             creationAncor.classList.add("text-decoration-none","text-black")
@@ -242,7 +241,7 @@ let userDataOnPost = (post) => {
 
     return userNameSpace
 }
-// almacena la imagen del creador del post con su nombre y fecha de creacion
+// almacena la imagen del creador del post
 let creatorProfilePicture = (post) => {
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space","d-flex")
@@ -279,7 +278,7 @@ let imageCardPost = (post) => {
         return imgContainer
 }
 // almacena el contenido completo de la card post principal del main
-let cardWrapper = (post) => {
+let cardWrapper = (post,key) => {
     let userNameData = creatorProfilePicture(post)
         let userData = userDataOnPost(post)
             userNameData.append(userData)
@@ -295,10 +294,10 @@ let cardWrapper = (post) => {
         imgContainer.append(userNameData)
         imgContainer.append(contenTags)
         
-        
-    
-        let containerCard = document.createElement("div")
-    containerCard.classList.add("card-cont","d-flex", "justify-content-center")
+        let containerCard = document.createElement("a")
+        containerCard.classList.add("card-cont","d-flex","justify-content-center")
+        containerCard.addEventListener("click", () => {
+            window.open(`/html/post.html?post=${key}`)});
 
     containerCard.append(imgContainer)
 return containerCard

@@ -18,20 +18,20 @@ let postInformation = {
     fireReactions: "25"
 };
 
-const targetDinamic = (posts) => {
-    let newCard = cardWrapper(posts)
+const targetDinamic = (posts,key) => {
+    let newCard = cardWrapper(posts,key)
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
 }
 
 let printPost = async () =>{
     let posts = await getPosts();
-    let array = Object.values(posts)
+    let array = Object.entries(posts);
     array.forEach(element => {
-        console.log(element);
-        let cardPost = targetDinamic(element)
+        console.log(element[0]);
+        let cardPost = targetDinamic(element[1], element[0])
     });
-    return 
+    return 
 };
 
 printPost();

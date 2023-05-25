@@ -1,3 +1,24 @@
+import { getPosts } from "./getPosts.js";
+let params = new URLSearchParams(document.location.search);
+let idPost = params.get("post")
+console.log(idPost)
+
+const getPostInfo = async (post) => {
+    let posts = await getPosts();
+    let array = Object.entries(posts);
+    let actual = array.reduce((acum, act) => {
+        let actualPostKey = act[0];
+        if(actualPostKey === post){
+            acum = act[1];
+        }
+        return acum;
+    }, {});
+    console.log(actual);
+    return actual;
+}
+let postToView = await getPostInfo(idPost);
+console.log(postToView)
+
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = () => {
     let divComment = document.createElement("div")
@@ -36,7 +57,7 @@ let commentSection = () => {
     return divComment
 }
 // crea la imagen del usuario para el comentario
-let commentImg = (post) => {
+let commentImg = (postToView) => {
     let commentRectangle = commentSection()
     let divComment = document.createElement("div")
     divComment.classList.add("comment-section")
@@ -48,7 +69,7 @@ let commentImg = (post) => {
             imgAncor.setAttribute("href","#")
 
                 let userImg = document.createElement("img")
-                userImg.setAttribute("src",post.userProfileImg)
+                userImg.setAttribute("src",postToView.userProfileImg)
                 userImg.classList.add("rounded-circle")
             imgAncor.appendChild(userImg)
         divPicture.appendChild(imgAncor)
@@ -59,7 +80,7 @@ let commentImg = (post) => {
 
 
 // tiene el tiempo de lectura y el icono
-let minutesRead = (post) => { 
+let minutesRead = (postToView) => { 
         let minutes = document.createElement("div")
         minutes.classList.add("minutes-read")
             let anchorMins = document.createElement("a")
@@ -69,7 +90,7 @@ let minutesRead = (post) => {
                 parrafMins.classList.add("card-text")
                     let parrafMinsSmall = document.createElement("small")
                     parrafMinsSmall.classList.add("text-body-secondary")
-                    let parrafMinsSmallText = document.createTextNode(post.postlectureTime)
+                    let parrafMinsSmallText = document.createTextNode(postToView.postlectureTime)
                     parrafMinsSmall.append(parrafMinsSmallText)
                 let imgBook = document.createElement("img")
                     imgBook.setAttribute("src","./assets/icons/book-Icon.svg")
@@ -80,7 +101,7 @@ let minutesRead = (post) => {
     return  minutes
 }
 // este contiene el svg de los comentarios y el numero de comentarios
-let emojisReaction = (post) => {
+let emojisReaction = (postToView) => {
     let divEmoji = document.createElement("div")
     divEmoji.classList.add("emojisReaction__comments")
 
@@ -90,8 +111,8 @@ let emojisReaction = (post) => {
 
             let iconComment = document.createElement("img")
             iconComment.setAttribute("src","./assets/icons/black-Flat-Icon.svg")
-            console.log(post);
-            let  totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions;
+            
+            let  totalReactions = postToView.heartReactions + postToView.unicornReactions + postToView.crazyManReactions + postToView.hansReactions + postToView.fireReactions;
             let parrafComment = document.createElement("p")
                 let parrafCommentText = document.createTextNode(totalReactions);
                 parrafComment.appendChild(parrafCommentText)
@@ -146,9 +167,9 @@ let emojisIcons = () => {
     return divContainer
 }   
 // mete el numero de comentarios y la lista de emojis en un nuevo div
-let emojisReactionWrapper = (post) => {
+let emojisReactionWrapper = (postToView) => {
     let emojis = emojisIcons()
-    let comment = emojisReaction(post) 
+    let comment = emojisReaction(postToView) 
 
     let emojisReactionContainer = document.createElement("div")
         emojisReactionContainer.classList.add("emojisReaction")
@@ -157,9 +178,9 @@ let emojisReactionWrapper = (post) => {
     return emojisReactionContainer
 }   
 // mezcla en un nuevo div las reacciones (emojis,comments) y el tiempo de lectura
-let userTagsEmojis = (post) => {
-    let emojisReaction = emojisReactionWrapper(post)
-    let minutesFunc = minutesRead(post)
+let userTagsEmojis = (postToView) => {
+    let emojisReaction = emojisReactionWrapper(postToView)
+    let minutesFunc = minutesRead(postToView)
 
     let divContainer = document.createElement("div")
         divContainer.classList.add("user-data-space__tags--emojis")
@@ -197,7 +218,7 @@ let tagsLighter = (item) => {
         return firstAncor
 }
 // almacena el titulo de la publicacion con los iconos de la parte de abajo
-let postBodyWrapper = (post) => {
+let postBodyWrapper = (postToView) => {
     let postBody = document.createElement("div")
         postBody.classList.add("user-data-space__tags","card-body")
     
@@ -207,14 +228,14 @@ let postBodyWrapper = (post) => {
                 let titleAncor = document.createElement("a")
                     titleAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(post.postTitle)
+                    let titleText = document.createTextNode(postToView.postTitle)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
         postBody.append(postH2)
     return postBody
 }
 // jala de la BD el nombre completo del usuario que creo el post y la fecha de creacion
-let userDataOnPost = (post) => {
+let userDataOnPost = (postToView) => {
     let userNameSpace = document.createElement("div")
         userNameSpace.classList.add("user-data-space__name")
     
@@ -224,7 +245,7 @@ let userDataOnPost = (post) => {
 
                 let ancoreP = document.createElement("p")
                     ancoreP.classList.add("author-name")
-                    let ancoreText = document.createTextNode(post.userName)
+                    let ancoreText = document.createTextNode(postToView.userName)
                 ancoreP.append(ancoreText)
         ancoreBold.append(ancoreP)
     userNameSpace.append(ancoreBold)
@@ -235,7 +256,7 @@ let userDataOnPost = (post) => {
 
                 let creationP = document.createElement("p")
                     creationP.classList.add("reation-date")
-                    let creationText = document.createTextNode(post.date)
+                    let creationText = document.createTextNode(postToView.date)
                 creationP.appendChild(creationText)
             creationAncor.appendChild(creationP)
         userNameSpace.append(creationAncor)
@@ -243,7 +264,7 @@ let userDataOnPost = (post) => {
     return userNameSpace
 }
 // almacena la imagen del creador del post con su nombre y fecha de creacion
-let creatorProfilePicture = (post) => {
+let creatorProfilePicture = (postToView) => {
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space","d-flex")
 
@@ -255,14 +276,14 @@ let creatorProfilePicture = (post) => {
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",post.userProfileImg)
+                            picture.setAttribute("src",postToView.userProfileImg)
                 pictureAncor.append(picture)
             imgOnMini.append(pictureAncor)
         creatorPicture.append(imgOnMini)
     return creatorPicture
 }
 // almacena la imagen principal del post
-let imageCardPost = (post) => {
+let imageCardPost = (postToView) => {
     let imgContainer = document.createElement("div")
     imgContainer.classList.add("img-container", "card", "mb-3","d-flex")
     
@@ -271,37 +292,49 @@ let imageCardPost = (post) => {
 
             let image = document.createElement("img")
             image.classList.add("card-img-top")    
-            image.setAttribute("src",post.postImage)
-            image.setAttribute("alt",post.postImageTitle)
+            image.setAttribute("src",postToView.postImage)
+            image.setAttribute("alt",postToView.postImageTitle)
 
         imgContainerAncor.append(image)
         imgContainer.append(imgContainerAncor)
         return imgContainer
 }
+let sectionWrapper = () => {
+    let section = document.createElement("section")
+    section.setAttribute("id","postview")
+    section.classList.add("col-12","col-md-10","col-lg-6")
+    return section
+}
+
 // almacena el contenido completo de la card post principal del main
-let cardWrapper = (post) => {
-    let userNameData = creatorProfilePicture(post)
-        let userData = userDataOnPost(post)
+let cardWrapper = (postToView,key) => {
+    let sectionWrapperr = sectionWrapper()
+    let userNameData = creatorProfilePicture(postToView)
+        let userData = userDataOnPost(postToView)
             userNameData.append(userData)
     
-    let contenTags = postBodyWrapper(post)
-    console.log(post.postTags);
-    let allTags = ulListAll(post.postTags)
+    let contenTags = postBodyWrapper(postToView)
+    console.log(postToView)
+    let allTags = ulListAll(postToView.postTags)
         contenTags.append(allTags)
-    let emojis = userTagsEmojis(post)
+    let emojis = userTagsEmojis(postToView)
         contenTags.append(emojis)
-    let comments = commentImg(post)
-    let imgContainer = imageCardPost(post)
+    let comments = commentImg(postToView)
+    let imgContainer = imageCardPost(postToView)
         imgContainer.append(userNameData)
         imgContainer.append(contenTags)
         
         
-    
         let containerCard = document.createElement("div")
-    containerCard.classList.add("card-cont","d-flex", "justify-content-center")
+    containerCard.classList.add("card-cont","d-flex","justify-content-center")
 
-    containerCard.append(imgContainer)
-return containerCard
+        containerCard.append(imgContainer)
+    sectionWrapperr.appendChild(containerCard)
+return sectionWrapperr
 }
 
-export { cardWrapper };
+let newCard = cardWrapper(postToView)
+console.log(newCard)
+
+let sectionLocation = document.getElementById("postView")
+sectionLocation.append(newCard)
