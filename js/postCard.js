@@ -1,3 +1,20 @@
+let postInformation = {
+    userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
+    userName: "Ana",
+    postTitle: "7 tricks in typescript",
+    postContend: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
+    postImage: "https://picsum.photos/200",
+    postImageTitle: "una imagen random",
+    postlectureTime: "5 minutos",
+    postTags: ["#typescript","#randomtag2","#randomtag1"] ,
+    date: "05-04-1586",
+    heartReactions : "24",
+    unicornReactions: "25",
+    crazyManReactions: "25",
+    hansReactions: "25",
+    fireReactions: "25"
+};
+
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = (postInformation) => {
     let divComment = document.createElement("div")
@@ -64,7 +81,7 @@ let minutesRead = (postInformation) => {
                 let parrafMins= document.createElement("p")
                 parrafMins.classList.add("card-text")
                     let parrafMinsSmall = document.createElement("small")
-                    parrafMinsSmall.classList.add("text-body-secobdary")
+                    parrafMinsSmall.classList.add("text-body-secondary")
                     let parrafMinsSmallText = document.createTextNode(postInformation.postlectureTime)
                     parrafMinsSmall.append(parrafMinsSmallText)
                 let imgBook = document.createElement("img")
@@ -128,7 +145,7 @@ let emojisIcons = () => {
                 iconFire.setAttribute("src","./assets/icons/fire-Icon.svg")
                 iconFire.setAttribute("alt","... pos es un icono de fuego")
             
-            let spanCounter = doccument.createElement("span")
+            let spanCounter = document.createElement("span")
                 let spanCounterP = document.createElement("p")
                 let spanCounterPText = document.createTextNode("240 reactions")
 
@@ -151,9 +168,9 @@ let emojisReactionWrapper = () => {
     return emojisReactionContainer
 }   
 // mezcla en un nuevo div las reacciones (emojis,comments) y el tiempo de lectura
-let userTagsEmojis = () => {
+let userTagsEmojis = (postInformation) => {
     let emojisReaction = emojisReactionWrapper()
-    let minutesFunc = minutesRead()
+    let minutesFunc = minutesRead(postInformation)
 
     let divContainer = document.createElement("div")
         divContainer.classList.add("user-data-space__tags--emojis")
@@ -174,8 +191,8 @@ let tagsLighter = (postInformation) => {
 }
 // almacena el titulo de la publicacion con los iconos de la parte de abajo
 let postBodyWrapper = (postInformation) => {
-    let emojisComent = userTagsEmojis()
-    let hashTags = tagsLighter()
+    let emojisComent = userTagsEmojis(postInformation)
+    let hashTags = tagsLighter(postInformation)
     
     let postBody = document.createElement("div")
         postBody.classList.add("user-data-space__tags","card-body")
@@ -186,7 +203,7 @@ let postBodyWrapper = (postInformation) => {
                 let titleAncor = document.createElement("a")
                     titleAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(postinformation.postTitle)
+                    let titleText = document.createTextNode(postInformation.postTitle)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
         postBody.append(postH2,emojisComent,hashTags)
@@ -209,7 +226,7 @@ let userDataOnPost = (postInformation) => {
 
         let creationAncor = document.createElement("a")
             creationAncor.classList.add("text-decoration-none","text-black")
-            creationAncor.setAttribute("./html/post.html")
+            creationAncor.setAttribute("href","./html/post.html")
 
                 let creationP = document.createElement("p")
                     creationP.classList.add("reation-date")
@@ -222,7 +239,7 @@ let userDataOnPost = (postInformation) => {
 }
 // almacena la imagen del creador del post con su nombre y fecha de creacion
 let creatorProfilePicture = (postInformation) => {
-    let userNameDate = userDataOnPost()
+    let userNameDate = userDataOnPost(postInformation)
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space","d-flex")
 
@@ -241,8 +258,8 @@ let creatorProfilePicture = (postInformation) => {
 }
 // almacena la imagen principal del post
 let imageCardPost = (postInformation) => {
-    let fullProfile = creatorProfilePicture()
-    let fullCard = postBodyWrapper()
+    let fullProfile = creatorProfilePicture(postInformation)
+    let fullCard = postBodyWrapper(postInformation)
 
     let imgContainer = document.createElement("div")
     imgContainer.classList.add("img-container", "card", "mb-3","d-flex")
@@ -253,9 +270,9 @@ let imageCardPost = (postInformation) => {
             let image = document.createElement("img")
             image.classList.add("card-img-top")    
             image.setAttribute("src",`${postInformation.postImage}`)
-            imgContainer.setAttribute("alt","img del post")
+            image.setAttribute("alt","img del post")
 
-        imgContainerAncor.append(imageContainer)
+        imgContainerAncor.append(image)
         imgContainer.append(imgContainerAncor,fullProfile,fullCard)
         return imgContainer
 }
