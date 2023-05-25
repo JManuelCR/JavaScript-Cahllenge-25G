@@ -175,65 +175,11 @@ let emojisIcons = (postToView) => {
 
         divContainer.append(heartSpan,unicornSpan,crazySpan,handsSpan,fireSpan)
     classCardBody.appendChild(divContainer)   
-    return classCardBody
-}   
-// mete el numero de comentarios y la lista de emojis en un nuevo div
-let emojisReactionWrapper = (postToView) => {
-    let emojis = emojisIcons(postToView)
-    let comment = emojisReaction(postToView) 
-
-    let emojisReactionContainer = document.createElement("div")
-        emojisReactionContainer.classList.add("emojisReaction")
-    
-    emojisReactionContainer.append(emojis,comment)
-    return emojisReactionContainer
-}   
-// mezcla en un nuevo div las reacciones (emojis,comments) y el tiempo de lectura
-let userTagsEmojis = (postToView) => {
-    let emojisReaction = emojisReactionWrapper(postToView)
-    let minutesFunc = minutesRead(postToView)
-
-    let divContainer = document.createElement("div")
-        divContainer.classList.add("user-data-space__tags--emojis")
-
-    divContainer.append(emojisReaction,minutesFunc)
     return divContainer
-}
-// este almacena las #tags (revisar como pasarle los #tags)
-let ulListAll = (postTags) => {
-    let wrapper = document.createElement("div")
-    let ulList = document.createElement("ul")
-    wrapper.classList.add("user-data-space__tags--lighter")
-    wrapper.appendChild(ulList)
-    
-    postTags.forEach(element => {
-        let listItem = liListAll()
-        let itemContent = tagsLighter(element)
-        listItem.appendChild(itemContent)
-        ulList.appendChild(listItem)
-    });
-    return wrapper
-}
-let liListAll = () => {
-    let liList = document.createElement("li")
-    return liList
-}
-
-let tagsLighter = (item) => {
-            let firstAncor = document.createElement("a")
-                firstAncor.setAttribute("href","#")
-                    let firstAncorP = document.createElement("p")
-                        let firstAncorText = document.createTextNode(item)
-                    firstAncorP.appendChild(firstAncorText)
-            firstAncor.appendChild(firstAncorP)
-        return firstAncor
-}
-// almacena el titulo de la publicacion con los iconos de la parte de abajo
+}   
+// almacena el titulo de la publicacion
 let postBodyWrapper = (postToView) => {
-    let postBody = document.createElement("div")
-        postBody.classList.add("emojis-colection__icons")
-    
-        let postH2 = document.createElement("h2")
+        let postH2 = document.createElement("h1")
             postH2.classList.add("card-title")
 
                 let titleAncor = document.createElement("a")
@@ -242,8 +188,8 @@ let postBodyWrapper = (postToView) => {
                     let titleText = document.createTextNode(postToView.postTitle)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
-        postBody.append(postH2)
-    return postBody
+
+    return postH2
 }
 // jala de la BD el nombre completo del usuario que creo el post y la fecha de creacion
 let userDataOnPost = (postToView) => {
@@ -274,7 +220,7 @@ let userDataOnPost = (postToView) => {
 
     return userNameSpace
 }
-// almacena la imagen del creador del post con su nombre y fecha de creacion
+// almacena la imagen del creador del post
 let creatorProfilePicture = (postToView) => {
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space")
@@ -310,28 +256,75 @@ let imageCardPost = (postToView) => {
         imgContainer.append(imgContainerAncor)
         return imgContainer
 }
-let sectionWrapper = () => {
-    let section = document.createElement("section")
-    section.setAttribute("id","postView")
-    section.classList.add("col-12","col-md-10","col-lg-6")
-    return section
-}
+// mete las tags dinamicamente
+let createDynamicTags = (postToView) => {
+    let divContainer = document.createElement("div")
+    divContainer.classList.add("emojis-colection__tags")
 
+        let ancorTag = document.createElement("a")
+        ancorTag.classList.add("emojis-colection__tags--blue")
+        ancorTag.setAttribute("href","#")
+
+            let tagInP = document.createElement("p")
+                let tagText = document.createTextNode(postToView.postTags)
+            tagInP.append(tagText)
+        ancorTag.append(tagInP)
+    divContainer.append(ancorTag)
+
+    return divContainer
+}
+// crea la informacion del post
+let postTextDynamic = (postToView) => {
+    let postSection = document.createElement("div")
+    postSection.classList.add("comment-section")
+
+        let divContainer = document.createElement("div")
+        divContainer.classList.add("article__contentMain")
+
+            let postParagraph = document.createElement("p")
+                let postText = document.createTextNode(postToView.postContend)
+            postParagraph.append(postText)  
+
+            let h3Subtitle = document.createElement("h3")
+                let ancorInH3 = document.createElement("a")
+                    ancorInH3.setAttribute("href","#")
+                        let textInAnc = document.createTextNode("1. Address the reasons why you want to come back to coding")
+                    ancorInH3.append(textInAnc)
+                h3Subtitle.append(ancorInH3)
+
+            let imgInPost = document.createElement("img")
+                imgInPost.setAttribute("src","https://picsum.photos/450/300")
+                imgInPost.setAttribute("alt","foto de unas montañas")
+            
+            let moreTextPara = document.createElement("p")
+                let moreText = document.createTextNode("Learning to code, and relearning to code is no different, you need to make a plan! To make sure you aren't all over the place, scrambling to learn every technology that you knew previously, you need to assemble a plan. Something very common with burnout is feeling overwhelmed with all the things you need to do to get back to where you were prior. To prevent this feeling, you need to take it one step at a time, to make your foundations strong but also to maintain that healthy relationship. In my case, for the past few weeks, I've just been relearning Python, the first programming language I learned. Since Python is easy to learn, I thought it would be a logical starting point for me. Although my main programming language was Rust, I felt like that would be a harder starting point, leading to more roadblocks and possibly being overwhelmed. Before you start getting into coding again, outline the languages/concepts/frameworks you want to relearn, and the resources that you will use. This will keep you on track, but also prevent you from being overwhelmed as you have a clear plan to get back to where you were before. Furthermore, it's rewarding to tick off the tasks that you have completed, giving yourself more motivation to continue.")
+            moreTextPara.append(moreText)
+
+        divContainer.append(postParagraph,imgInPost,moreTextPara)
+    postSection.append(divContainer)
+
+    return postSection
+}
 // almacena el contenido completo de la card post principal del main
 let cardWrapper = (postToView,key) => {
     let userNameData = creatorProfilePicture(postToView)
         let userData = userDataOnPost(postToView)
             userNameData.append(userData)
-    let emojisList = emojisIcons(postToView)
-    let contenTags = postBodyWrapper(postToView)
-    
-    let allTags = ulListAll(postToView.postTags)
-        contenTags.append(allTags)
-        emojisList.append(contenTags)
-        
 
+        let test1 = emojisColection()
+        let test2 = emojisIcons(postToView)
+        let test3 = postBodyWrapper(postToView)
+        let test4 = createDynamicTags(postToView)
+        let test5 = postTextDynamic(postToView)
     let imgContainer = imageCardPost(postToView)
-        userNameData.append(imgContainer)
+        imgContainer.append(userNameData)
+        imgContainer.append(test1)
+            test1.append(test2)
+            test1.append(test3)
+            test1.append(test4)
+            test1.append(test5)
+            
+        
         // console.log(emojisList)
         // console.log(contenTags)
         let containerCard = document.createElement("div")
