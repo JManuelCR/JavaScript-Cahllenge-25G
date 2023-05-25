@@ -1,7 +1,7 @@
 import { getPosts } from "./getPosts.js";
 let params = new URLSearchParams(document.location.search);
 let idPost = params.get("post")
-console.log(idPost)
+
 
 const getPostInfo = async (post) => {
     let posts = await getPosts();
@@ -13,11 +13,11 @@ const getPostInfo = async (post) => {
         }
         return acum;
     }, {});
-    console.log(actual);
+    
     return actual;
 }
 let postToView = await getPostInfo(idPost);
-console.log(postToView)
+
 
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = () => {
@@ -93,82 +93,93 @@ let minutesRead = (postToView) => {
                     let parrafMinsSmallText = document.createTextNode(postToView.postlectureTime)
                     parrafMinsSmall.append(parrafMinsSmallText)
                 let imgBook = document.createElement("img")
-                    imgBook.setAttribute("src","./assets/icons/book-Icon.svg")
+                    imgBook.setAttribute("src","../assets/icons/book-Icon.svg")
                     imgBook.classList.add("mt-1")
         parrafMins.append(parrafMinsSmall)
         anchorMins.append(parrafMins,imgBook)
         minutes.append(anchorMins)
     return  minutes
 }
-// este contiene el svg de los comentarios y el numero de comentarios
+// este contiene numero de reacciones totales
 let emojisReaction = (postToView) => {
-    let divEmoji = document.createElement("div")
-    divEmoji.classList.add("emojisReaction__comments")
-
-        let emojisAncor = document.createElement("a")
-        emojisAncor.classList.add("text-container")
-        emojisAncor.setAttribute("href","#")
-
             let iconComment = document.createElement("img")
-            iconComment.setAttribute("src","./assets/icons/black-Flat-Icon.svg")
+            iconComment.setAttribute("src","../assets/icons/black-Flat-Icon.svg")
             
             let  totalReactions = postToView.heartReactions + postToView.unicornReactions + postToView.crazyManReactions + postToView.hansReactions + postToView.fireReactions;
             let parrafComment = document.createElement("p")
                 let parrafCommentText = document.createTextNode(totalReactions);
-                parrafComment.appendChild(parrafCommentText)
-            
+                
                 let parrafCommentSpan = document.createElement("span")
                 parrafCommentSpan.classList.add("d-none","d-md-inline-block")
                     let parrafCommentSpanText = document.createTextNode("comments")
                     parrafCommentSpan.append(parrafCommentSpanText)
-                parrafComment.append(parrafCommentSpan)
-        emojisAncor.append(iconComment,parrafComment)
-    divEmoji.append(emojisAncor)
-    return divEmoji
+    return parrafComment
 }
 // contiene la coleccion de los icons y el numero de reacciones
-let emojisIcons = () => {
+let emojisColection = () => {
+    let divColector = document.createElement("div")
+    divColector.classList.add("emojis-colection","card-body")
+    return divColector
+}
+
+let emojisIcons = (postToView) => {
+    let classCardBody = emojisColection()
     let divContainer = document.createElement("div")
     divContainer.classList.add("emojisReaction__icons")
 
-        let iconsAncor = document.createElement("a")
-        iconsAncor.classList.add("text-decoration-none")
-        iconsAncor.setAttribute("href","#")
+            let heartSpan = document.createElement("span")
+                let iconHeart = document.createElement("img")
+                    iconHeart.setAttribute("src","../assets/icons/red-Heart-Icon.svg")
+                    iconHeart.setAttribute("alt","icono de corazon")
+                        let heartP = document.createElement("p")
+                        let heartText = document.createTextNode(postToView.heartReactions)
+                        heartP.appendChild(heartText)
+                heartSpan.append(iconHeart,heartP)
+            
+            let unicornSpan = document.createElement("span")
+                let iconUnicorn = document.createElement("img")
+                    iconUnicorn.setAttribute("src","../assets/icons/unicorn-Icon.svg")
+                    iconUnicorn.setAttribute("alt","icono de unicornio")
+                        let unicornP = document.createElement("p")
+                        let unicornText = document.createTextNode(postToView.unicornReactions)
+                        unicornP.appendChild(unicornText)
+                unicornSpan.append(iconUnicorn,unicornP)
+            
+            let crazySpan = document.createElement("span")
+                let iconCrazy = document.createElement("img")
+                    iconCrazy.setAttribute("src","../assets/icons/crazy-Man-Icon.svg")
+                    iconCrazy.setAttribute("alt","icono de cabeza que explota")
+                        let crazyP = document.createElement("p")
+                        let crazyText = document.createTextNode(postToView.crazyManReactions)
+                        crazyP.appendChild(crazyText)
+                crazySpan.append(iconCrazy,crazyP)
+            
+            let handsSpan = document.createElement("span")
+                let iconHands = document.createElement("img")
+                    iconHands.setAttribute("src","../assets/icons/raise-.svg")
+                    iconHands.setAttribute("alt","icono de manitas diciendo chocalas we")
+                        let handsP = document.createElement("p")
+                        let handsText = document.createTextNode(postToView.hansReactions)
+                        handsP.appendChild(handsText)
+                handsSpan.append(iconHands,handsP)
+            
+            let fireSpan = document.createElement("span")
+                let iconFire = document.createElement("img")
+                    iconFire.setAttribute("src","../assets/icons/fire-Icon.svg")
+                    iconFire.setAttribute("alt","...pos es un icono de fuego")
+                        let fireP = document.createElement("p")
+                        let fireText = document.createTextNode(postToView.fireReactions)
+                        fireP.appendChild(fireText)
+                fireSpan.append(iconFire,fireP)
+            
 
-            let iconHeart = document.createElement("img")
-                iconHeart.setAttribute("src","./assets/icons/red-Heart-Icon.svg")
-                iconHeart.setAttribute("alt","icono de corazon")
-            
-            let iconUnicorn = document.createElement("img")
-                iconUnicorn.setAttribute("src","./assets/icons/unicorn-Icon.svg")
-                iconUnicorn.setAttribute("alt","icono de unicornio")
-            
-            let iconCrazy = document.createElement("img")
-                iconCrazy.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
-                iconCrazy.setAttribute("alt","icono de cabeza que explota")
-            
-            let iconHands = document.createElement("img")
-                iconHands.setAttribute("src","./assets/icons/raise-.svg")
-                iconHands.setAttribute("alt","icono de manitas diciendo chocalas we")
-            
-            let iconFire = document.createElement("img")
-                iconFire.setAttribute("src","./assets/icons/fire-Icon.svg")
-                iconFire.setAttribute("alt","... pos es un icono de fuego")
-            
-            let spanCounter = document.createElement("span")
-                let spanCounterP = document.createElement("p")
-                let spanCounterPText = document.createTextNode("240 reactions")
-
-                spanCounterP.append(spanCounterPText)
-                spanCounter.append(spanCounterP)
-
-        iconsAncor.append(iconHeart,iconUnicorn,iconCrazy,iconHands,iconFire)      
-    divContainer.append(iconsAncor)   
-    return divContainer
+        divContainer.append(heartSpan,unicornSpan,crazySpan,handsSpan,fireSpan)
+    classCardBody.appendChild(divContainer)   
+    return classCardBody
 }   
 // mete el numero de comentarios y la lista de emojis en un nuevo div
 let emojisReactionWrapper = (postToView) => {
-    let emojis = emojisIcons()
+    let emojis = emojisIcons(postToView)
     let comment = emojisReaction(postToView) 
 
     let emojisReactionContainer = document.createElement("div")
@@ -220,7 +231,7 @@ let tagsLighter = (item) => {
 // almacena el titulo de la publicacion con los iconos de la parte de abajo
 let postBodyWrapper = (postToView) => {
     let postBody = document.createElement("div")
-        postBody.classList.add("user-data-space__tags","card-body")
+        postBody.classList.add("emojis-colection__icons")
     
         let postH2 = document.createElement("h2")
             postH2.classList.add("card-title")
@@ -266,7 +277,7 @@ let userDataOnPost = (postToView) => {
 // almacena la imagen del creador del post con su nombre y fecha de creacion
 let creatorProfilePicture = (postToView) => {
     let creatorPicture = document.createElement("div")
-        creatorPicture.classList.add("user-data-space","d-flex")
+        creatorPicture.classList.add("user-data-space")
 
         let imgOnMini = document.createElement("div")
             imgOnMini.classList.add("user-data-space__mini")
@@ -285,7 +296,7 @@ let creatorProfilePicture = (postToView) => {
 // almacena la imagen principal del post
 let imageCardPost = (postToView) => {
     let imgContainer = document.createElement("div")
-    imgContainer.classList.add("img-container", "card", "mb-3","d-flex")
+    imgContainer.classList.add("img-container", "card","d-flex")
     
         let imgContainerAncor = document.createElement("a")
         imgContainerAncor.setAttribute("href","#")
@@ -301,36 +312,37 @@ let imageCardPost = (postToView) => {
 }
 let sectionWrapper = () => {
     let section = document.createElement("section")
-    section.setAttribute("id","postview")
+    section.setAttribute("id","postView")
     section.classList.add("col-12","col-md-10","col-lg-6")
     return section
 }
 
 // almacena el contenido completo de la card post principal del main
 let cardWrapper = (postToView,key) => {
-    let sectionWrapperr = sectionWrapper()
     let userNameData = creatorProfilePicture(postToView)
         let userData = userDataOnPost(postToView)
             userNameData.append(userData)
-    
+    let emojisList = emojisIcons(postToView)
     let contenTags = postBodyWrapper(postToView)
-    console.log(postToView)
+    
     let allTags = ulListAll(postToView.postTags)
         contenTags.append(allTags)
-    let emojis = userTagsEmojis(postToView)
-        contenTags.append(emojis)
-    let comments = commentImg(postToView)
-    let imgContainer = imageCardPost(postToView)
-        imgContainer.append(userNameData)
-        imgContainer.append(contenTags)
+        emojisList.append(contenTags)
         
+
+    let imgContainer = imageCardPost(postToView)
+        userNameData.append(imgContainer)
+            
+        
+        console.log(emojisList)
+        console.log(contenTags)
         
         let containerCard = document.createElement("div")
     containerCard.classList.add("card-cont","d-flex","justify-content-center")
 
         containerCard.append(imgContainer)
-    sectionWrapperr.appendChild(containerCard)
-return sectionWrapperr
+    // sectionWrapperr.appendChild(containerCard)
+return containerCard
 }
 
 let newCard = cardWrapper(postToView)
