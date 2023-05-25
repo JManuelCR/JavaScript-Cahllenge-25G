@@ -18,6 +18,10 @@
             display: flex;
             justify-content: center;
             gap: 2.5rem;
+            @media screen and (max-width:variables.$laptop) {
+                flex-wrap: wrap;
+                
+            }
             li {
                 a {
                     text-decoration: none;
