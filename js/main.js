@@ -23,15 +23,60 @@ const targetDinamic = (posts,key) => {
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
 }
-
-let printPost = async () =>{
+let Posts = async () => {
     let posts = await getPosts();
     let array = Object.entries(posts);
-    array.forEach(element => {
-        console.log(element[0]);
+    return array;
+};
+let allPosts = await Posts()
+let printPost = async (posts) =>{
+    posts.forEach(element => {
         let cardPost = targetDinamic(element[1], element[0])
     });
-    return 
-};
+    return
+}
+printPost(allPosts);
 
-printPost();
+const filterRelevant = (post) => post.filter( post => {
+    let reactions = post[1].heartReactions;
+    return  reactions > 60;
+});
+
+let relevantSelector = document.getElementById("relevant");
+relevantSelector.addEventListener('click', () => {
+    let relevant = filterRelevant(allPosts);
+    console.log(relevant);
+    deletePosts();
+    printPost(relevant);
+    return;
+});
+
+const filterLastest = (post) => post.filter( post => post.heartReactions > 25);
+
+let lastestSelector = document.getElementById("lastest");
+relevantSelector.addEventListener('click', () => {
+    let lastest = filterLastest(allPosts);
+    printPost(lastest);
+});
+
+const filterTop = (post) => post.filter( post => {
+    let top = post[1].topCriterium;
+    return  top > 90;
+});
+
+let topSelector = document.getElementById("top");
+topSelector.addEventListener('click', () => {
+    let top = filterTop(allPosts);
+    console.log(top);
+    deletePosts();
+    printPost(top);
+    return;
+});
+
+const deletePosts = () => {
+    let list = document.getElementById("card-container");
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+    return ;
+};
