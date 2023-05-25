@@ -171,7 +171,7 @@ const getPosttInformation = () => {
     let date = new Date();
     let mont = getMonthName(date);
     console.log(mont);
-    let creationDate = `${mont}/${date.getDay()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}}`
+    let creationDate = `${mont}/${date.getDay()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`
     let heartReactions = getRamdomInt(100);
     let unicornReactions = getRamdomInt(100);
     let crazyManReactions = getRamdomInt(100);

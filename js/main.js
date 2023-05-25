@@ -1,4 +1,5 @@
 import { cardWrapper } from "./postCard.js";
+import { getPosts } from "./getPosts.js";
 
 let postInformation = {
     userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -17,9 +18,20 @@ let postInformation = {
     fireReactions: "25"
 };
 
-const targetDinamic = () => {
-    let newCard = cardWrapper(postInformation)
+const targetDinamic = (posts) => {
+    let newCard = cardWrapper(posts)
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
 }
-targetDinamic()
+
+let printPost = async () =>{
+    let posts = await getPosts();
+    let array = Object.values(posts)
+    array.forEach(element => {
+        console.log(element);
+        let cardPost = targetDinamic(element)
+    });
+    return 
+};
+
+printPost();
