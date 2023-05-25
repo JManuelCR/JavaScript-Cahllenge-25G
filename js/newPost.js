@@ -169,7 +169,9 @@ const getPosttInformation = () => {
     let postTags = tags;
     let postlectureTime = postlectureTimeInput.value;
     let date = new Date();
-    let creationDate = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}}`
+    let mont = getMonthName(date);
+    console.log(mont);
+    let creationDate = `${mont}/${date.getDay()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}}`
     let heartReactions = getRamdomInt(100);
     let unicornReactions = getRamdomInt(100);
     let crazyManReactions = getRamdomInt(100);
@@ -210,9 +212,10 @@ const addPostButton = async () => {
     clearForm();
     return data;
   };
-const getMonth = date => {
+const getMonthName = date => {
     let monntName;
-    let monthNumber = date.getMonth();
+    let monthNumber = date.getMonth(); 
+    console.log(monthNumber);
     switch (monthNumber){
       case 0:
         monntName = "Jan";
@@ -223,10 +226,10 @@ const getMonth = date => {
       case 2:
         monntName = "Mar";
       break;
-      case 0:
+      case 3:
         monntName = "Apr";
       break;
-      case 0:
+      case 4:
         monntName = "Jun";
       break;
       case 5:
