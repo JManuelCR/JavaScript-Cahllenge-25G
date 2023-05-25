@@ -332,11 +332,8 @@ let cardWrapper = (postToView,key) => {
 
     let imgContainer = imageCardPost(postToView)
         userNameData.append(imgContainer)
-            
-        
-        console.log(emojisList)
-        console.log(contenTags)
-        
+        // console.log(emojisList)
+        // console.log(contenTags)
         let containerCard = document.createElement("div")
     containerCard.classList.add("card-cont","d-flex","justify-content-center")
 
