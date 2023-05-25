@@ -1,4 +1,5 @@
 let tags = [];
+let usersProfieImg = [];
 const getProductInformation = () => {
     let nameInput = document.getElementById("postUserName");
     let userName = nameInput.value;
@@ -24,7 +25,9 @@ const getProductInformation = () => {
     let crazyManReactions = getRamdomInt(100);
     let hansReactions = getRamdomInt(100);
     let fireReactions = getRamdomInt(100);
+    let userProfileImg = getProfileImg();
     let postInformation = {
+      userProfileImg: userProfileImg,
       userName: fullNme,
       postTitle: postTitle,
       postContend: postContend,
@@ -180,3 +183,19 @@ const clearForm = () => {
   let postInput = document.getElementById("postTags");
   postInput.value = "";
 }
+const previewImage = () => {
+  console.log("it works");
+  let postImageInput = document.getElementById("postImageUrl");
+  let postImage = postImageInput.value;
+  console.log(postImage);
+  let imgPreview = document.getElementById("imgPreview");
+  if(postImage !== ""){
+    imgPreview.setAttribute("src", `${postImage}` );
+  }else{
+    imgPreview.setAttribute("scc", "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fccard3dev%2Fdynamic-yosemite%2F512%2FPreview-icon.png&f=1&nofb=1&ipt=68aa98d04b1dfc9def2120e1c8b36293eb8b25fd6d7c72ae2f7f39eb2acefab6&ipo=images");
+  }
+  return;
+}
+
+document.addEventListener('click', previewImage);
+
