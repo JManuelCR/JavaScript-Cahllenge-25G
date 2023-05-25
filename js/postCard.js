@@ -89,7 +89,6 @@ let emojisReaction = (post) => {
 
             let iconComment = document.createElement("img")
             iconComment.setAttribute("src","./assets/icons/black-Flat-Icon.svg")
-            console.log(post);
             let  totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions;
             let parrafComment = document.createElement("p")
                 let parrafCommentText = document.createTextNode(totalReactions);
@@ -284,7 +283,6 @@ let cardWrapper = (post,key) => {
             userNameData.append(userData)
     
     let contenTags = postBodyWrapper(post)
-    console.log(post.postTags);
     let allTags = ulListAll(post.postTags)
         contenTags.append(allTags)
     let emojis = userTagsEmojis(post)

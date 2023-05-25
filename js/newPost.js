@@ -143,12 +143,8 @@ let users = [
 ];
 const getUserImgRamdom = (users) => {
   const userId = getRamdomInt(0, users.length - 1);
-  return users.reduce((img, element, index) => {
-      if (index === userId) {
-          img = element.picture.medium;
-      }
-      return img;
-  }, "");
+  let imgUser = users.filter((element, index) => index === userId);
+  return imgUser[0].picture.large;
 };
 
 const getPosttInformation = () => {
@@ -308,7 +304,6 @@ const deleteTagButton = (id) => {
   createTagsTable(tags);
   return tags;
 }
-
 const deleteTagsList = () => {
     let list = document.getElementById("tagsTable");
     while (list.firstChild) {
