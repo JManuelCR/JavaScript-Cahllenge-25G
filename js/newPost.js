@@ -143,12 +143,8 @@ let users = [
 ];
 const getUserImgRamdom = (users) => {
   const userId = getRamdomInt(0, users.length - 1);
-  return users.reduce((img, element, index) => {
-      if (index === userId) {
-          img = element.picture.medium;
-      }
-      return img;
-  }, "");
+  let imgUser = users.filter((element, index) => index === userId);
+  return imgUser[0].picture.large;
 };
 
 const getPosttInformation = () => {
@@ -169,15 +165,14 @@ const getPosttInformation = () => {
     let postTags = tags;
     let postlectureTime = postlectureTimeInput.value;
     let date = new Date();
-    let mont = getMonthName(date);
-    console.log(mont);
-    let creationDate = `${mont}/${date.getDay()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`
+    let creationDate = date;
     let heartReactions = getRamdomInt(100);
     let unicornReactions = getRamdomInt(100);
     let crazyManReactions = getRamdomInt(100);
     let hansReactions = getRamdomInt(100);
     let fireReactions = getRamdomInt(100);
     let userProfileImg =  getUserImgRamdom(users);
+    let topCriterium = getRamdomInt(100);
     let postInformation = {
       userProfileImg: userProfileImg,
       userName: fullNme,
@@ -192,7 +187,8 @@ const getPosttInformation = () => {
       unicornReactions: unicornReactions,
       crazyManReactions: crazyManReactions,
       hansReactions: hansReactions,
-      fireReactions: fireReactions
+      fireReactions: fireReactions,
+      topCriterium : topCriterium
     };
     console.log(postInformation);
     return postInformation;
@@ -308,7 +304,6 @@ const deleteTagButton = (id) => {
   createTagsTable(tags);
   return tags;
 }
-
 const deleteTagsList = () => {
     let list = document.getElementById("tagsTable");
     while (list.firstChild) {
