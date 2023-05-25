@@ -235,7 +235,7 @@
                     <a href=""
                       ><span
                         ><img
-                          src="./assets/icons/tuwiter-Icon.svg"
+                          src="./assets/icons/tuwiter-Black-Icon.svg"
                           alt="" /></span
                     ></a>
                     <a href=""
@@ -381,7 +381,7 @@
                     <a class="dropdown-item" href="#">Settings</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Sign Out</a>
+                    <a class="dropdown-item" href="./html/login.html">Sign Out</a>
                   </li>
                 </ul>
               </div>
@@ -608,7 +608,7 @@
                     <a href=""
                       ><span
                         ><img
-                          src="./assets/icons/tuwiter-Icon.svg"
+                          src="./assets/icons/tuwiter-Black-Icon.svg"
                           alt="" /></span
                     ></a>
                     <a href=""
@@ -775,22 +775,22 @@
                 <div class="pills-nav-container nav-pill-container">
                   <ul class="pills-nav-container__ulList nav nav-pills">
                     <li class="pills-nav-container__ulList--bold nav-item">
-                      <a class="nav-link rounded-2" aria-current="page" href="#"
+                      <a id="relevant" class="nav-link rounded-2" aria-current="page" href="#"
                         >Relevant</a
                       >
                     </li>
                     <li class="pills-nav-container__ulList--lighter nav-item">
-                      <a class="nav-link rounded-2" href="#">Latest</a>
+                      <a id="latest" class="nav-link rounded-2" href="#">Latest</a>
                     </li>
                     <li class="pills-nav-container__ulList--lighter nav-item">
-                      <a class="nav-link rounded-2" href="#">Top</a>
+                      <a id="top" top class="nav-link rounded-2" href="#">Top</a>
                     </li>
                   </ul>
                 </div>
-                <div id="card-container" class="d-flex">
+                <div id="card-container" class="d-flex flex-column">
                   
                 </div>
-                <div class="card-cont d-flex justify-content-center">
+                <!-- <div class="card-cont d-flex justify-content-center">
                   <div class="img-container card mb-3 d-flex">
                     <a href="#">
                       <img
@@ -801,7 +801,7 @@
                     </a>
                     <div class="user-data-space d-flex">
                       <div class="user-data-space__mini">
-                        <a href="#">
+                        <a href="./html/post.html">
                           <img
                             class="rounded-circle"
                             src="https://randomuser.me/api/portraits/men/0.jpg"
@@ -822,18 +822,28 @@
                         <a href="./html/post.html">7 secrets TypeScript Tricks Pros Use</a>
                       </h2>
                       <div class="user-data-space__tags--lighter">
-                        <a href="#">
-                          <p>#TypeScript</p>
-                        </a>
-                        <a href="#">
-                          <p>#JavaScript</p>
-                        </a>
-                        <a href="#">
-                          <p>#Programming</p>
-                        </a>
-                        <a href="#">
-                          <p>#Beginners</p>
-                        </a>
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <p>#TypeScript</p>
+                            </a>
+                          </li>
+                          <li>  
+                            <a href="#">
+                              <p>#JavaScript</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <p>#Programming</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <p>#Beginners</p>
+                            </a>
+                          </li>
+                        </ul>
                       </div>
                       <div class="user-data-space__tags--emojis">
                         <div class="emojisReaction">
@@ -864,7 +874,7 @@
                           <div class="emojisReaction__comments">
                             <a class="text-container" href="#">
                               <img src="./assets/icons/black-Flat-Icon.svg"/>
-                              <p>23 <span class="d-none d-md-inline-block">comments</span></p>
+                              <p>23<span class="d-none d-md-inline-block">comments</span></p>
                             </a>
                           </div>
                         </div>
@@ -913,7 +923,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </section>
               <aside class="col-lg-3 d-none d-lg-block g-3">
                 <div class="cardCommunity p-3">
@@ -1035,6 +1045,6 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

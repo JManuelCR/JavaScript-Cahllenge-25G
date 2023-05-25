@@ -73,6 +73,14 @@
         margin-left: 1rem;
         h2 {
         font-weight: bolder;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        font-size: 18px;
+        @media screen and (max-width:variables.$laptop) {
+            flex-wrap: wrap;
+            margin-left: 0;
+            padding-left: 0;
+        }
             a {
                 text-decoration: none;
                 color: #171717;
@@ -83,11 +91,23 @@
             }
         }
         &--lighter {
-            @media screen and (max-width:variables.$small) {
-                flex-wrap: wrap;
-            }
             display: flex;
             gap:variables.$standGap;
+            @media screen and (max-width:variables.$small) {
+                width: fit-content;
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 2rem;
+                @media screen and (max-width:variables.$laptop) {
+                    flex-wrap: wrap;
+                    gap: .5rem;
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+            }
             a {
                 font-weight: lighter;
                 text-decoration: none;
@@ -113,23 +133,25 @@
     gap: variables.$standGap;
     justify-content: space-between; 
     &__icons {
+        display: flex;
+        margin-left: 1rem;
         &:hover {
             background-color:#f5f5f5 ;
             border-radius: .4rem;
         }
-        display: flex;
         a {
             text-decoration: none;
             color:#171717;
             display: flex;
             img {
-                @media screen and (max-width:variables.$small) {
-                    width: 1rem; 
+                @media screen and (max-width:variables.$laptop) {
+                    width: 1rem;
+                    margin-left: 0rem; 
                 }
                 width: 1.5rem;
             }
             span {
-                @media screen and (max-width:variables.$small) {
+                @media screen and (max-width:variables.$laptop) {
                     display: none;
                 }
                 margin-left: variables.$mediumMargin;
