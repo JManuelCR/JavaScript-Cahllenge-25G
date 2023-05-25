@@ -1103,6 +1103,30 @@ html {
   color: black;
 }
 
+.newParamsDiv {
+  gap: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 7%;
+}
+@media screen and (max-width: 1024px) {
+  .newParamsDiv {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+}
+.newParamsDiv span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.newParamsDiv span img {
+  width: 30px;
+}
+.newParamsDiv span p {
+  margin-top: 0.5rem;
+}
+
 .assideLeftFirstNav .list-group .list-group-item {
   background-color: transparent;
   border: none;
