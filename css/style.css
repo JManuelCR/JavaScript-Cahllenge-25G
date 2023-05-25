@@ -649,7 +649,7 @@ body {
 .emojisReaction__icons a img {
   width: 1.5rem;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   .emojisReaction__icons a img {
     width: 1rem;
   }
@@ -809,6 +809,11 @@ body {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .container-footer__DEV ul {
+    flex-wrap: wrap;
+  }
 }
 .container-footer__DEV ul li a {
   text-decoration: none;

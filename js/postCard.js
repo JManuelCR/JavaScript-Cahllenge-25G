@@ -178,19 +178,19 @@ let userTagsEmojis = () => {
     divContainer.append(emojisReaction,minutesFunc)
 }
 // este almacena las #tags (revisar como pasarle los #tags)
-let tagsLighter = (postlectureTime) => {
+let tagsLighter = (postInformation) => {
     let divLighter = document.createElement("div")
         divLighter.classList.add("user-data-space__tags--lighter")
 
             let firstAncor = document.createElement("a")
                 firstAncor.setAttribute("href","#")
                     let firstAncorP = document.createElement("p")
-                        let firstAncorText = document.createTextNode(postlectureTime.tags)
+                        let firstAncorText = document.createTextNode(postInformation.tags)
                     firstAncorP.appendChild(firstAncorText)
             firstAncor.appendChild(firstAncorP)
 }
 // almacena el titulo de la publicacion con los iconos de la parte de abajo
-let postBodyWrapper = (postlectureTime) => {
+let postBodyWrapper = (postInformation) => {
     let emojisComent = userTagsEmojis()
     let hashTags = tagsLighter()
     
@@ -209,7 +209,7 @@ let postBodyWrapper = (postlectureTime) => {
         postBody.append(postH2,emojisComent,hashTags)
 }
 // jala de la BD el nombre completo del usuario que creo el post y la fecha de creacion
-let userDataOnPost = (postlectureTime) => {
+let userDataOnPost = (postInformation) => {
     let userNameSpace = document.createElement("div")
         userNameSpace.classList.add("user-data-space__name")
     
@@ -219,7 +219,7 @@ let userDataOnPost = (postlectureTime) => {
 
                 let ancoreP = document.createElement("p")
                     ancoreP.classList.add("author-name")
-                    let ancoreText = document.createTextNode(postlectureTime.userName)
+                    let ancoreText = document.createTextNode(postInformation.userName)
                 ancoreP.append(ancoreText)
         ancoreBold.append(ancoreP)
     userNameSpace.append(ancoreBold)
@@ -230,7 +230,7 @@ let userDataOnPost = (postlectureTime) => {
 
                 let creationP = document.createElement("p")
                     creationP.classList.add("reation-date")
-                    let creationText = document.createTextNode(postlectureTime.date)
+                    let creationText = document.createTextNode(postInformation.date)
                 creationP.appendChild(creationText)
             creationAncor.appendChild(creationP)
         userNameSpace.append(creationAncor)
@@ -238,7 +238,7 @@ let userDataOnPost = (postlectureTime) => {
     return userNameSpace
 }
 // almacena la imagen del creador del post con su nombre y fecha de creacion
-let creatorProfilePicture = (postlectureTime) => {
+let creatorProfilePicture = (postInformation) => {
     let userNameDate = userDataOnPost()
     
     let creatorPicture = document.createElement("div")
@@ -252,13 +252,13 @@ let creatorProfilePicture = (postlectureTime) => {
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",postlectureTime.userProfileImg)
+                            picture.setAttribute("src",postInformation.userProfileImg)
                 pictureAncor.append(picture)
             imgOnMini.append(pictureAncor)
         creatorPicture.append(imgOnMini,userNameDate)
 }
 // almacena la imagen principal del post
-let imageCardPost = (postlectureTime) => {
+let imageCardPost = (postInformation) => {
     let fullProfile = creatorProfilePicture()
     let fullCard = postBodyWrapper()
 
@@ -270,7 +270,7 @@ let imageCardPost = (postlectureTime) => {
 
             let imageContainer = document.createElement("img")
             imageContainer.classList.add("card-img-top")    
-            imageContainer.setAttribute("src",postlectureTime.postImage)
+            imageContainer.setAttribute("src",postInformation.postImage)
             imgContainer.setAttribute("alt","img del post")
 
         imgContainerAncor.append(imageContainer)
@@ -286,9 +286,4 @@ let cardWrapper = () => {
 
     containerCard.append(imgContainer)
 return containerCard
-}
-
-const targetDinamic = () => {
-    let target = document.getElementById("card-container")
-    let card = cardWrapper()
 }

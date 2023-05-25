@@ -123,7 +123,7 @@
             color:#171717;
             display: flex;
             img {
-                @media screen and (max-width:variables.$small) {
+                @media screen and (max-width:variables.$laptop) {
                     width: 1rem; 
                 }
                 width: 1.5rem;
