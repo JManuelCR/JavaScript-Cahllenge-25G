@@ -1,19 +1,4 @@
-let postInformation = {
-    userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
-    userName: "Ana",
-    postTitle: "7 tricks in typescript",
-    postContend: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
-    postImage: "https://picsum.photos/200",
-    postImageTitle: "una imagen random",
-    postlectureTime: "5 minutos",
-    postTags: "#typescript #randomtag2 #randomtag1",
-    date: "05-04-1586",
-    heartReactions : "24",
-    unicornReactions: "25",
-    crazyManReactions: "25",
-    hansReactions: "25",
-    fireReactions: "25"
-};
+
 
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let commentSection = (postInformation) => {
@@ -178,19 +163,19 @@ let userTagsEmojis = () => {
     divContainer.append(emojisReaction,minutesFunc)
 }
 // este almacena las #tags (revisar como pasarle los #tags)
-let tagsLighter = (postlectureTime) => {
+let tagsLighter = (postInformation) => {
     let divLighter = document.createElement("div")
         divLighter.classList.add("user-data-space__tags--lighter")
 
             let firstAncor = document.createElement("a")
                 firstAncor.setAttribute("href","#")
                     let firstAncorP = document.createElement("p")
-                        let firstAncorText = document.createTextNode(postlectureTime.tags)
+                        let firstAncorText = document.createTextNode(postInformation.tags)
                     firstAncorP.appendChild(firstAncorText)
             firstAncor.appendChild(firstAncorP)
 }
 // almacena el titulo de la publicacion con los iconos de la parte de abajo
-let postBodyWrapper = (postlectureTime) => {
+let postBodyWrapper = (postInformation) => {
     let emojisComent = userTagsEmojis()
     let hashTags = tagsLighter()
     
@@ -203,13 +188,13 @@ let postBodyWrapper = (postlectureTime) => {
                 let titleAncor = document.createElement("a")
                     titleAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(postlectureTime.postTitle)
+                    let titleText = document.createTextNode(postinformation.postTitle)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
         postBody.append(postH2,emojisComent,hashTags)
 }
 // jala de la BD el nombre completo del usuario que creo el post y la fecha de creacion
-let userDataOnPost = (postlectureTime) => {
+let userDataOnPost = (postInformation) => {
     let userNameSpace = document.createElement("div")
         userNameSpace.classList.add("user-data-space__name")
     
@@ -219,7 +204,7 @@ let userDataOnPost = (postlectureTime) => {
 
                 let ancoreP = document.createElement("p")
                     ancoreP.classList.add("author-name")
-                    let ancoreText = document.createTextNode(postlectureTime.userName)
+                    let ancoreText = document.createTextNode(postInformation.userName)
                 ancoreP.append(ancoreText)
         ancoreBold.append(ancoreP)
     userNameSpace.append(ancoreBold)
@@ -230,7 +215,7 @@ let userDataOnPost = (postlectureTime) => {
 
                 let creationP = document.createElement("p")
                     creationP.classList.add("reation-date")
-                    let creationText = document.createTextNode(postlectureTime.date)
+                    let creationText = document.createTextNode(postInformation.date)
                 creationP.appendChild(creationText)
             creationAncor.appendChild(creationP)
         userNameSpace.append(creationAncor)
@@ -238,9 +223,8 @@ let userDataOnPost = (postlectureTime) => {
     return userNameSpace
 }
 // almacena la imagen del creador del post con su nombre y fecha de creacion
-let creatorProfilePicture = (postlectureTime) => {
+let creatorProfilePicture = (postInformation) => {
     let userNameDate = userDataOnPost()
-    
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space","d-flex")
 
@@ -252,13 +236,13 @@ let creatorProfilePicture = (postlectureTime) => {
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",postlectureTime.userProfileImg)
+                            picture.setAttribute("src",`${postInformation.userProfileImg}`)
                 pictureAncor.append(picture)
             imgOnMini.append(pictureAncor)
         creatorPicture.append(imgOnMini,userNameDate)
 }
 // almacena la imagen principal del post
-let imageCardPost = (postlectureTime) => {
+let imageCardPost = (postInformation) => {
     let fullProfile = creatorProfilePicture()
     let fullCard = postBodyWrapper()
 
@@ -268,9 +252,9 @@ let imageCardPost = (postlectureTime) => {
         let imgContainerAncor = document.createElement("a")
         imgContainerAncor.setAttribute("href","#")
 
-            let imageContainer = document.createElement("img")
-            imageContainer.classList.add("card-img-top")    
-            imageContainer.setAttribute("src",postlectureTime.postImage)
+            let image = document.createElement("img")
+            image.classList.add("card-img-top")    
+            image.setAttribute("src",`${postInformation.postImage}`)
             imgContainer.setAttribute("alt","img del post")
 
         imgContainerAncor.append(imageContainer)
@@ -292,3 +276,5 @@ const targetDinamic = () => {
     let target = document.getElementById("card-container")
     let card = cardWrapper()
 }
+
+export { cardWrapper };
