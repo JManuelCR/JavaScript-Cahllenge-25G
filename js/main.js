@@ -19,6 +19,8 @@ let postInformation = {
 };
 
 const targetDinamic = (posts,key) => {
+    console.log(key);
+    console.log(posts);
     let newCard = cardWrapper(posts,key)
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
@@ -51,12 +53,20 @@ relevantSelector.addEventListener('click', () => {
     return;
 });
 
-const filterLastest = (post) => post.filter( post => post.heartReactions > 25);
+const filterLastest = (post) => post.filter((item, index) => {
+    if((post.length - 1) === index){
+        console.log(item);
+        return item
+    }
+});
 
 let lastestSelector = document.getElementById("lastest");
-relevantSelector.addEventListener('click', () => {
+lastestSelector.addEventListener('click', () => {
     let lastest = filterLastest(allPosts);
+    console.log(lastest);
+    deletePosts();
     printPost(lastest);
+    return
 });
 
 const filterTop = (post) => post.filter( post => {
@@ -80,3 +90,4 @@ const deletePosts = () => {
     }
     return ;
 };
+
