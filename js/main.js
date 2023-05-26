@@ -20,6 +20,7 @@ let postInformation = {
 
 const targetDinamic = (posts,key) => {
     console.log(key);
+    console.log(posts);
     let newCard = cardWrapper(posts,key)
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
@@ -31,9 +32,7 @@ let Posts = async () => {
 };
 let allPosts = await Posts()
 let printPost = async (posts) =>{
-    console.log(posts);
     posts.forEach(element => {
-        console.log(element);
         let cardPost = targetDinamic(element[1], element[0])
     });
     return
@@ -54,32 +53,18 @@ relevantSelector.addEventListener('click', () => {
     return;
 });
 
-const filterLastest = (post) => post.reduce((maxDate, item) => {
-    let dateString = '';
-    if (typeof item[1].date === 'string') {
-      dateString = item[1].date;
-    } else if (typeof item[1].date === 'object' && item.hasOwnProperty('date')) {
-      dateString = item[1].date;
-    } else {
-      return maxDate;
+const filterLastest = (post) => post.filter((item, index) => {
+    if((post.length - 1) === index){
+        console.log(item);
+        return item
     }
-
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) {
-      return maxDate;
-    }
-
-    if (maxDate === null || date > maxDate) {
-      return item;
-    } else {
-      return maxDate;
-    }
-  }, []);
+});
 
 let lastestSelector = document.getElementById("lastest");
 lastestSelector.addEventListener('click', () => {
     let lastest = filterLastest(allPosts);
     console.log(lastest);
+    deletePosts();
     printPost(lastest);
     return
 });
