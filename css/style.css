@@ -615,6 +615,7 @@ body {
 .user-data-space__tags--lighter {
   display: flex;
   gap: 1rem;
+  width: 70%;
 }
 @media screen and (max-width: 425px) {
   .user-data-space__tags--lighter {
@@ -626,7 +627,8 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 2rem;
+  gap: 0.75rem;
+  padding-left: 1rem;
 }
 @media screen and (max-width: 1024px) {
   .user-data-space__tags--lighter ul {
@@ -643,6 +645,7 @@ body {
 }
 .user-data-space__tags--lighter a p {
   margin: 0;
+  font-size: 12px;
 }
 .user-data-space__tags--lighter a p:hover {
   background-color: #f5f5f5;
@@ -655,13 +658,13 @@ body {
 }
 
 .emojisReaction {
+  align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
 }
 .emojisReaction__icons {
   display: flex;
-  margin-left: 1rem;
 }
 .emojisReaction__icons:hover {
   background-color: #f5f5f5;
@@ -671,9 +674,10 @@ body {
   text-decoration: none;
   color: #171717;
   display: flex;
+  gap: 0.25rem;
 }
 .emojisReaction__icons a img {
-  width: 1.5rem;
+  width: 1.25rem;
 }
 @media screen and (max-width: 1024px) {
   .emojisReaction__icons a img {
@@ -682,7 +686,7 @@ body {
   }
 }
 .emojisReaction__icons a span {
-  margin-left: 0.5rem;
+  margin-left: 0px;
   margin-top: 1.1rem;
 }
 @media screen and (max-width: 1024px) {
@@ -691,8 +695,9 @@ body {
   }
 }
 .emojisReaction__icons a span p {
-  font-size: 0.87rem;
+  font-size: 0.875rem;
   margin: 0;
+  padding-bottom: 0.875rem;
 }
 .emojisReaction__comments a {
   display: flex;
@@ -726,6 +731,12 @@ body {
   }
 }
 
+.minutes-read {
+  padding-top: 0.25rem;
+  padding-left: 2.5rem;
+  display: flex;
+  align-items: center;
+}
 .minutes-read__anc {
   display: flex;
   text-decoration: none;
@@ -741,6 +752,8 @@ body {
   }
 }
 .minutes-read img {
+  position: relative;
+  bottom: 0.2rem;
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -836,6 +849,28 @@ body {
   height: 650px;
 }
 
+.titleAnchor {
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+}
+
+.infoWrapper {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.commentIcon {
+  width: 1rem;
+  height: auto;
+}
+
+.reactionsContainer {
+  position: relative;
+  bottom: 0.5rem;
+  height: 3rem;
+  justify-content: start;
+}
+
 .container-footer {
   font-size: 0.9rem;
 }
@@ -891,22 +926,22 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.user-data-space--post {
+.user-data-space-post {
   margin-left: 2rem;
   align-items: center;
 }
 @media screen and (max-width: 425px) {
-  .user-data-space--post {
+  .user-data-space-post {
     margin-left: 0rem;
     align-items: start;
   }
 }
 @media screen and (max-width: 1024px) {
-  .user-data-space--post {
+  .user-data-space-post {
     margin-left: 0rem;
   }
 }
-.user-data-space--post__name {
+.user-data-space-post__name {
   display: inline-block;
   margin-left: 1rem;
   justify-content: start;
