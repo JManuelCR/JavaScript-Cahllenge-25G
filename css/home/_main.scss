@@ -93,6 +93,7 @@
         &--lighter {
             display: flex;
             gap:variables.$standGap;
+            width: 70%;
             @media screen and (max-width:variables.$small) {
                 width: fit-content;
             }
@@ -100,7 +101,8 @@
                 display: flex;
                 flex-direction: row;
                 list-style: none;
-                gap: 2rem;
+                gap: 0.75rem;
+                padding-left: 1rem;
                 @media screen and (max-width:variables.$laptop) {
                     flex-wrap: wrap;
                     gap: .5rem;
@@ -114,6 +116,7 @@
                 color: #171717;
                 p {
                     margin:0;
+                    font-size: 12px;
                     &:hover {
                         background-color:#f5f5f5 ;
                         border-radius: .4rem;
@@ -129,12 +132,12 @@
     }
 }
 .emojisReaction {
+    align-items: center;
     display: flex;
     gap: variables.$standGap;
     justify-content: space-between; 
     &__icons {
         display: flex;
-        margin-left: 1rem;
         &:hover {
             background-color:#f5f5f5 ;
             border-radius: .4rem;
@@ -143,22 +146,25 @@
             text-decoration: none;
             color:#171717;
             display: flex;
+            gap: 0.25rem;
             img {
                 @media screen and (max-width:variables.$laptop) {
                     width: 1rem;
                     margin-left: 0rem; 
                 }
-                width: 1.5rem;
+                width: 1.25rem;
             }
             span {
                 @media screen and (max-width:variables.$laptop) {
                     display: none;
                 }
-                margin-left: variables.$mediumMargin;
+                margin-left: 0px;
                 margin-top: 1.1rem;
                 p {
-                    font-size: 0.87rem;
+                    font-size: 0.875rem;
                     margin: 0;
+                    padding-bottom: 0.875rem;
+
                 }
             }
         }
@@ -194,6 +200,10 @@
 }
 
 .minutes-read {
+    padding-top: 0.25rem;
+    padding-left: 2.5rem;
+    display: flex;
+    align-items: center;
     &__anc {
         display: flex;
         text-decoration: none;
@@ -208,6 +218,8 @@
         }
     }
     img {
+        position: relative;
+        bottom: 0.2rem;
         &:hover {
             background-color:variables.$navbarBlueCreatePostBorder ;
             border-radius: .4rem;
@@ -294,11 +306,27 @@
         }
       }
     }
-<<<<<<< HEAD
-=======
 }
 
 .anchorsFinals {
         text-decoration: none;
->>>>>>> develop
+}
+
+.titleAnchor{
+    text-decoration: none;
+    color: variables.$blackSocialNetwork;
+}
+.infoWrapper{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.commentIcon{
+    width: 1rem;
+    height: auto;
+}
+.reactionsContainer{
+    position: relative;
+    bottom: 0.5rem;
+    height: 3rem;
+    justify-content: start;
 }
