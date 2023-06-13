@@ -737,6 +737,7 @@ body {
 @media screen and (max-width: 425px) {
   .minutes-read__anc p {
     font-size: 0.875rem;
+    justify-content: center;
   }
 }
 .minutes-read img {
@@ -818,8 +819,21 @@ body {
   width: 22px;
 }
 
-.anchorsFinals {
+.img-container {
+  width: 100%;
+  padding: 0.5rem;
   text-decoration: none;
+}
+.img-container .anchorsFinals .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-cont {
+  background: rgb(249, 249, 249);
+  width: 80%;
+  padding: 1rem;
+  height: 650px;
 }
 
 .container-footer {
@@ -877,22 +891,22 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.user-data-space {
+.user-data-space--post {
   margin-left: 2rem;
   align-items: center;
 }
 @media screen and (max-width: 425px) {
-  .user-data-space {
+  .user-data-space--post {
     margin-left: 0rem;
     align-items: start;
   }
 }
 @media screen and (max-width: 1024px) {
-  .user-data-space {
+  .user-data-space--post {
     margin-left: 0rem;
   }
 }
-.user-data-space__name {
+.user-data-space--post__name {
   display: inline-block;
   margin-left: 1rem;
   justify-content: start;

@@ -33,14 +33,14 @@
     }
 }
 
-.user-data-space{
+.user-data-space {
     padding-left: 1.25rem;
     padding-top: 1.25rem;
     display: flex;
     &__mini {
         display: flex;
         gap: variables.$standGap;
-        align-items: center; 
+        align-items: center;
         a {
             img {
                 width: 2.5rem;
@@ -131,7 +131,7 @@
 .emojisReaction {
     display: flex;
     gap: variables.$standGap;
-    justify-content: space-between; 
+    justify-content: space-between;
     &__icons {
         display: flex;
         margin-left: 1rem;
@@ -146,7 +146,7 @@
             img {
                 @media screen and (max-width:variables.$laptop) {
                     width: 1rem;
-                    margin-left: 0rem; 
+                    margin-left: 0rem;
                 }
                 width: 1.5rem;
             }
@@ -204,6 +204,7 @@
         p {
             @media screen and (max-width:variables.$small) {
                 font-size: .875rem;
+                justify-content: center;
             }
         }
     }
@@ -276,7 +277,7 @@
         position: absolute;
         right: 0px;
         width: 40px;
-  
+
         &:hover {
           background-color: #2c6be02c;
           svg {
@@ -294,11 +295,23 @@
         }
       }
     }
-<<<<<<< HEAD
-=======
 }
 
-.anchorsFinals {
-        text-decoration: none;
->>>>>>> develop
+.img-container {
+    width: 100%;
+    padding: .5rem;
+    // height: 100px;
+    text-decoration: none;
+    .anchorsFinals {
+        .card-img-top{
+            object-fit: cover;
+        }
+    }
+}
+
+.card-cont {
+    background: variables.$colorNewPostForm;
+    width: 80%;
+    padding: 1rem;
+    height: 650px;
 }
