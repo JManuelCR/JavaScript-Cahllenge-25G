@@ -164,46 +164,34 @@ let reactionsContainer = (post) => {
 // }
 
 let hashtags = (post) => {
-
+let tags = post.postTags
     let divTags = document.createElement("div")
         divTags.classList.add("user-data-space__tags--lighter")
 
         let ulList = document.createElement("ul")
 
-            let list1 = document.createElement("li")
+            // let list2 = document.createElement("li")
                 
-                let ancor1 = document.createElement("a")
-                    ancor1.setAttribute("href","#")
+            //     let ancor2 = document.createElement("a")
+            //         ancor2.setAttribute("href","#")
 
-                        let tag1 = document.createElement("p")
-                            let textInP1 = document.createTextNode(post.postTags[0])
-                        tag1.appendChild(textInP1)
+            //             let tag2 = document.createElement("p")
+            //                 let textInP2 = document.createTextNode(post.postTags[1])
+            //             tag2.appendChild(textInP2)
+            //         ancor2.appendChild(tag2)
+            //     list2.appendChild(ancor2)
 
-                    ancor1.appendChild(tag1)
-                list1.appendChild(ancor1)
-            
-            let list2 = document.createElement("li")
+            // let list3 = document.createElement("li")
                 
-                let ancor2 = document.createElement("a")
-                    ancor2.setAttribute("href","#")
-
-                        let tag2 = document.createElement("p")
-                            let textInP2 = document.createTextNode(post.postTags[1])
-                        tag2.appendChild(textInP2)
-                    ancor2.appendChild(tag2)
-                list2.appendChild(ancor2)
-
-            let list3 = document.createElement("li")
-                
-                let ancor3 = document.createElement("a")
-                    ancor3.setAttribute("href","#")
+            //     let ancor3 = document.createElement("a")
+            //         ancor3.setAttribute("href","#")
         
-                        let tag3 = document.createElement("p")
-                            let textInP3 = document.createTextNode(post.postTags[2])
-                        tag3.appendChild(textInP3)
+            //             let tag3 = document.createElement("p")
+            //                 let textInP3 = document.createTextNode(post.postTags[2])
+            //             tag3.appendChild(textInP3)
 
-                    ancor3.appendChild(tag3)
-                list3.appendChild(ancor3)
+            //         ancor3.appendChild(tag3)
+            //     list3.appendChild(ancor3)
 
             // let list4 = document.createElement("li")
                 
@@ -217,7 +205,23 @@ let hashtags = (post) => {
             //         ancor4.appendChild(tag4)
             //     list4.appendChild(ancor4)
 
-        ulList.append(list1,list2,list3)
+            const liTags = (tags)  => {
+                tags.forEach(tag => {
+                let list1 = document.createElement("li")
+                
+                let ancor1 = document.createElement("a")
+                    ancor1.setAttribute("href","#")
+
+                        let tag1 = document.createElement("p")
+                            let textInP1 = document.createTextNode(post.postTags[0])
+                        tag1.appendChild(textInP1)
+
+                    ancor1.appendChild(tag1)
+                list1.appendChild(ancor1)
+            ulList.append(list1)
+                })
+            }
+            liTags(tags)
     divTags.appendChild(ulList)
 return divTags
 }

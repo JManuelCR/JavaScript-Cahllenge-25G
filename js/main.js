@@ -1,5 +1,6 @@
 import { card } from "./postCard.js";
 import { getPosts } from "./getPosts.js";
+import { filterTags } from "./asideRight.js";
 
 let postInformation = {
     userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -32,12 +33,17 @@ let Posts = async () => {
 };
 
 let allPosts = await Posts()
+
 let printPost = async (posts) =>{
+    console.log(posts)
+    // const test1 = filterTags(posts)
     posts.forEach(element => {
         let cardPost = targetDinamic(element[1], element[0])
     });
+    // console.log("estas son las tags",test1)
     return
 }
+
 printPost(allPosts);
 
 const filterRelevant = (post) => post.filter( post => {
@@ -87,11 +93,8 @@ topSelector.addEventListener('click', () => {
 const deletePosts = () => {
     let list = document.getElementById("card-container");
     while (list.firstChild) {
-      list.removeChild(list.firstChild);
+        list.removeChild(list.firstChild);
     }
     return ;
 };
-
-
-
 
