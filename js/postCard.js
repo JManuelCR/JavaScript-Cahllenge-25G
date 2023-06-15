@@ -1,629 +1,403 @@
-// // Tiene el nombre de usuario, cuando se publico, comentario en texto
-// let commentSection = () => {
-//     let divComment = document.createElement("div")
-//     divComment.classList.add("comment-section__rectangle")
+// Tiene el nombre de usuario, cuando se publico, comentario en texto
+let minutesRead = (post) => {
+    let divContainer = document.createElement("div")
 
-//         let divUserName = document.createElement("div")
-//         divUserName.classList.add("comment-section__rectangle--username")
+        let divMinutesRead = document.createElement("div")
+            divMinutesRead.classList.add("minutes-read")
 
-//             let userNameAncor = document.createElement("a")
-//             userNameAncor.classList.add("anchorsFinals")
-//             userNameAncor.setAttribute("href","#")
+            let ancorRead = document.createElement("a")
+                ancorRead.classList.add("minutes-read__anc")
+                ancorRead.setAttribute("href","#")
 
-//                 let userName = document.createElement("h6")
-//                     let  userNameText = document.createTextNode("hgarper")
-//                     userName.append(userNameText)
-            
-//                 let timeOfComment = document.createElement("p")
-//                     let timeOfCommentText = document.createTextNode("(3 days ago)")
-//                     timeOfComment.append(timeOfCommentText)
-        
-//             userNameAncor.append(userName,timeOfComment)
-//         divUserName.append(userNameAncor)
+                let cardText = document.createElement("p")
+                    cardText.classList.add("card-text")
 
-//         let divCommentText = document.createElement("div")
-//         divCommentText.classList.add("comment-section__rectangle--comment")
+                    let smallText = document.createElement("small")
+                        smallText.classList.add("text-body-secondary")
 
-//             let commentAncor = document.createElement("a")
-//             commentAncor.classList.add("anchorsFinals")
-//             commentAncor.setAttribute("href","#")
+                        let readText = document.createTextNode(`${post.postlectureTime}ute read`)
+                    smallText.append(readText)
+                cardText.append(smallText)
+
+                let readImg = document.createElement("img")
+                    readImg.setAttribute("src","./assets/icons/save-No-Background-Icon.svg")
+                    readImg.classList.add("mt-1")
+
+                ancorRead.append(cardText,readImg)
+            divMinutesRead.append(ancorRead)
+        divContainer.append(divMinutesRead)
+    return divContainer
+}
+let reactionsContainer = (post) => {
+    let comments = minutesRead(post)
+    let mainDiv = document.createElement("div")
+
+        let reactionsContainer = document.createElement("div")
+            reactionsContainer.classList.add("reactionsContainer","d-flex","flex-row")
+
+            let ancorReaction = document.createElement("a")
+                ancorReaction.setAttribute("href","#")
+                ancorReaction.classList.add("text-decoration-none")
+
+                let userSpaceEmojis = document.createElement("div")
+                    userSpaceEmojis.classList.add("user-data-space__tags--emojis")
+
+                    let emojisReactions = document.createElement("div")
+                        emojisReactions.classList.add("emojisReaction")
+
+                        let emojisIcons = document.createElement("div")
+                            emojisIcons.classList.add("emojisReaction__icons")
+
+                            let ancorIcons = document.createElement("a")
+                                ancorIcons.classList.add("text-decoration-none")
+                                ancorIcons.setAttribute("href","#")
+                            
+                                let heartIcon = document.createElement("img")
+                                    heartIcon.setAttribute("src","./assets/icons/red-Heart-Icon.svg")
+                                    heartIcon.setAttribute("alt","icono de corazon")
+                                
+                                let unicornIcon = document.createElement("img")
+                                    unicornIcon.setAttribute("src","./assets/icons/unicorn-Icon.svg")
+                                    unicornIcon.setAttribute("alt","icono de unicornio")
+
+                                let crazyIcon = document.createElement("img")
+                                    crazyIcon.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
+                                    crazyIcon.setAttribute("alt","icono de cabeza que explota")
+                                        
+                                let raiseIcon = document.createElement("img")
+                                    raiseIcon.setAttribute("src","./assets/icons/raise-.svg")
+                                    raiseIcon.setAttribute("alt","icono de manos arriba")
+                                
+                                let fireIcon = document.createElement("img")
+                                    fireIcon.setAttribute("src","./assets/icons/fire-Icon.svg")
+                                    fireIcon.setAttribute("alt","icono de fuego")
+
+                                let spanText = document.createElement("span")
+                                    spanText.classList.add("reactionCount")
+
+                                    let parragraph = document.createElement("p")
+                                        let totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions
+                                        let textInP = document.createTextNode(`${totalReactions} reactions`)
+                                    parragraph.appendChild(textInP);
+                                    parragraph.classList.add("text-decoration-none");
+                                spanText.appendChild(parragraph);
+                                
+                            ancorIcons.append(heartIcon,unicornIcon,crazyIcon,raiseIcon,fireIcon,spanText)
+                        emojisIcons.appendChild(ancorIcons)
+                    emojisReactions.appendChild(emojisIcons)
+                userSpaceEmojis.appendChild(emojisReactions)
+            ancorReaction.appendChild(userSpaceEmojis)
 
 
-//                 let commentP = document.createElement("p")
-//                     let commentPText = document.createTextNode("Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the strict options and still manage to avoid as like the plague because they know a ton of tools like these to avoid it.")
-//                 commentP.appendChild(commentPText)
+                            let divComments = document.createElement("div")
+                                divComments.classList.add("emojisReaction__comments")
+
+                                let commentAncor = document.createElement("a")
+                                    commentAncor.classList.add("text-container")
+                                    commentAncor.setAttribute("href","#")
+
+                                    // let iconSvg = document.createElement("svg")
+                                    //     iconSvg.setAttribute("xmlns","http://www.w3.org/2000/svg")
+                                    //     iconSvg.setAttribute("width","24")
+                                    //     iconSvg.setAttribute("height","24")
+                                    //     iconSvg.setAttribute("role","img")
+                                    //     iconSvg.setAttribute("aria-labelledby","arxy4y2dlmoqk3v2m7pqq1i5h7pawpy2")
+                                    //     iconSvg.classList.add("crayons-icon")
+
+                                    //     let title = document.createElement("title")
+                                    //         title.setAttribute("id","arxy4y2dlmoqk3v2m7pqq1i5h7pawpy2")
+                                    //             let textInTitle = document.createTextNode("Comments")
+                                    //         title.appendChild(textInTitle)
+                                        
+                                    //     let path = document.createElement("path")
+                                    //         path.setAttribute("d","M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z")
+
+                                    // iconSvg.append(title,path)
+                                    let commenImg = () => {
+                                        let commentsCountImg = document.createElement("img");
+                                        commentsCountImg.classList.add("commentIcon");
+                                        commentsCountImg.setAttribute("src", "./assets/icons/comments-count.svg");
+                                        commentsCountImg.setAttribute("alt", "Comments Icon");
+                                        return commentsCountImg;
+                                    };
+
+                                    let commentsP = document.createElement("p")
+                                        let text23 = document.createTextNode(`${aleatorio()} comments`)
+                                    commentsP.appendChild(text23)
+                                        
+                                        let commentSpan = document.createElement("span")
+                                            commentSpan.classList.add("d-none","d-md-inline-block")
+
+                                            let textInSpan = document.createTextNode(" " + "\n comments")
+                                        // commentSpan.appendChild(textInSpan)
+                                    commentsP.appendChild(commentSpan)
+
+                                let imgCom = commenImg()
+                                commentAncor.append(imgCom,commentsP)
+                            divComments.appendChild(commentAncor)
+
+                    reactionsContainer.append(ancorReaction,divComments,comments)
+                mainDiv.appendChild(reactionsContainer)
+
+        return mainDiv
+}
+// let reactionsContainer = post => {
+//     let emojisReactions = anchorWrapper(post);
+//     let minutesToRead = minutesRead(post);
+
+//     let reactions = document.createElement("div");
+//     reactions.classList("reactionsContainer", "d-fex", "flex-row");
+//     reactions.append(emojisReactions, minutesToRead);
+//     return reactions;
+// }
+
+// let anchorWrapper = post => {
+//     let anchorCont = anchorContainer();
+//     let reactionsAnchor = document.createElement("a");
+//     reactionsAnchor.setAttribute("href", "#");
+//     reactionsAnchor.appendChild(anchorCont);
+//     return reactionsAnchor; 
+// };
+
+// let anchorContainer = post => {
     
-//             commentAncor.append(commentP)
-//         divCommentText.append(commentAncor) 
-//     divComment.append(divUserName,divCommentText)
-//     return divComment
-// }
-// // crea la imagen del usuario para el comentario
-// let commentImg = (post) => {
-//     let commentRectangle = commentSection()
-//     let divComment = document.createElement("div")
-//     divComment.classList.add("comment-section")
-
-//         let divPicture = document.createElement("div")
-//         divPicture.classList.add("comment-section__picture")
-
-//             let imgAncor = document.createElement("a")
-//             imgAncor.classList.add("anchorsFinals")
-//             imgAncor.setAttribute("href","#")
-
-//                 let userImg = document.createElement("img")
-//                 userImg.setAttribute("src",post.userProfileImg)
-//                 userImg.classList.add("rounded-circle")
-//             imgAncor.appendChild(userImg)
-//         divPicture.appendChild(imgAncor)
-//     divComment.appendChild(divPicture)
-//     divComment.append(commentRectangle)
-//     return divComment
-// }
-// // tiene el tiempo de lectura y el icono
-// let minutesRead = (post) => { 
-//         let minutes = document.createElement("div")
-//         minutes.classList.add("minutes-read")
-//             let anchorMins = document.createElement("a")
-//             anchorMins.classList.add("minutes-read__anc","anchorsFinals")
-//             anchorMins.setAttribute("href","#")
-//                 let parrafMins= document.createElement("p")
-//                 parrafMins.classList.add("card-text")
-//                     let parrafMinsSmall = document.createElement("small")
-//                     parrafMinsSmall.classList.add("text-body-secondary")
-//                     let parrafMinsSmallText = document.createTextNode(post.postlectureTime)
-//                     parrafMinsSmall.append(parrafMinsSmallText)
-//                 let imgBook = document.createElement("img")
-//                     imgBook.setAttribute("src","./assets/icons/book-Icon.svg")
-//                     imgBook.classList.add("mt-1")
-//         parrafMins.append(parrafMinsSmall)
-//         anchorMins.append(parrafMins,imgBook)
-//         minutes.append(anchorMins)
-//     return  minutes
-// }
-// // este contiene el svg de los comentarios y el numero de comentarios
-// let emojisReaction = (post) => {
-//     let divEmoji = document.createElement("div")
-//     divEmoji.classList.add("emojisReaction__comments")
-
-//         let emojisAncor = document.createElement("a")
-//         emojisAncor.classList.add("text-container","anchorsFinals")
-//         emojisAncor.setAttribute("href","#")
-
-//             let iconComment = document.createElement("img")
-//             iconComment.setAttribute("src","./assets/icons/black-Flat-Icon.svg")
-//             let  totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions;
-//             let parrafComment = document.createElement("p")
-//                 let parrafCommentText = document.createTextNode(totalReactions);
-//                 parrafComment.appendChild(parrafCommentText)
-            
-//                 let parrafCommentSpan = document.createElement("span")
-//                 parrafCommentSpan.classList.add("d-none","d-md-inline-block")
-//                     let parrafCommentSpanText = document.createTextNode("comments")
-//                     parrafCommentSpan.append(parrafCommentSpanText)
-//                 parrafComment.append(parrafCommentSpan)
-//         emojisAncor.append(iconComment,parrafComment)
-//     divEmoji.append(emojisAncor)
-//     return divEmoji
-// }
-// // contiene la coleccion de los icons y el numero de reacciones
-// let emojisIcons = () => {
-//     let divContainer = document.createElement("div")
-//     divContainer.classList.add("emojisReaction__icons")
-
-//         let iconsAncor = document.createElement("a")
-//         iconsAncor.classList.add("text-decoration-none","anchorsFinals")
-//         iconsAncor.setAttribute("href","#")
-
-//             let iconHeart = document.createElement("img")
-//                 iconHeart.setAttribute("src","./assets/icons/red-Heart-Icon.svg")
-//                 iconHeart.setAttribute("alt","icono de corazon")
-            
-//             let iconUnicorn = document.createElement("img")
-//                 iconUnicorn.setAttribute("src","./assets/icons/unicorn-Icon.svg")
-//                 iconUnicorn.setAttribute("alt","icono de unicornio")
-            
-//             let iconCrazy = document.createElement("img")
-//                 iconCrazy.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
-//                 iconCrazy.setAttribute("alt","icono de cabeza que explota")
-            
-//             let iconHands = document.createElement("img")
-//                 iconHands.setAttribute("src","./assets/icons/raise-.svg")
-//                 iconHands.setAttribute("alt","icono de manitas diciendo chocalas we")
-            
-//             let iconFire = document.createElement("img")
-//                 iconFire.setAttribute("src","./assets/icons/fire-Icon.svg")
-//                 iconFire.setAttribute("alt","... pos es un icono de fuego")
-            
-//             let spanCounter = document.createElement("span")
-//                 let spanCounterP = document.createElement("p")
-//                 let spanCounterPText = document.createTextNode("240 reactions")
-
-//                 spanCounterP.append(spanCounterPText)
-//                 spanCounter.append(spanCounterP)
-
-//         iconsAncor.append(iconHeart,iconUnicorn,iconCrazy,iconHands,iconFire)      
-//     divContainer.append(iconsAncor)   
-//     return divContainer
-// }   
-// // mete el numero de comentarios y la lista de emojis en un nuevo div
-// let emojisReactionWrapper = (post) => {
-//     let emojis = emojisIcons()
-//     let comment = emojisReaction(post) 
-
-//     let emojisReactionContainer = document.createElement("div")
-//         emojisReactionContainer.classList.add("emojisReaction")
-    
-//     emojisReactionContainer.append(emojis,comment)
-//     return emojisReactionContainer
-// }   
-// // mezcla en un nuevo div las reacciones (emojis,comments) y el tiempo de lectura
-// let userTagsEmojis = (post) => {
-//     let emojisReaction = emojisReactionWrapper(post)
-//     let minutesFunc = minutesRead(post)
-
-//     let divContainer = document.createElement("div")
-//         divContainer.classList.add("user-data-space__tags--emojis")
-
-//     divContainer.append(emojisReaction,minutesFunc)
-//     return divContainer
-// }
-// // este almacena las #tags (revisar como pasarle los #tags)
-// let ulListAll = (postTags) => {
-//     let wrapper = document.createElement("div")
-//     let ulList = document.createElement("ul")
-//     wrapper.classList.add("user-data-space__tags--lighter")
-//     wrapper.appendChild(ulList)
-    
-//     postTags.forEach(element => {
-//         let listItem = liListAll()
-//         let itemContent = tagsLighter(element)
-//         listItem.appendChild(itemContent)
-//         ulList.appendChild(listItem)
-//     });
-//     return wrapper
-// }
-// let liListAll = () => {
-//     let liList = document.createElement("li")
-//     return liList
 // }
 
-// let tagsLighter = (item) => {
-//             let firstAncor = document.createElement("a")
-//                 firstAncor.classList.add("anchorsFinals")
-//                 firstAncor.setAttribute("href","#")
-//                     let firstAncorP = document.createElement("p")
-//                         let firstAncorText = document.createTextNode(item)
-//                     firstAncorP.appendChild(firstAncorText)
-//             firstAncor.appendChild(firstAncorP)
-//         return firstAncor
-// }
-// // almacena el titulo de la publicacion
-// let postBodyWrapper = (post) => {
-//     let postBody = document.createElement("div")
-//         postBody.classList.add("user-data-space__tags","card-body")
-    
-//         let postH2 = document.createElement("h2")
-//             postH2.classList.add("card-title")
+let hashtags = (post) => {
 
-//                 let titleAncor = document.createElement("a")
-//                 titleAncor.classList.add("anchorsFinals")
-//                     titleAncor.setAttribute("href","./html/post.html")
+    let divTags = document.createElement("div")
+        divTags.classList.add("user-data-space__tags--lighter")
 
-//                     let titleText = document.createTextNode(post.postTitle)
-//                 titleAncor.appendChild(titleText)
-//             postH2.appendChild(titleAncor)
-//         postBody.append(postH2)
-//     return postBody
-// }
-// // jala de la BD la fecha de creacion del post
-// let userDataOnPost = (post) => {
-//     let userNameSpace = document.createElement("div")
-//         userNameSpace.classList.add("user-data-space__name")
-    
-//         let ancoreBold = document.createElement("a")
-//             ancoreBold.classList.add("user-data-space__name--bold","anchorsFinals")
-//             ancoreBold.setAttribute("href","./html/post.html")
+        let ulList = document.createElement("ul")
 
-//     //             let ancoreP = document.createElement("p")
-//     //                 ancoreP.classList.add("author-name")
-//     //                 let ancoreText = document.createTextNode(post.userName)
-//     //             ancoreP.append(ancoreText)
-//     //     ancoreBold.append(ancoreP)
-//     // userNameSpace.append(ancoreBold)
-
-//         let creationAncor = document.createElement("a")
-//             creationAncor.classList.add("text-decoration-none","text-black","anchorsFinals")
-//             creationAncor.setAttribute("href","./html/post.html")
-
-//                 let creationP = document.createElement("p")
-//                     creationP.classList.add("reation-date")
-//                     let creationText = document.createTextNode(post.date)
-//                 creationP.appendChild(creationText)
-//             creationAncor.appendChild(creationP)
-//         userNameSpace.append(creationAncor)
-
-//     return userNameSpace
-// }
-// // almacena la imagen del creador del post
-// let creatorProfilePicture = (post) => {
-//     let creatorPicture = document.createElement("div")
-//         creatorPicture.classList.add("user-data-space","d-flex")
-
-//         let imgOnMini = document.createElement("div")
-//             imgOnMini.classList.add("user-data-space__mini")
-
-//                 let pictureAncor = document.createElement("a")
-//                     pictureAncor.setAttribute("href","./html/post.html","anchorsFinals")
+            let list1 = document.createElement("li")
                 
-//                         let picture = document.createElement("img")
-//                             picture.classList.add("rounded-circle")
-//                             picture.setAttribute("src",post.userProfileImg)
-//                 pictureAncor.append(picture)
-//             imgOnMini.append(pictureAncor)
-//         creatorPicture.append(imgOnMini)
-//     return creatorPicture
-// }
-// // almacena la imagen principal del post
-// let imageCardPost = (post) => {
-//     let imgContainer = document.createElement("div")
-//     imgContainer.classList.add("img-container","card","mb-3","d-flex")
-    
-//         let imgContainerAncor = document.createElement("a")
-//         imgContainerAncor.classList.add("anchorsFinals")
-//         imgContainerAncor.setAttribute("href","#")
+                let ancor1 = document.createElement("a")
+                    ancor1.setAttribute("href","#")
 
-//             let image = document.createElement("img")
-//             image.classList.add("card-img-top")    
-//             image.setAttribute("src",post.postImage)
-//             image.setAttribute("alt",post.postImageTitle)
+                        let tag1 = document.createElement("p")
+                            let textInP1 = document.createTextNode(post.postTags)
+                        tag1.appendChild(textInP1)
+            
+            let list2 = document.createElement("li")
+                
+                let ancor2 = document.createElement("a")
+                    ancor2.setAttribute("href","#")
 
-//         imgContainerAncor.append(image)
-//         imgContainer.append(imgContainerAncor)
-//         return imgContainer
-// }
-// // almacena el contenido completo de la card post principal del main
-// let cardWrapper = (post,key) => {
-//     let userNameData = creatorProfilePicture(post)
-//         let userData = userDataOnPost(post)
-//             userNameData.append(userData)
-    
-//     let contenTags = postBodyWrapper(post)
-//     let allTags = ulListAll(post.postTags)
-//         contenTags.append(allTags)
-//     let emojis = userTagsEmojis(post)
-//         contenTags.append(emojis)
-//     let comments = commentImg(post)
-//     let imgContainer = imageCardPost(post)
-//         imgContainer.append(userNameData)
-//         imgContainer.append(contenTags)
+                        let tag2 = document.createElement("p")
+                            let textInP2 = document.createTextNode(post.postTags[1])
+                        tag2.appendChild(textInP2)
+
+            let list3 = document.createElement("li")
+                
+                let ancor3 = document.createElement("a")
+                    ancor3.setAttribute("href","#")
         
-//         let containerCard = document.createElement("a")
-//         containerCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
-//         containerCard.addEventListener("click", () => {
-//             window.open(`/html/post.html?post=${key}`)});
+                        let tag3 = document.createElement("p")
+                            let textInP3 = document.createTextNode(post.postTags[2])
+                        tag3.appendChild(textInP3)
 
-//     containerCard.append(imgContainer)
-// return containerCard
-// }
-
-// export { cardWrapper };
-
-
-// * SECCION DE COMENTARIOS 
-let commentSection = () => {
-    let divComment = document.createElement("div")
-    divComment.classList.add("comment-section__rectangle")
-
-        let divUserName = document.createElement("div")
-        divUserName.classList.add("comment-section__rectangle--username")
-
-            let userNameAncor = document.createElement("a")
-            userNameAncor.classList.add("anchorsFinals")
-            userNameAncor.setAttribute("href","#")
-
-                let userName = document.createElement("h6")
-                    let  userNameText = document.createTextNode("hgarper")
-                    userName.append(userNameText)
-            
-                let timeOfComment = document.createElement("p")
-                    let timeOfCommentText = document.createTextNode("(3 days ago)")
-                    timeOfComment.append(timeOfCommentText)
+            let list4 = document.createElement("li")
+                
+                let ancor4 = document.createElement("a")
+                    ancor4.setAttribute("href","#")
         
-            userNameAncor.append(userName,timeOfComment)
-        divUserName.append(userNameAncor)
+                        let tag4 = document.createElement("p")
+                            let textInP4 = document.createTextNode(post.postTags[3])
+                        tag4.appendChild(textInP4)
 
-        let divCommentText = document.createElement("div")
-        divCommentText.classList.add("comment-section__rectangle--comment")
-
-            let commentAncor = document.createElement("a")
-            commentAncor.classList.add("anchorsFinals")
-            commentAncor.setAttribute("href","#")
-
-
-                let commentP = document.createElement("p")
-                    let commentPText = document.createTextNode("Nice tips. In my opinion the main thing that separates pros from newbies is that pros turn on all the strict options and still manage to avoid as like the plague because they know a ton of tools like these to avoid it.")
-                commentP.appendChild(commentPText)
-    
-            commentAncor.append(commentP)
-        divCommentText.append(commentAncor) 
-    divComment.append(divUserName,divCommentText)
-    return divComment
+        ulList.append(list1,list2,list3,list4)
+    divTags.appendChild(ulList)
+return divTags
 }
-let commentImg = (post) => {
-    let commentRectangle = commentSection()
-    let divComment = document.createElement("div")
-    divComment.classList.add("comment-section")
+let title = (post) => {
+    let divWrapper = document.createElement("div")
 
-        let divPicture = document.createElement("div")
-        divPicture.classList.add("comment-section__picture")
+        let h2Title = document.createElement("h2")
+            h2Title.classList.add("card-title","user-data-space","d-flex")
 
-            let imgAncor = document.createElement("a")
-            imgAncor.classList.add("anchorsFinals")
-            imgAncor.setAttribute("href","#")
+            let titleAncor = document.createElement("a")
+                titleAncor.classList.add("titleAnchor")
+                titleAncor.setAttribute("href","./html/post.html")
 
-                let userImg = document.createElement("img")
-                userImg.setAttribute("src",post.userProfileImg)
-                userImg.classList.add("rounded-circle")
-            imgAncor.appendChild(userImg)
-        divPicture.appendChild(imgAncor)
-    divComment.appendChild(divPicture)
-    divComment.append(commentRectangle)
-    return divComment
+                let titleText = document.createTextNode(post.postTitle)
+            titleAncor.appendChild(titleText)
+        h2Title.appendChild(titleAncor)
+    divWrapper.appendChild(h2Title)
+    return divWrapper
 }
-// *
 
-// * SECCION DE EMOJIS Y MINUTOS DE LECTURA
-let minutesRead = (post) => { 
-        let minutes = document.createElement("div")
-        minutes.classList.add("minutes-read")
-            let anchorMins = document.createElement("a")
-            anchorMins.classList.add("minutes-read__anc","anchorsFinals")
-            anchorMins.setAttribute("href","#")
-                let parrafMins= document.createElement("p")
-                parrafMins.classList.add("card-text")
-                    let parrafMinsSmall = document.createElement("small")
-                    parrafMinsSmall.classList.add("text-body-secondary")
-                    let parrafMinsSmallText = document.createTextNode(post.postlectureTime)
-                    parrafMinsSmall.append(parrafMinsSmallText)
-                let imgBook = document.createElement("img")
-                    imgBook.setAttribute("src","./assets/icons/book-Icon.svg")
-                    imgBook.classList.add("mt-1")
-        parrafMins.append(parrafMinsSmall)
-        anchorMins.append(parrafMins,imgBook)
-        minutes.append(anchorMins)
-    return  minutes
-}
-//* 
+let infoWrapper = (post) => {
+    let postTitle = title(post)
+    let tags = hashtags(post)
+    let reactions = reactionsContainer(post)
 
-//* SECCION DE EMOJIS Y CANTIDAD DE COMENTARIOS
-let emojisIcons = () => {
-    let divContainer = document.createElement("div")
-    divContainer.classList.add("emojisReaction__icons")
-
-        let iconsAncor = document.createElement("a")
-        iconsAncor.classList.add("text-decoration-none","anchorsFinals")
-        iconsAncor.setAttribute("href","#")
-
-            let iconHeart = document.createElement("img")
-                iconHeart.setAttribute("src","./assets/icons/red-Heart-Icon.svg")
-                iconHeart.setAttribute("alt","icono de corazon")
-            
-            let iconUnicorn = document.createElement("img")
-                iconUnicorn.setAttribute("src","./assets/icons/unicorn-Icon.svg")
-                iconUnicorn.setAttribute("alt","icono de unicornio")
-            
-            let iconCrazy = document.createElement("img")
-                iconCrazy.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
-                iconCrazy.setAttribute("alt","icono de cabeza que explota")
-            
-            let iconHands = document.createElement("img")
-                iconHands.setAttribute("src","./assets/icons/raise-.svg")
-                iconHands.setAttribute("alt","icono de manitas diciendo chocalas we")
-            
-            let iconFire = document.createElement("img")
-                iconFire.setAttribute("src","./assets/icons/fire-Icon.svg")
-                iconFire.setAttribute("alt","... pos es un icono de fuego")
-            
-            let spanCounter = document.createElement("span")
-                let spanCounterP = document.createElement("p")
-                let spanCounterPText = document.createTextNode("240 reactions")
-
-                spanCounterP.append(spanCounterPText)
-                spanCounter.append(spanCounterP)
-
-        iconsAncor.append(iconHeart,iconUnicorn,iconCrazy,iconHands,iconFire)      
-    divContainer.append(iconsAncor)   
-    return divContainer
-}   
-let emojisReaction = (post) => {
-    let divEmoji = document.createElement("div")
-    divEmoji.classList.add("emojisReaction__comments")
-
-        let emojisAncor = document.createElement("a")
-        emojisAncor.classList.add("text-container","anchorsFinals")
-        emojisAncor.setAttribute("href","#")
-
-            let iconComment = document.createElement("img")
-            iconComment.setAttribute("src","./assets/icons/black-Flat-Icon.svg")
-            let  totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions;
-            let parrafComment = document.createElement("p")
-                let parrafCommentText = document.createTextNode(totalReactions);
-                parrafComment.appendChild(parrafCommentText)
-            
-                let parrafCommentSpan = document.createElement("span")
-                parrafCommentSpan.classList.add("d-none","d-md-inline-block")
-                    let parrafCommentSpanText = document.createTextNode("comments")
-                    parrafCommentSpan.append(parrafCommentSpanText)
-                parrafComment.append(parrafCommentSpan)
-        emojisAncor.append(iconComment,parrafComment)
-    divEmoji.append(emojisAncor)
-    return divEmoji
-}
-let emojisReactionWrapper = (post) => {
-    let emojis = emojisIcons()
-    let comment = emojisReaction(post) 
-
-    let emojisReactionContainer = document.createElement("div")
-        emojisReactionContainer.classList.add("emojisReaction")
-    
-    emojisReactionContainer.append(emojis,comment)
-    return emojisReactionContainer
-}  
-// *
-
-// * WRAPPER DE EMOJIS Y COMMENTS
-let userTagsEmojis = (post) => {
-    let emojisReaction = emojisReactionWrapper(post)
-    let minutesFunc = minutesRead(post)
-
-    let divContainer = document.createElement("div")
-        divContainer.classList.add("user-data-space__tags--emojis")
-
-    divContainer.append(emojisReaction,minutesFunc)
-    return divContainer
-}
-//*
-
-// * CONTIENE TODOS LOS # DEL POST 
-
-let ulListAll = (postTags) => {
     let wrapper = document.createElement("div")
-    let ulList = document.createElement("ul")
-    wrapper.classList.add("user-data-space__tags--lighter")
-    wrapper.appendChild(ulList)
+        wrapper.classList.add("infoWrapper")
     
-    postTags.forEach(element => {
-        let listItem = liListAll()
-        let itemContent = tagsLighter(element)
-        listItem.appendChild(itemContent)
-        ulList.appendChild(listItem)
-    });
+        wrapper.append(postTitle,tags,reactions)
+
     return wrapper
 }
-let liListAll = () => {
-    let liList = document.createElement("li")
-    return liList
-}
+// TODOs:
 
-let tagsLighter = (item) => {
-            let firstAncor = document.createElement("a")
-                firstAncor.classList.add("anchorsFinals")
-                firstAncor.setAttribute("href","#")
-                    let firstAncorP = document.createElement("p")
-                        let firstAncorText = document.createTextNode(item)
-                    firstAncorP.appendChild(firstAncorText)
-            firstAncor.appendChild(firstAncorP)
-        return firstAncor
-}
-// *
+// ? genera el card body
+let userName = (post, date) => {
 
-// * WRAPPER DEÑ BODY CON TITULO
-let postBodyWrapper = (post) => {
-    let postBody = document.createElement("div")
-        postBody.classList.add("user-data-space__tags","card-body")
-    
-        let postH2 = document.createElement("h2")
-            postH2.classList.add("card-title")
+    let divUserName = document.createElement("div")
+        divUserName.classList.add("user-data-space__name")
 
-                let titleAncor = document.createElement("a")
-                titleAncor.classList.add("anchorsFinals")
-                    titleAncor.setAttribute("href","./html/post.html")
+        let nameAncor = document.createElement("a")
+            nameAncor.classList.add("user-data-space__name--bold")
+            nameAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(post.postTitle)
-                titleAncor.appendChild(titleText)
-            postH2.appendChild(titleAncor)
-        postBody.append(postH2)
-    return postBody
-}
-// * NOMBRE DEL CREADOR DEL POST  Y FECHA DE CREACION
-let userDataOnPost = (post) => {
-    let userNameSpace = document.createElement("div")
-        userNameSpace.classList.add("user-data-space__name")
-    
-        let ancoreBold = document.createElement("a")
-            ancoreBold.classList.add("user-data-space__name--bold","anchorsFinals")
-            ancoreBold.setAttribute("href","./html/post.html")
-
-        let creationAncor = document.createElement("a")
-            creationAncor.classList.add("text-decoration-none","text-black","anchorsFinals")
-            creationAncor.setAttribute("href","./html/post.html")
-
-                let creationP = document.createElement("p")
-                    creationP.classList.add("reation-date")
-                    let creationText = document.createTextNode(post.date)
-                creationP.appendChild(creationText)
-            creationAncor.appendChild(creationP)
-        userNameSpace.append(creationAncor)
-
-    return userNameSpace
-}
-//* 
-//* IMAGEN DE PERFIL DEL CREADOR
-let creatorProfilePicture = (post) => {
-    let creatorPicture = document.createElement("div")
-        creatorPicture.classList.add("user-data-space","d-flex")
-
-        let imgOnMini = document.createElement("div")
-            imgOnMini.classList.add("user-data-space__mini")
-
-                let pictureAncor = document.createElement("a")
-                    pictureAncor.setAttribute("href","./html/post.html","anchorsFinals")
+            let nameP = document.createElement("p")
+                nameP.classList.add("author-name")
                 
-                        let picture = document.createElement("img")
-                            picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",post.userProfileImg)
-                pictureAncor.append(picture)
-            imgOnMini.append(pictureAncor)
-        creatorPicture.append(imgOnMini)
-    return creatorPicture
-}
-//*
+                let textInP = document.createTextNode(post.userName)
+            nameP.appendChild(textInP)
+            nameAncor.appendChild(nameP)
 
-// * IMG CONTAINER A.K.A CONTENEDOR DE LA CARD
-let imageCardPost = (post) => {
-    let imgContainer = document.createElement("div")
-    imgContainer.classList.add("img-container","card","mb-3","d-flex")
-    
-        let imgContainerAncor = document.createElement("a")
-        imgContainerAncor.classList.add("anchorsFinals")
-        imgContainerAncor.setAttribute("href","#")
-
-            let image = document.createElement("img")
-            image.classList.add("card-img-top")    
-            image.setAttribute("src",post.postImage)
-            image.setAttribute("alt",post.postImageTitle)
-
-        imgContainerAncor.append(image)
-        imgContainer.append(imgContainerAncor)
-        return imgContainer
-}
-//*
-
-//* WRAPPER FINAL 
-
-let cardWrapper = (post,key) => {
-    let userNameData = creatorProfilePicture(post)
-        let userData = userDataOnPost(post)
-            userNameData.append(userData)
-    
-    let contenTags = postBodyWrapper(post)
-    let allTags = ulListAll(post.postTags)
-        contenTags.append(allTags)
-    let emojis = userTagsEmojis(post)
-        contenTags.append(emojis)
-    let comments = commentImg(post)
-    let imgContainer = imageCardPost(post)
-        imgContainer.append(userNameData)
-        imgContainer.append(contenTags)
+        let dateAncor = document.createElement("a")
+            dateAncor.classList.add("text-decoration-none","text-black")
+            dateAncor.setAttribute("href","./html/post.html")
         
-        let containerCard = document.createElement("a")
-        containerCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
-        containerCard.addEventListener("click", () => {
-            window.open(`/html/post.html?post=${key}`)});
+            let dateP = document.createElement("p")
+                dateP.classList.add("reation-date")
 
-    containerCard.append(imgContainer)
-return containerCard
+                let dateText = document.createTextNode(date)
+            dateP.appendChild(dateText)
+            dateAncor.appendChild(dateP)
+
+    divUserName.append(nameAncor,dateAncor)
+return divUserName
 }
 
-export {cardWrapper}
+let userImg = (post) => {
+    let imageDiv = document.createElement("div")
+        imageDiv.classList.add("user-data-space__mini")
+
+        let imgAncor = document.createElement("a")
+            imgAncor.setAttribute("href","./html/post.html")
+
+            let profileImg = document.createElement("img")
+                profileImg.classList.add("rounded-circle")
+                profileImg.setAttribute("src",`${post.userProfileImg}`)
+        
+        imgAncor.appendChild(profileImg)
+    imageDiv.appendChild(imgAncor)
+return imageDiv
+}
+
+let userDataWrapper = (post) => {
+    let date = formatTime(post.date)
+    let nameUser = userName(post, date)
+    let imgUser = userImg(post)
+
+    let divWrapper = document.createElement("div")
+        divWrapper.classList.add("user-data-space","d-flex")
+
+        divWrapper.append(imgUser,nameUser)
+    return divWrapper
+}
+
+let cardBody = (post) => {
+    let info = infoWrapper(post)
+    let user = userDataWrapper(post)
+
+    let divWrapper = document.createElement("div")
+        divWrapper.classList.add("card-body")
+
+    divWrapper.append(user,info)
+
+return divWrapper
+}
+
+let imgTop = (post) => {
+    let cardTop = document.createElement("div")
+        cardTop.classList.add("card-img-top")
+
+        let imgAncor = document.createElement("a")
+            imgAncor.setAttribute("href","#")
+
+            let img =document.createElement("img")
+                img.setAttribute("src", `${post.postImage}`)
+                img.classList.add("card-img-top", "cardImg")
+                img.setAttribute("alt", `${post.ImageTitle}`)
+
+        imgAncor.appendChild(img)
+    cardTop.appendChild(imgAncor)
+return cardTop
+}
+
+let formatTime = (date) =>{
+    console.log(date);
+    // console.log(typeof(date));  string
+    let year = date.split("T")[0].split("-")[0]
+    let monthNumber = date.split("T")[0].split("-")[1]
+    let monthName = getMonthName(date);
+    return `${year} ${monthName}`
+}
+
+const getMonthName = month => {
+    let monntName;
+    let monthNumber = new Date(month).getMonth(); 
+    console.log(monthNumber);
+    switch (monthNumber){
+      case 0:
+        monntName = "Jan";
+      break;
+      case 1:
+        monntName = "Feb";
+      break;
+      case 2:
+        monntName = "Mar";
+      break;
+      case 3:
+        monntName = "Apr";
+      break;
+      case 4:
+        monntName = "Jun";
+      break;
+      case 5:
+        monntName = "Jul";
+      break;
+      case 6:
+        monntName = "Jan";
+      break;
+      case 7:
+        monntName = "Jan";
+      break;
+      case 8:
+        monntName = "Aug";
+      break;
+      case 9:
+        monntName = "Sep";
+      break;
+      case 10:
+        monntName = "Nov";
+      break;
+      case 11:
+        monntName = "Dec";
+      break;
+      default:
+        monntName = undefined;
+    }
+    return monntName;
+}
+let card = (post) => {
+    let img = imgTop(post)
+    let body = cardBody(post)
+
+    let divCard = document.createElement("div")
+        divCard.classList.add("card","mb-3")
+
+    divCard.append(img,body)
+return divCard
+}
+
+let aleatorio = () => {
+    return Math.floor(Math.random()*100);
+};
+
+export { card };
