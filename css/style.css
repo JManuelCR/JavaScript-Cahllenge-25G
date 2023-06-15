@@ -689,15 +689,15 @@ body {
   margin-left: 0px;
   margin-top: 1.1rem;
 }
-@media screen and (max-width: 1024px) {
-  .emojisReaction__icons a span {
-    display: none;
-  }
-}
 .emojisReaction__icons a span p {
   font-size: 0.875rem;
   margin: 0;
   padding-bottom: 0.875rem;
+}
+@media screen and (max-width: 1400px) {
+  .emojisReaction__icons a span p {
+    display: none;
+  }
 }
 .emojisReaction__comments {
   margin-left: 0.5rem;
@@ -862,6 +862,25 @@ body {
   bottom: 0.5rem;
   height: 3rem;
   justify-content: start;
+}
+.reactionsContainer .emojisReaction__comments {
+  height: 2.5rem;
+}
+@media screen and (max-width: 1400px) {
+  .reactionsContainer .emojisReaction__comments .text-container p {
+    display: none;
+  }
+}
+.reactionsContainer .user-data-space__tags--emojis .emojisReaction .emojisReaction__icons {
+  padding-top: 0.5rem;
+}
+.reactionsContainer .user-data-space__tags--emojis .emojisReaction .emojisReaction__icons .iconsContainer {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 2.5rem;
+}
+.reactionsContainer .user-data-space__tags--emojis .emojisReaction .emojisReaction__icons .iconsContainer .reactionCount {
+  margin-top: 0.7rem;
 }
 
 .cardImg {

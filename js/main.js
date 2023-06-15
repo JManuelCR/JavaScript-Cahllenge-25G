@@ -9,7 +9,7 @@ let postInformation = {
     postImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--3644EhCg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/crpm3se7wbh1xywp78wt.jpg",
     postImageTitle: "una imagen random",
     postlectureTime: "5 minutos",
-    postTags: ["#typescript","#randomtag2","#randomtag1"] ,
+    postTags: ["#typescript","#randomtag2","#randomtag1"],
     date: "05-04-2022",
     heartReactions : "24",
     unicornReactions: "25",

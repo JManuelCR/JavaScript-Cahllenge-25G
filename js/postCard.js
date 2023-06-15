@@ -1,4 +1,4 @@
-// Tiene el nombre de usuario, cuando se publico, comentario en texto
+// * Tiene el nombre de usuario, cuando se publico, comentario en texto
 let minutesRead = (post) => {
     let divContainer = document.createElement("div")
 
@@ -37,7 +37,7 @@ let reactionsContainer = (post) => {
 
             let ancorReaction = document.createElement("a")
                 ancorReaction.setAttribute("href","#")
-                ancorReaction.classList.add("text-decoration-none")
+                ancorReaction.classList.add("text-decoration-none","emojisWrapper")
 
                 let userSpaceEmojis = document.createElement("div")
                     userSpaceEmojis.classList.add("user-data-space__tags--emojis")
@@ -49,7 +49,7 @@ let reactionsContainer = (post) => {
                             emojisIcons.classList.add("emojisReaction__icons")
 
                             let ancorIcons = document.createElement("a")
-                                ancorIcons.classList.add("text-decoration-none")
+                                ancorIcons.classList.add("text-decoration-none","iconsContainer")
                                 ancorIcons.setAttribute("href","#")
                             
                                 let heartIcon = document.createElement("img")
@@ -176,8 +176,11 @@ let hashtags = (post) => {
                     ancor1.setAttribute("href","#")
 
                         let tag1 = document.createElement("p")
-                            let textInP1 = document.createTextNode(post.postTags)
+                            let textInP1 = document.createTextNode(post.postTags[0])
                         tag1.appendChild(textInP1)
+
+                    ancor1.appendChild(tag1)
+                list1.appendChild(ancor1)
             
             let list2 = document.createElement("li")
                 
@@ -187,6 +190,8 @@ let hashtags = (post) => {
                         let tag2 = document.createElement("p")
                             let textInP2 = document.createTextNode(post.postTags[1])
                         tag2.appendChild(textInP2)
+                    ancor2.appendChild(tag2)
+                list2.appendChild(ancor2)
 
             let list3 = document.createElement("li")
                 
@@ -197,16 +202,22 @@ let hashtags = (post) => {
                             let textInP3 = document.createTextNode(post.postTags[2])
                         tag3.appendChild(textInP3)
 
-            let list4 = document.createElement("li")
-                
-                let ancor4 = document.createElement("a")
-                    ancor4.setAttribute("href","#")
-        
-                        let tag4 = document.createElement("p")
-                            let textInP4 = document.createTextNode(post.postTags[3])
-                        tag4.appendChild(textInP4)
+                    ancor3.appendChild(tag3)
+                list3.appendChild(ancor3)
 
-        ulList.append(list1,list2,list3,list4)
+            // let list4 = document.createElement("li")
+                
+            //     let ancor4 = document.createElement("a")
+            //         ancor4.setAttribute("href","#")
+        
+            //             let tag4 = document.createElement("p")
+            //                 let textInP4 = document.createTextNode(post.postTags[3])
+            //             tag4.appendChild(textInP4)
+
+            //         ancor4.appendChild(tag4)
+            //     list4.appendChild(ancor4)
+
+        ulList.append(list1,list2,list3)
     divTags.appendChild(ulList)
 return divTags
 }
@@ -346,41 +357,41 @@ const getMonthName = month => {
     switch (monthNumber){
       case 0:
         monntName = "Jan";
-      break;
-      case 1:
+            break;
+            case 1:
         monntName = "Feb";
-      break;
-      case 2:
+            break;
+            case 2:
         monntName = "Mar";
-      break;
-      case 3:
+            break;
+            case 3:
         monntName = "Apr";
-      break;
-      case 4:
+            break;
+            case 4:
         monntName = "Jun";
-      break;
-      case 5:
+            break;
+            case 5:
         monntName = "Jul";
-      break;
-      case 6:
+            break;
+            case 6:
         monntName = "Jan";
-      break;
-      case 7:
+            break;
+            case 7:
         monntName = "Jan";
-      break;
-      case 8:
+            break;
+            case 8:
         monntName = "Aug";
-      break;
-      case 9:
+            break;
+            case 9:
         monntName = "Sep";
-      break;
-      case 10:
+            break;
+            case 10:
         monntName = "Nov";
-      break;
-      case 11:
+            break;
+            case 11:
         monntName = "Dec";
-      break;
-      default:
+            break;
+            default:        
         monntName = undefined;
     }
     return monntName;

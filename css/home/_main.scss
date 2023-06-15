@@ -151,20 +151,23 @@
                 @media screen and (max-width:variables.$laptop) {
                     width: 1rem;
                     margin-left: 0rem;
+                    
                 }
                 width: 1.25rem;
             }
             span {
-                @media screen and (max-width:variables.$laptop) {
-                    display: none;
-                }
+                // @media screen and (max-width:variables.$laptop) {
+                //     display: none;
+                // }
                 margin-left: 0px;
                 margin-top: 1.1rem;
                 p {
                     font-size: 0.875rem;
                     margin: 0;
                     padding-bottom: 0.875rem;
-
+                    @media screen and (max-width:1400px) {
+                        display: none;  // * quita al contador de reacciones 
+                    }
                 }
             }
         }
@@ -334,6 +337,31 @@
     bottom: 0.5rem;
     height: 3rem;
     justify-content: start;
+    .emojisReaction__comments {
+        height: 2.5rem;
+        .text-container{
+            p{
+                @media screen and (max-width:1400px) {
+                    display: none;  // * quita al contador de reacciones 
+                }
+            }
+        }
+    }
+    .user-data-space__tags--emojis {
+        .emojisReaction{
+            .emojisReaction__icons {
+                padding-top: .5rem;
+                .iconsContainer{
+                    width: fit-content;
+                    height: 2.5rem;
+                    .reactionCount{
+                        margin-top: .7rem;
+                    }
+                }
+            }
+        }
+    }
+
 }
 .cardImg{
     object-fit: cover;
