@@ -1,4 +1,4 @@
-import { cardWrapper } from "./postCard.js";
+import { card } from "./postCard.js";
 import { getPosts } from "./getPosts.js";
 
 let postInformation = {
@@ -10,7 +10,7 @@ let postInformation = {
     postImageTitle: "una imagen random",
     postlectureTime: "5 minutos",
     postTags: ["#typescript","#randomtag2","#randomtag1"] ,
-    date: "05-04-1586",
+    date: "05-04-2022",
     heartReactions : "24",
     unicornReactions: "25",
     crazyManReactions: "25",
@@ -19,9 +19,9 @@ let postInformation = {
 };
 
 const targetDinamic = (posts,key) => {
-    console.log(key);
-    console.log(posts);
-    let newCard = cardWrapper(posts,key)
+    // console.log(key);
+    // console.log(posts);
+    let newCard = card(posts,key)
     let target = document.getElementById("card-container")
     target.appendChild(newCard)
 }
@@ -30,6 +30,7 @@ let Posts = async () => {
     let array = Object.entries(posts);
     return array;
 };
+
 let allPosts = await Posts()
 let printPost = async (posts) =>{
     posts.forEach(element => {
@@ -90,4 +91,7 @@ const deletePosts = () => {
     }
     return ;
 };
+
+
+
 
