@@ -740,7 +740,12 @@ body {
   padding-top: 0.2rem;
   padding-left: 7rem;
   display: flex;
-  align-items: center;
+  align-items: end;
+}
+@media screen and (max-width: 1194px) {
+  .minutes-read {
+    padding-left: 2rem;
+  }
 }
 .minutes-read__anc {
   display: flex;
@@ -752,8 +757,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .minutes-read__anc p {
-    font-size: 0.875rem;
-    justify-content: center;
+    display: none;
   }
 }
 .minutes-read img {
@@ -763,9 +767,16 @@ body {
   width: 1.5rem;
 }
 .minutes-read img:hover {
-  background-color: rgb(47, 58, 178);
+  background-color: rgb(116, 126, 232);
   border-radius: 0.4rem;
   border-width: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .minutes-read img {
+    display: flex;
+    justify-content: start;
+    padding-left: 0;
+  }
 }
 
 .comment-section {
@@ -866,8 +877,8 @@ body {
 .reactionsContainer .emojisReaction__comments {
   height: 2.5rem;
 }
-@media screen and (max-width: 1400px) {
-  .reactionsContainer .emojisReaction__comments .text-container p {
+@media screen and (min-width: 1100px) {
+  .reactionsContainer .emojisReaction__comments .text-container p span {
     display: none;
   }
 }

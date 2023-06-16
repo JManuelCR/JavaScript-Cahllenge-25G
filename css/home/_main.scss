@@ -209,7 +209,10 @@
     padding-top: 0.2rem;
     padding-left: 7rem;
     display: flex;
-    align-items: center;
+    align-items: end;
+    @media screen and (max-width:1194px){
+        padding-left: 2rem;
+    }
     &__anc {
         display: flex;
         text-decoration: none;
@@ -219,8 +222,7 @@
         padding-top: .8rem;
         p {
             @media screen and (max-width:variables.$small) {
-                font-size: .875rem;
-                justify-content: center;
+                display: none;
             }
         }
     }
@@ -228,9 +230,14 @@
         position: relative;
         bottom: 0.2rem;
         &:hover {
-            background-color:variables.$navbarBlueCreatePostBorder ;
+            background-color:variables.$createPostText ;
             border-radius: .4rem;
             border-width: 1rem;
+        }
+        @media screen and (max-width:500px){
+            display: flex;
+            justify-content: start;
+            padding-left: 0;
         }
         height: 1.5rem;
         width: 1.5rem;
@@ -341,8 +348,10 @@
         height: 2.5rem;
         .text-container{
             p{
-                @media screen and (max-width:1400px) {
-                    display: none;  // * quita al contador de reacciones 
+                span {
+                    @media screen and (min-width:1100px) {
+                        display: none;  // * quita al contador de reacciones 
+                    }
                 }
             }
         }

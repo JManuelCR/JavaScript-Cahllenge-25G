@@ -1,6 +1,6 @@
 import { card } from "./postCard.js";
 import { getPosts } from "./getPosts.js";
-import { filterTags } from "./asideRight.js";
+// import { filterTags } from "./asideRight.js";
 
 let postInformation = {
     userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",

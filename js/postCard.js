@@ -122,14 +122,14 @@ let reactionsContainer = (post) => {
                                     };
 
                                     let commentsP = document.createElement("p")
-                                        let text23 = document.createTextNode(`${aleatorio()} comments`)
+                                        let text23 = document.createTextNode(`${aleatorio()}`)
                                     commentsP.appendChild(text23)
                                         
                                         let commentSpan = document.createElement("span")
                                             commentSpan.classList.add("d-none","d-md-inline-block")
 
                                             let textInSpan = document.createTextNode(" " + "\n comments")
-                                        // commentSpan.appendChild(textInSpan)
+                                        commentSpan.appendChild(textInSpan)
                                     commentsP.appendChild(commentSpan)
 
                                 let imgCom = commenImg()
