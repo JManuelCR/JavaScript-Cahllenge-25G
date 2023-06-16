@@ -289,6 +289,7 @@
                   type="text"
                   placeholder="Search..."
                   aria-label="Search"
+                  id="searchPost"
                 />
                 <button
                   id="buttonSearchForm"
@@ -429,9 +430,10 @@
                     type="text"
                     placeholder="Search..."
                     aria-label="Search"
+                    id="searchPostMobile"
                   />
                   <button
-                    id="buttonSearchForm"
+                    id="buttonSearchFormMobile"
                     class="buttonSearch"
                     type="submit"
                   >
@@ -931,7 +933,7 @@
                     </div>
                   </div>
                 </div> -->
-                <div class="card mb-3">
+                <!-- <div class="card mb-3">
                   <div class="card-img-top">
                     <a href="#">
                       <img
@@ -1032,7 +1034,8 @@
                                 </div>
                                 <div class="emojisReaction__comments">
                                   <a class="text-container" href="#">
-                                    <img src="./assets/icons/comments-count.svg" alt="">
+                                    <img src="
+                                    " alt="">
                                     <p>
                                       23<span class="d-none d-md-inline-block"
                                         >comments</span
@@ -1062,7 +1065,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div id="card-container" class="d-flex flex-column"></div>
               </section>
               <aside class="col-lg-3 d-none d-lg-block g-3">
@@ -1107,7 +1110,7 @@
                     <h3 class="cardListings__header--Title">Listing</h3>
                     <a class="cardListings__header--link" href="">See all</a>
                   </div>
-                  <ul class="cardListings__list list-group list-group-flush">
+                  <ul id="listings" class="cardListings__list list-group list-group-flush">
                     <a class="cardListings__list--trend" href=""
                       >Chainpage challenge
                       <p class="cardListings__list--trend-text">misc</p>

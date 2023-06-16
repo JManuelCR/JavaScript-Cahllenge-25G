@@ -164,50 +164,27 @@ let reactionsContainer = (post) => {
 // }
 
 let hashtags = (post) => {
-
     let divTags = document.createElement("div")
         divTags.classList.add("user-data-space__tags--lighter")
 
-        let ulList = document.createElement("ul")
-
-            let list1 = document.createElement("li")
-                
-                let ancor1 = document.createElement("a")
+        let ulList = document.createElement("ul");
+            const tags = post.postTags;
+            let printTags = (tags) => {
+                let tag = tags.forEach(element => {
+                    let list1 = document.createElement("li");
+                    let ancor1 = document.createElement("a")
                     ancor1.setAttribute("href","#")
-
                         let tag1 = document.createElement("p")
-                            let textInP1 = document.createTextNode(post.postTags)
+                            let textInP1 = document.createTextNode(element)
                         tag1.appendChild(textInP1)
-            
-            let list2 = document.createElement("li")
-                
-                let ancor2 = document.createElement("a")
-                    ancor2.setAttribute("href","#")
-
-                        let tag2 = document.createElement("p")
-                            let textInP2 = document.createTextNode(post.postTags[1])
-                        tag2.appendChild(textInP2)
-
-            let list3 = document.createElement("li")
-                
-                let ancor3 = document.createElement("a")
-                    ancor3.setAttribute("href","#")
-        
-                        let tag3 = document.createElement("p")
-                            let textInP3 = document.createTextNode(post.postTags[2])
-                        tag3.appendChild(textInP3)
-
-            let list4 = document.createElement("li")
-                
-                let ancor4 = document.createElement("a")
-                    ancor4.setAttribute("href","#")
-        
-                        let tag4 = document.createElement("p")
-                            let textInP4 = document.createTextNode(post.postTags[3])
-                        tag4.appendChild(textInP4)
-
-        ulList.append(list1,list2,list3,list4)
-    divTags.appendChild(ulList)
+                        ancor1.appendChild(tag1)
+                        list1.appendChild(ancor1)
+                        ulList.append(list1)
+                })
+                return tag;
+            }
+            printTags(tags)
+            divTags.appendChild(ulList)
 return divTags
 }
 let title = (post) => {
@@ -331,8 +308,6 @@ return cardTop
 }
 
 let formatTime = (date) =>{
-    console.log(date);
-    // console.log(typeof(date));  string
     let year = date.split("T")[0].split("-")[0]
     let monthNumber = date.split("T")[0].split("-")[1]
     let monthName = getMonthName(date);
@@ -342,7 +317,6 @@ let formatTime = (date) =>{
 const getMonthName = month => {
     let monntName;
     let monthNumber = new Date(month).getMonth(); 
-    console.log(monthNumber);
     switch (monthNumber){
       case 0:
         monntName = "Jan";
@@ -385,14 +359,17 @@ const getMonthName = month => {
     }
     return monntName;
 }
-let card = (post) => {
+let card = (post, key) => {
     let img = imgTop(post)
     let body = cardBody(post)
 
-    let divCard = document.createElement("div")
+    let divCard = document.createElement("a")
         divCard.classList.add("card","mb-3")
 
     divCard.append(img,body)
+    divCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
+    divCard.addEventListener("click", () => window.open(`/html/post.html?post=${key}`));
+
 return divCard
 }
 

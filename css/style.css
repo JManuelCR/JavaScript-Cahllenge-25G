@@ -137,6 +137,18 @@
   text-decoration: none;
 }
 
+.listingsTags {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0rem;
+}
+.listingsTags .buttonTag {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+}
+
 html,
 body {
   background-color: #f5f5f5;
@@ -645,7 +657,7 @@ body {
 }
 .user-data-space__tags--lighter a p {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 .user-data-space__tags--lighter a p:hover {
   background-color: #f5f5f5;
