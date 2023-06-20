@@ -1,5 +1,5 @@
 import { card } from "./postCard.js";
-import { getPosts } from "./getPosts.js";
+import { getPosts } from "./DataBase.js";
 import { filterTags } from "./asideRight.js";
 
 let postInformation = {
@@ -28,7 +28,8 @@ const targetDinamic = (posts,key) => {
 }
 let Posts = async () => {
     let posts = await getPosts();
-    let array = Object.entries(posts);
+    console.log("Este es el post obtenido", posts.data);
+    let array = Object.entries(posts.data);
     return array;
 };
 

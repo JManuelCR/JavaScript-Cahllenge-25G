@@ -15,7 +15,7 @@ let minutesRead = (post) => {
                     let smallText = document.createElement("small")
                         smallText.classList.add("text-body-secondary")
 
-                        let readText = document.createTextNode(`${post.postlectureTime}ute read`)
+                        let readText = document.createTextNode(`${post.postlectureTime}min read`)
                     smallText.append(readText)
                 cardText.append(smallText)
 
@@ -166,7 +166,6 @@ let reactionsContainer = (post) => {
 let hashtags = (post) => {
     let divTags = document.createElement("div")
         divTags.classList.add("user-data-space__tags--lighter")
-
         let ulList = document.createElement("ul");
             const tags = post.postTags;
             let printTags = (tags) => {

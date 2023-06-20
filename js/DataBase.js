@@ -1,7 +1,19 @@
 const getPosts = async () => {
     let response = await fetch(
-        `https://jschallenge-25g-default-rtdb.firebaseio.com/DevTo/userPost/.json`
+      `http://localhost:8080/post`
     );
-    let postData = await response.json();
-    return postData;
-};
+    let posts = await response.json();
+    return posts;
+  };
+  
+const getUsers = async () =>{
+    let response= await fetch(
+        ``
+    )
+}
+export { getPosts };
+// let getUsers = async ( ) => {
+//     let respomse = await fetch[
+//         ``
+//     ]
+// }
