@@ -355,7 +355,7 @@ const getMonthName = month => {
     let monntName;
     let monthNumber = new Date(month).getMonth(); 
     switch (monthNumber){
-      case 0:
+        case 0:
         monntName = "Jan";
             break;
             case 1:
