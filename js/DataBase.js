@@ -1,13 +1,14 @@
+const token = localStorage.getItem('token');
+
 const getPosts = async () => {
     let response = await fetch(
       `http://localhost:8080/post`
     );
     let posts = await response.json();
     return posts;
-  };
+};
   
 const deletePost = async (id) =>{
-  const token = localStorage.getItem('token');
     let response = await fetch(
         `http://localhost:8080/post/${id}`, {
           method: DELETE,
@@ -15,23 +16,27 @@ const deletePost = async (id) =>{
             'Autorization': `Bearer ${token}`
           }          
         }
-    )
-}
+    );
+    let postToDelete = await response.json();
+    return postToDelete;
+};
+
 const editPost = async (id, data) =>{
-  const token = localStorage.getItem('token');
     let response = await fetch(
         `http://localhost:8080/post/${id}`, {
           method: PATCH,
           headers: {
-            'Autorization': `Bearer ${token}`
+            'Autorization': `Bearer ${token}`,
+            'Content-Type': `application/json`
           }, 
           body: JSON.stringify(data)          
         }
     )
-}
+    let postEdited = await response.json();
+    return postEdited;
+};
 
 const getPostById = async (id) =>{
-  const token = localStorage.getItem('token');
   let response = await fetch(
     `http://localhost:8080/post/${id}`, {
       method: GET,
@@ -40,39 +45,56 @@ const getPostById = async (id) =>{
       }          
     }
 )
-}
+let post = await response.json();
+return post;
+};
+
 const createUser = async (data) =>{
     let response = await fetch(
         `http://localhost:8080/`, {
           method: POST,
-          body: JSON.stringify(data)
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': `application/json`
+          }
         }
     )
-}
+    let postCreated = response.json();
+    return postCreated;
+};
+
 const login = async (data) => {
   let reponse = await fetch(
     `http://localhost:8080/auth`, {
       method: POST,
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': `application/json`
+      }
     }
   )
-}
+  let userLoged = await response.json();
+  return userLoged;
+};
+
 const addComment = async (id, data) => {
-  const token = localStorage.getItem('token');
     let response = await fetch(
         `http://localhost:8080/post/${id}`, {
-          method: PATCH,
+          method: POST,
           headers: {
-            'Autorization': `Bearer ${token}`
+            'Autorization': `Bearer ${token}`,
+            'Content-Type': `application/json`
           },
           body: JSON.stringify(data)          
         }
-    )
-}
+    );
+    let comment = await response.json();
+    return comment;
+};
 
 export { getPosts, deletePost, editPost, getPostById, createUser, login, addComment };
 // let getUsers = async ( ) => {
 //     let respomse = await fetch[
 //         ``
-//     ]
+//     ]  
 // }

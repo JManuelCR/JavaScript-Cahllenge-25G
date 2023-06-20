@@ -1,3 +1,5 @@
+import { deletePost, editPost, addComment } from "./DataBase"
+
 // Tiene el nombre de usuario, cuando se publico, comentario en texto
 let minutesRead = (post) => {
     let divContainer = document.createElement("div")
