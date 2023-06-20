@@ -164,7 +164,7 @@ let reactionsContainer = (post) => {
 // }
 
 let hashtags = (post) => {
-let tags = post.postTags
+let tags = post.tags
     let divTags = document.createElement("div")
         divTags.classList.add("user-data-space__tags--lighter")
 
@@ -176,7 +176,7 @@ let tags = post.postTags
             //         ancor2.setAttribute("href","#")
 
             //             let tag2 = document.createElement("p")
-            //                 let textInP2 = document.createTextNode(post.postTags[1])
+            //                 let textInP2 = document.createTextNode(post.tags[1])
             //             tag2.appendChild(textInP2)
             //         ancor2.appendChild(tag2)
             //     list2.appendChild(ancor2)
@@ -187,7 +187,7 @@ let tags = post.postTags
             //         ancor3.setAttribute("href","#")
         
             //             let tag3 = document.createElement("p")
-            //                 let textInP3 = document.createTextNode(post.postTags[2])
+            //                 let textInP3 = document.createTextNode(post.tags[2])
             //             tag3.appendChild(textInP3)
 
             //         ancor3.appendChild(tag3)
@@ -199,7 +199,7 @@ let tags = post.postTags
             //         ancor4.setAttribute("href","#")
         
             //             let tag4 = document.createElement("p")
-            //                 let textInP4 = document.createTextNode(post.postTags[3])
+            //                 let textInP4 = document.createTextNode(post.tags[3])
             //             tag4.appendChild(textInP4)
 
             //         ancor4.appendChild(tag4)
@@ -212,7 +212,7 @@ let tags = post.postTags
                 let ancor1 = document.createElement("a")
                     ancor1.setAttribute("href","#")
                         let tag1 = document.createElement("p")
-                            let textInP1 = document.createTextNode(post.postTags[0])
+                            let textInP1 = document.createTextNode(post.tags[0])
                         tag1.appendChild(textInP1)
 
                     ancor1.appendChild(tag1)
@@ -234,7 +234,7 @@ let title = (post) => {
                 titleAncor.classList.add("titleAnchor")
                 titleAncor.setAttribute("href","./html/post.html")
 
-                let titleText = document.createTextNode(post.postTitle)
+                let titleText = document.createTextNode(post.title)
             titleAncor.appendChild(titleText)
         h2Title.appendChild(titleAncor)
     divWrapper.appendChild(h2Title)
@@ -268,7 +268,7 @@ let userName = (post, date) => {
             let nameP = document.createElement("p")
                 nameP.classList.add("author-name")
                 
-                let textInP = document.createTextNode(post.userName)
+                let textInP = document.createTextNode(post.userCreatorId.name)
             nameP.appendChild(textInP)
             nameAncor.appendChild(nameP)
 
@@ -296,7 +296,7 @@ let userImg = (post) => {
 
             let profileImg = document.createElement("img")
                 profileImg.classList.add("rounded-circle")
-                profileImg.setAttribute("src",`${post.userProfileImg}`)
+                profileImg.setAttribute("src",`${post.userCreatorId.profilePicture}`)
         
         imgAncor.appendChild(profileImg)
     imageDiv.appendChild(imgAncor)
@@ -328,6 +328,7 @@ return divWrapper
 }
 
 let imgTop = (post) => {
+    console.log("los tags", post)
     let cardTop = document.createElement("div")
         cardTop.classList.add("card-img-top")
 
@@ -335,9 +336,9 @@ let imgTop = (post) => {
             imgAncor.setAttribute("href","#")
 
             let img =document.createElement("img")
-                img.setAttribute("src", `${post.postImage}`)
+                img.setAttribute("src", `${post.image}`)
                 img.classList.add("card-img-top", "cardImg")
-                img.setAttribute("alt", `${post.ImageTitle}`)
+                img.setAttribute("alt","imagen superior del post")
 
         imgAncor.appendChild(img)
     cardTop.appendChild(imgAncor)
@@ -396,7 +397,7 @@ const getMonthName = month => {
     }
     return monntName;
 }
-let card = (post, key) => {
+let card = (post) => {
     let img = imgTop(post)
     let body = cardBody(post)
 
@@ -405,7 +406,7 @@ let card = (post, key) => {
 
     divCard.append(img,body)
     divCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
-    divCard.addEventListener("click", () => window.open(`/html/post.html?post=${key}`));
+    divCard.addEventListener("click", () => window.open(`/html/post.html?post=${post._id}`));
 
 return divCard
 }

@@ -273,7 +273,7 @@ let createDynamicTags = (postToView) => {
         ancorTag.setAttribute("href","#")
 
             let tagInP = document.createElement("p")
-                let tagText = document.createTextNode(postToView.postTags)
+                let tagText = document.createTextNode(postToView.tags)
             tagInP.append(tagText)
         ancorTag.append(tagInP)
     divContainer.append(ancorTag)

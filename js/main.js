@@ -30,7 +30,7 @@ let Posts = async () => {
     let posts = await getPosts();
     console.log("Este es el post obtenido", posts.data);
     let array = Object.entries(posts.data);
-    return array;
+    return posts.data;
 };
 
 let allPosts = await Posts()
@@ -39,7 +39,7 @@ let printPost = async (posts) =>{
     console.log(posts)
     // const test1 = filterTags(posts)
     posts.forEach(element => {
-        let cardPost = targetDinamic(element[1], element[0])
+        let cardPost = targetDinamic(element, element)
     });
     // console.log("estas son las tags",test1)
     return
@@ -100,6 +100,7 @@ const deletePosts = () => {
 };
 
 const getTags = async (posts) =>{
+    console.log("esto es posts",posts)
     const allPosts = filterTags(posts)
     return allPosts
 }
@@ -107,9 +108,9 @@ const getTags = async (posts) =>{
 let test1 = await getTags(allPosts)
 
 let button = document.getElementById("buttonSearchForm");
-let buttonMobile = document.getElementById("buttonSearchFormMobile");
-let tagOneListings= document.getElementById("#tesla");
-let tagTwoListings = document.getElementById("#windows");
+// let buttonMobile = document.getElementById("buttonSearchFormMobile");
+// let tagOneListings= document.getElementById("#tesla");
+// let tagTwoListings = document.getElementById("#windows");
 
 
 button.addEventListener('click', () => {
@@ -118,23 +119,23 @@ button.addEventListener('click', () => {
     searchByElement(allPosts)
 });
 
-buttonMobile.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByElement(allPosts)
-});
+// buttonMobile.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByElement(allPosts)
+// });
 
-tagOneListings.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByTag("tesla", allPosts)
-});
+// tagOneListings.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByTag("tesla", allPosts)
+// });
 
-tagTwoListings.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByTag("Windows", allPosts)
-});
+// tagTwoListings.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByTag("Windows", allPosts)
+// });
 
 const searchByElement = allPosts => {
     const searchInput = document.getElementById("searchPost");
