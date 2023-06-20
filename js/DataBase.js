@@ -7,8 +7,8 @@ const getPosts = async () => {
 };
 
 const createPost = async (data) => {
-  let reponse = await fetch(`http://localhost:8080/post`, {
-    method: POST,
+  let response = await fetch(`http://localhost:8080/post`, {
+    method: 'POST',
     headers: {
       Autorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
@@ -21,7 +21,7 @@ const createPost = async (data) => {
 
 const deletePost = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: DELETE,
+    method: 'DELETE',
     headers: {
       Autorization: `Bearer ${token}`,
     },
@@ -32,7 +32,7 @@ const deletePost = async (id) => {
 
 const editPost = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: PATCH,
+    method: 'PATCH',
     headers: {
       Autorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
@@ -45,7 +45,7 @@ const editPost = async (id, data) => {
 
 const getPostById = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: GET,
+    method: 'GET',
     headers: {
       Autorization: `Bearer ${token}`,
     },
@@ -57,20 +57,19 @@ const getPostById = async (id) => {
 const createUser = async (data) => {
   console.log("Esta es la data", data);
   let response = await fetch(`http://localhost:8080/`, {
-    method: POST,
+    method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": `application/json`,
+      "Content-Type": "application/json",
     },
   });
-  let userCreated = response.json();
-  console.log("response", response);
+  let userCreated = await response.json();
   return userCreated;
 };
 
 const login = async (data) => {
-  let reponse = await fetch(`http://localhost:8080/auth`, {
-    method: POST,
+  let response = await fetch(`http://localhost:8080/auth`, {
+    method: 'POST',
     body: JSON.stringify(data),
     headers: {
       "Content-Type": `application/json`,
@@ -82,7 +81,7 @@ const login = async (data) => {
 
 const addComment = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: POST,
+    method: 'POST',
     headers: {
       Autorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
