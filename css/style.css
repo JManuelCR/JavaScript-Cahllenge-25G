@@ -1301,4 +1301,66 @@ html {
   font-weight: 0;
   padding-left: 35%;
   padding-top: 1rem;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.contentLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+.contentLogin__registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: rem;
+  margin: 0;
+}
+.contentLogin__registration h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.contentLogin__registration p {
+  font-size: 0.9rem;
+}
+
+.registrationButtons {
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.formUser {
+  width: 100%;
+  -moz-column-gap: 0;
+       column-gap: 0;
+}
+
+.buttonLoggin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.buttonLoggin button {
+  width: 100%;
+  background-color: #3B49DF;
+  font-weight: bold;
+  padding: 0.6rem;
+}
+.buttonLoggin a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 0;
+  padding-left: 35%;
+  padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
