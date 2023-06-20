@@ -1,3 +1,27 @@
+import { createPost } from "./DataBase";
+
+/**
+ * console.log("estamos en profile");
+const token = localStorage.getItem("token") || "";
+// Regresarme a iniciar sesion
+if(token === "") {
+  window.location.replace("/login");
+}
+const payload = token.split(".")[1];
+
+const destructuracion = atob(payload);
+const id = JSON.parse(atob(payload)).id; // atob -> nos saca la data de la payload
+const nameUser = document.querySelector("#name-profile") // JSON.parse -> para parsearlo
+const ageUser = document.querySelector("#age-profile") // .id - > para acced
+ */
+
+const token = localStorage.getItem('token');
+if(token === ""){
+  window.location.replace("/login");
+};
+const payload = token.split(".")[1];
+const idUserLoged = JSON.parse(atob(payload)).id
+
 let tags = [];
 let users = [
   {
@@ -164,31 +188,26 @@ const getPosttInformation = () => {
     let postlectureTimeInput = document.getElementById("lectureTime");
     let postTags = tags;
     let postlectureTime = postlectureTimeInput.value;
-    let date = new Date();
-    let creationDate = date;
+    let creationDate = new Date();
     let heartReactions = getRamdomInt(100);
-    let unicornReactions = getRamdomInt(100);
-    let crazyManReactions = getRamdomInt(100);
-    let hansReactions = getRamdomInt(100);
-    let fireReactions = getRamdomInt(100);
-    let userProfileImg =  getUserImgRamdom(users);
-    let topCriterium = getRamdomInt(100);
+    let marksCount = getRamdomInt(100);
+    // let unicornReactions = getRamdomInt(100);
+    // let crazyManReactions = getRamdomInt(100);
+    // let hansReactions = getRamdomInt(100);
+    // let fireReactions = getRamdomInt(100);
+    // let userProfileImg =  getUserImgRamdom(users);
+    // let topCriterium = getRamdomInt(100);
     let postInformation = {
+      userCreatorId: idUserLoged,
       userProfileImg: userProfileImg,
-      userName: fullNme,
-      postTitle: postTitle,
-      postContend: postContend,
-      postImage: postImage,
-      postImageTitle: postImageTitle,
-      postlectureTime: postlectureTime,
-      postTags: postTags,
+      title: postTitle, //title
+      contend: postContend,
+      image: postImage,
+      time: postlectureTime,
+      tags: postTags,
       date: creationDate,
       heartReactions : heartReactions,
-      unicornReactions: unicornReactions,
-      crazyManReactions: crazyManReactions,
-      hansReactions: hansReactions,
-      fireReactions: fireReactions,
-      topCriterium : topCriterium
+      marks: marksCount 
     };
     console.log(postInformation);
     return postInformation;

@@ -1,3 +1,4 @@
+// Tiene el nombre de usuario, cuando se publico, comentario en texto
 // * Tiene el nombre de usuario, cuando se publico, comentario en texto
 let minutesRead = (post) => {
     let divContainer = document.createElement("div")
