@@ -3,7 +3,7 @@ const filterTags = (post) => {
   const searchInput = document.getElementById("listings");
 
   const tagsListings = post.filter((element) => {
-    return element[1].postTags.forEach((item) => {
+    return element.tags.forEach((item) => {
       if (
         item.toLowerCase().includes("tesla") ||
         item.toLowerCase().includes("windows")
