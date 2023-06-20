@@ -1,11 +1,11 @@
-import { getPosts } from "./getPosts.js";
+import { getPosts } from "./DataBase.js";
 let params = new URLSearchParams(document.location.search);
 let idPost = params.get("post")
 
 
 const getPostInfo = async (post) => {
     let posts = await getPosts();
-    let array = Object.entries(posts);
+    let array = Object.entries(posts.data);
     let actual = array.reduce((acum, act) => {
         let actualPostKey = act[0];
         if(actualPostKey === post){

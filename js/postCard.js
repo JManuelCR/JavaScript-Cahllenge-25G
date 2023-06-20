@@ -15,7 +15,7 @@ let minutesRead = (post) => {
                     let smallText = document.createElement("small")
                         smallText.classList.add("text-body-secondary")
 
-                        let readText = document.createTextNode(`${post.postlectureTime}ute read`)
+                        let readText = document.createTextNode(`${post.postlectureTime}min read`)
                     smallText.append(readText)
                 cardText.append(smallText)
 
@@ -211,7 +211,6 @@ let tags = post.postTags
                 
                 let ancor1 = document.createElement("a")
                     ancor1.setAttribute("href","#")
-
                         let tag1 = document.createElement("p")
                             let textInP1 = document.createTextNode(post.postTags[0])
                         tag1.appendChild(textInP1)
@@ -346,8 +345,6 @@ return cardTop
 }
 
 let formatTime = (date) =>{
-    console.log(date);
-    // console.log(typeof(date));  string
     let year = date.split("T")[0].split("-")[0]
     let monthNumber = date.split("T")[0].split("-")[1]
     let monthName = getMonthName(date);
@@ -357,7 +354,6 @@ let formatTime = (date) =>{
 const getMonthName = month => {
     let monntName;
     let monthNumber = new Date(month).getMonth(); 
-    console.log(monthNumber);
     switch (monthNumber){
       case 0:
         monntName = "Jan";
@@ -400,14 +396,17 @@ const getMonthName = month => {
     }
     return monntName;
 }
-let card = (post) => {
+let card = (post, key) => {
     let img = imgTop(post)
     let body = cardBody(post)
 
-    let divCard = document.createElement("div")
+    let divCard = document.createElement("a")
         divCard.classList.add("card","mb-3")
 
     divCard.append(img,body)
+    divCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
+    divCard.addEventListener("click", () => window.open(`/html/post.html?post=${key}`));
+
 return divCard
 }
 

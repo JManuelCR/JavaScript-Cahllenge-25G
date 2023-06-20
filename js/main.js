@@ -1,6 +1,6 @@
 import { card } from "./postCard.js";
-import { getPosts } from "./getPosts.js";
-// import { filterTags } from "./asideRight.js";
+import { getPosts } from "./DataBase.js";
+import { filterTags } from "./asideRight.js";
 
 let postInformation = {
     userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -28,7 +28,8 @@ const targetDinamic = (posts,key) => {
 }
 let Posts = async () => {
     let posts = await getPosts();
-    let array = Object.entries(posts);
+    console.log("Este es el post obtenido", posts.data);
+    let array = Object.entries(posts.data);
     return array;
 };
 
@@ -98,3 +99,57 @@ const deletePosts = () => {
     return ;
 };
 
+const getTags = async (posts) =>{
+    const allPosts = filterTags(posts)
+    return allPosts
+}
+
+let test1 = await getTags(allPosts)
+
+let button = document.getElementById("buttonSearchForm");
+let buttonMobile = document.getElementById("buttonSearchFormMobile");
+let tagOneListings= document.getElementById("#tesla");
+let tagTwoListings = document.getElementById("#windows");
+
+
+button.addEventListener('click', () => {
+    event.preventDefault()
+    deletePosts()
+    searchByElement(allPosts)
+});
+
+buttonMobile.addEventListener('click', () => {
+    event.preventDefault()
+    deletePosts()
+    searchByElement(allPosts)
+});
+
+tagOneListings.addEventListener('click', () => {
+    event.preventDefault()
+    deletePosts()
+    searchByTag("tesla", allPosts)
+});
+
+tagTwoListings.addEventListener('click', () => {
+    event.preventDefault()
+    deletePosts()
+    searchByTag("Windows", allPosts)
+});
+
+const searchByElement = allPosts => {
+    const searchInput = document.getElementById("searchPost");
+    const searchParam = searchInput.value;
+    let post = allPosts;
+    let getTitles = post.filter(element => {
+        return element[1].postTitle.toLowerCase().includes(searchParam.toLowerCase())
+    });
+    printPost(getTitles); 
+}
+const searchByTag = (tag, allPosts) => {
+    let tagToSearch = tag;
+    let posts = allPosts; 
+    let getTitles = posts.filter(element => {
+        return element[1].postTitle.toLowerCase().includes(tagToSearch.toLowerCase())
+    });
+    printPost(getTitles); 
+}
