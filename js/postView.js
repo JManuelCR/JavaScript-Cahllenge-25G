@@ -228,7 +228,7 @@ let userDataOnPost = (postToView) => {
 // almacena la imagen del creador del post
 let creatorProfilePicture = (postToView) => {
     let creatorPicture = document.createElement("div")
-        creatorPicture.classList.add("user-data-space")
+        creatorPicture.classList.add("user-data-space--post")
 
         let imgOnMini = document.createElement("div")
             imgOnMini.classList.add("user-data-space__mini")
@@ -273,7 +273,7 @@ let createDynamicTags = (postToView) => {
         ancorTag.setAttribute("href","#")
 
             let tagInP = document.createElement("p")
-                let tagText = document.createTextNode(postToView.postTags)
+                let tagText = document.createTextNode(postToView.tags)
             tagInP.append(tagText)
         ancorTag.append(tagInP)
     divContainer.append(ancorTag)

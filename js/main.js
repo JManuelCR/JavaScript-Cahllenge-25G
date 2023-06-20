@@ -10,7 +10,7 @@ let postInformation = {
     postImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--3644EhCg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/crpm3se7wbh1xywp78wt.jpg",
     postImageTitle: "una imagen random",
     postlectureTime: "5 minutos",
-    postTags: ["#typescript","#randomtag2","#randomtag1"] ,
+    postTags: ["#typescript","#randomtag2","#randomtag1"],
     date: "05-04-2022",
     heartReactions : "24",
     unicornReactions: "25",
@@ -30,17 +30,21 @@ let Posts = async () => {
     let posts = await getPosts();
     console.log("Este es el post obtenido", posts.data);
     let array = Object.entries(posts.data);
-    return array;
+    return posts.data;
 };
 
 let allPosts = await Posts()
-let printPost = async (posts) =>{
 
+let printPost = async (posts) =>{
+    console.log(posts)
+    // const test1 = filterTags(posts)
     posts.forEach(element => {
-        let cardPost = targetDinamic(element[1], element[0])
+        let cardPost = targetDinamic(element, element)
     });
+    // console.log("estas son las tags",test1)
     return
 }
+
 printPost(allPosts);
 
 const filterRelevant = (post) => post.filter( post => {
@@ -90,12 +94,13 @@ topSelector.addEventListener('click', () => {
 const deletePosts = () => {
     let list = document.getElementById("card-container");
     while (list.firstChild) {
-      list.removeChild(list.firstChild);
+        list.removeChild(list.firstChild);
     }
     return ;
 };
 
 const getTags = async (posts) =>{
+    console.log("esto es posts",posts)
     const allPosts = filterTags(posts)
     return allPosts
 }
@@ -103,9 +108,9 @@ const getTags = async (posts) =>{
 let test1 = await getTags(allPosts)
 
 let button = document.getElementById("buttonSearchForm");
-let buttonMobile = document.getElementById("buttonSearchFormMobile");
-let tagOneListings= document.getElementById("#tesla");
-let tagTwoListings = document.getElementById("#windows");
+// let buttonMobile = document.getElementById("buttonSearchFormMobile");
+// let tagOneListings= document.getElementById("#tesla");
+// let tagTwoListings = document.getElementById("#windows");
 
 
 button.addEventListener('click', () => {
@@ -114,23 +119,23 @@ button.addEventListener('click', () => {
     searchByElement(allPosts)
 });
 
-buttonMobile.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByElement(allPosts)
-});
+// buttonMobile.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByElement(allPosts)
+// });
 
-tagOneListings.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByTag("tesla", allPosts)
-});
+// tagOneListings.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByTag("tesla", allPosts)
+// });
 
-tagTwoListings.addEventListener('click', () => {
-    event.preventDefault()
-    deletePosts()
-    searchByTag("Windows", allPosts)
-});
+// tagTwoListings.addEventListener('click', () => {
+//     event.preventDefault()
+//     deletePosts()
+//     searchByTag("Windows", allPosts)
+// });
 
 const searchByElement = allPosts => {
     const searchInput = document.getElementById("searchPost");
