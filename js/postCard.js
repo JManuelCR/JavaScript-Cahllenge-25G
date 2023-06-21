@@ -16,7 +16,7 @@ let minutesRead = (post) => {
                     let smallText = document.createElement("small")
                         smallText.classList.add("text-body-secondary")
 
-                        let readText = document.createTextNode(`${post.postlectureTime}min read`)
+                        let readText = document.createTextNode(`${post.time}min read`)
                     smallText.append(readText)
                 cardText.append(smallText)
 
@@ -57,33 +57,33 @@ let reactionsContainer = (post) => {
                                     heartIcon.setAttribute("src","./assets/icons/red-Heart-Icon.svg")
                                     heartIcon.setAttribute("alt","icono de corazon")
                                 
-                                let unicornIcon = document.createElement("img")
-                                    unicornIcon.setAttribute("src","./assets/icons/unicorn-Icon.svg")
-                                    unicornIcon.setAttribute("alt","icono de unicornio")
+                                // let unicornIcon = document.createElement("img")
+                                //     unicornIcon.setAttribute("src","./assets/icons/unicorn-Icon.svg")
+                                //     unicornIcon.setAttribute("alt","icono de unicornio")
 
-                                let crazyIcon = document.createElement("img")
-                                    crazyIcon.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
-                                    crazyIcon.setAttribute("alt","icono de cabeza que explota")
+                                // let crazyIcon = document.createElement("img")
+                                //     crazyIcon.setAttribute("src","./assets/icons/crazy-Man-Icon.svg")
+                                //     crazyIcon.setAttribute("alt","icono de cabeza que explota")
                                         
-                                let raiseIcon = document.createElement("img")
-                                    raiseIcon.setAttribute("src","./assets/icons/raise-.svg")
-                                    raiseIcon.setAttribute("alt","icono de manos arriba")
+                                // let raiseIcon = document.createElement("img")
+                                //     raiseIcon.setAttribute("src","./assets/icons/raise-.svg")
+                                //     raiseIcon.setAttribute("alt","icono de manos arriba")
                                 
-                                let fireIcon = document.createElement("img")
-                                    fireIcon.setAttribute("src","./assets/icons/fire-Icon.svg")
-                                    fireIcon.setAttribute("alt","icono de fuego")
+                                // let fireIcon = document.createElement("img")
+                                //     fireIcon.setAttribute("src","./assets/icons/fire-Icon.svg")
+                                //     fireIcon.setAttribute("alt","icono de fuego")
 
                                 let spanText = document.createElement("span")
                                     spanText.classList.add("reactionCount")
 
                                     let parragraph = document.createElement("p")
-                                        let totalReactions = post.heartReactions + post.unicornReactions + post.crazyManReactions + post.hansReactions + post.fireReactions
+                                        let totalReactions = post.heartReactions 
                                         let textInP = document.createTextNode(`${totalReactions} reactions`)
                                     parragraph.appendChild(textInP);
                                     parragraph.classList.add("text-decoration-none");
                                 spanText.appendChild(parragraph);
                                 
-                            ancorIcons.append(heartIcon,unicornIcon,crazyIcon,raiseIcon,fireIcon,spanText)
+                            ancorIcons.append(heartIcon,spanText)
                         emojisIcons.appendChild(ancorIcons)
                     emojisReactions.appendChild(emojisIcons)
                 userSpaceEmojis.appendChild(emojisReactions)
@@ -297,7 +297,7 @@ let userImg = (post) => {
 
             let profileImg = document.createElement("img")
                 profileImg.classList.add("rounded-circle")
-                profileImg.setAttribute("src",`${post.userCreatorId.profilePicture}`)
+                profileImg.setAttribute("src",`${post.userCreatorId.profilePicture}`)  // ! La profile ya no viene aqui
         
         imgAncor.appendChild(profileImg)
     imageDiv.appendChild(imgAncor)
@@ -329,7 +329,6 @@ return divWrapper
 }
 
 let imgTop = (post) => {
-    console.log("los tags", post)
     let cardTop = document.createElement("div")
         cardTop.classList.add("card-img-top")
 
@@ -402,12 +401,13 @@ let card = (post) => {
     let img = imgTop(post)
     let body = cardBody(post)
 
-    let divCard = document.createElement("a")
+    let divCard = document.createElement("button")
         divCard.classList.add("card","mb-3")
+        divCard.setAttribute("id", `${post._id}`)
 
     divCard.append(img,body)
     divCard.classList.add("card-cont","d-flex","justify-content-center","anchorsFinals")
-    divCard.addEventListener("click", () => window.open(`/html/post.html?post=${post._id}`));
+    divCard.addEventListener("click", () => window.location.replace(`../html/post.html?post=${post._id}`));
 
 return divCard
 }

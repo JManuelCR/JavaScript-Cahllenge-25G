@@ -1,20 +1,17 @@
-import { getPosts } from "./DataBase.js";
+import { getPostById, deletePost, editPost } from "./DataBase.js";
+
 let params = new URLSearchParams(document.location.search);
 let idPost = params.get("post")
-
+const token = localStorage.getItem('token');
+if(!token){
+  window.location.replace("/index.html");
+};
+const payload = token.split(".")[1];
+const idUserLoged = JSON.parse(atob(payload)).id
 
 const getPostInfo = async (post) => {
-    let posts = await getPosts();
-    let array = Object.entries(posts.data);
-    let actual = array.reduce((acum, act) => {
-        let actualPostKey = act[0];
-        if(actualPostKey === post){
-            acum = act[1];
-        }
-        return acum;
-    }, {});
-    
-    return actual;
+    let postToPrint = await getPostById(post);
+    return postToPrint; 
 }
 let postToView = await getPostInfo(idPost);
 
@@ -72,7 +69,7 @@ let commentImg = (postToView) => {
             imgAncor.setAttribute("href","#")
 
                 let userImg = document.createElement("img")
-                userImg.setAttribute("src",postToView.userProfileImg)
+                userImg.setAttribute("src",postToView.userCreatorId.profilePicture)
                 userImg.classList.add("rounded-circle")
             imgAncor.appendChild(userImg)
         divPicture.appendChild(imgAncor)
@@ -93,7 +90,7 @@ let minutesRead = (postToView) => {
                 parrafMins.classList.add("card-text")
                     let parrafMinsSmall = document.createElement("small")
                     parrafMinsSmall.classList.add("text-body-secondary")
-                    let parrafMinsSmallText = document.createTextNode(postToView.postlectureTime)
+                    let parrafMinsSmallText = document.createTextNode(postToView.data.time)
                     parrafMinsSmall.append(parrafMinsSmallText)
                 let imgBook = document.createElement("img")
                     imgBook.setAttribute("src","../assets/icons/book-Icon.svg")
@@ -108,7 +105,7 @@ let emojisReaction = (postToView) => {
             let iconComment = document.createElement("img")
             iconComment.setAttribute("src","../assets/icons/black-Flat-Icon.svg")
             
-            let  totalReactions = postToView.heartReactions + postToView.unicornReactions + postToView.crazyManReactions + postToView.hansReactions + postToView.fireReactions;
+            let  totalReactions = postToView.heartReactions;
             let parrafComment = document.createElement("p")
                 let parrafCommentText = document.createTextNode(totalReactions);
                 
@@ -136,7 +133,7 @@ let emojisIcons = (postToView) => {
                     iconHeart.setAttribute("src","../assets/icons/red-Heart-Icon.svg")
                     iconHeart.setAttribute("alt","icono de corazon")
                         let heartP = document.createElement("p")
-                        let heartText = document.createTextNode(postToView.heartReactions)
+                        let heartText = document.createTextNode(postToView.data.heartReactions)
                         heartP.appendChild(heartText)
                 heartSpan.append(iconHeart,heartP)
             
@@ -177,7 +174,7 @@ let emojisIcons = (postToView) => {
                 fireSpan.append(iconFire,fireP)
             
 
-        divContainer.append(heartSpan,unicornSpan,crazySpan,handsSpan,fireSpan)
+        divContainer.append(heartSpan)
     classCardBody.appendChild(divContainer)   
     return divContainer
 }   
@@ -190,7 +187,7 @@ let postBodyWrapper = (postToView) => {
                     titleAncor.classList.add("anchorsFinals")
                     titleAncor.setAttribute("href","./html/post.html")
 
-                    let titleText = document.createTextNode(postToView.postTitle)
+                    let titleText = document.createTextNode(postToView.data.title)
                 titleAncor.appendChild(titleText)
             postH2.appendChild(titleAncor)
 
@@ -207,7 +204,7 @@ let userDataOnPost = (postToView) => {
 
                 let ancoreP = document.createElement("p")
                     ancoreP.classList.add("author-name")
-                    let ancoreText = document.createTextNode(postToView.userName)
+                    let ancoreText = document.createTextNode(postToView.data.userCreatorId.name)
                 ancoreP.append(ancoreText)
         ancoreBold.append(ancoreP)
     userNameSpace.append(ancoreBold)
@@ -218,7 +215,7 @@ let userDataOnPost = (postToView) => {
 
                 let creationP = document.createElement("p")
                     creationP.classList.add("reation-date")
-                    let creationText = document.createTextNode(postToView.date)
+                    let creationText = document.createTextNode(postToView.data.date)
                 creationP.appendChild(creationText)
             creationAncor.appendChild(creationP)
         userNameSpace.append(creationAncor)
@@ -239,7 +236,7 @@ let creatorProfilePicture = (postToView) => {
                 
                         let picture = document.createElement("img")
                             picture.classList.add("rounded-circle")
-                            picture.setAttribute("src",postToView.userProfileImg)
+                            picture.setAttribute("src",`${postToView.data.userCreatorId.profilePicture}`)
                 pictureAncor.append(picture)
             imgOnMini.append(pictureAncor)
         creatorPicture.append(imgOnMini)
@@ -256,8 +253,8 @@ let imageCardPost = (postToView) => {
 
             let image = document.createElement("img")
             image.classList.add("card-img-top")    
-            image.setAttribute("src",postToView.postImage)
-            image.setAttribute("alt",postToView.postImageTitle)
+            image.setAttribute("src",postToView.data.image)
+            image.setAttribute("alt","Imagen del post")
 
         imgContainerAncor.append(image)
         imgContainer.append(imgContainerAncor)
@@ -273,7 +270,7 @@ let createDynamicTags = (postToView) => {
         ancorTag.setAttribute("href","#")
 
             let tagInP = document.createElement("p")
-                let tagText = document.createTextNode(postToView.tags)
+                let tagText = document.createTextNode(postToView.data.tags)
             tagInP.append(tagText)
         ancorTag.append(tagInP)
     divContainer.append(ancorTag)
@@ -289,7 +286,7 @@ let postTextDynamic = (postToView) => {
         divContainer.classList.add("article__contentMain")
 
             let postParagraph = document.createElement("p")
-                let postText = document.createTextNode(postToView.postContend)
+                let postText = document.createTextNode(postToView.data.content)
             postParagraph.append(postText)  
 
             let h3Subtitle = document.createElement("h3")
@@ -307,8 +304,25 @@ let postTextDynamic = (postToView) => {
             let moreTextPara = document.createElement("p")
                 let moreText = document.createTextNode("Learning to code, and relearning to code is no different, you need to make a plan! To make sure you aren't all over the place, scrambling to learn every technology that you knew previously, you need to assemble a plan. Something very common with burnout is feeling overwhelmed with all the things you need to do to get back to where you were prior. To prevent this feeling, you need to take it one step at a time, to make your foundations strong but also to maintain that healthy relationship. In my case, for the past few weeks, I've just been relearning Python, the first programming language I learned. Since Python is easy to learn, I thought it would be a logical starting point for me. Although my main programming language was Rust, I felt like that would be a harder starting point, leading to more roadblocks and possibly being overwhelmed. Before you start getting into coding again, outline the languages/concepts/frameworks you want to relearn, and the resources that you will use. This will keep you on track, but also prevent you from being overwhelmed as you have a clear plan to get back to where you were before. Furthermore, it's rewarding to tick off the tasks that you have completed, giving yourself more motivation to continue.")
             moreTextPara.append(moreText)
+            let buttonContainer = document.createElement("div");
+            buttonContainer.classList.add("d-flex", "gap-3")
+            
+            let buttonDelete = document.createElement("button")
+                buttonDelete.classList.add("btn","btn-danger",)
+                buttonDelete.setAttribute("type","button")
+                buttonDelete.setAttribute("id","deleteButton")
+                    let textDelete = document.createTextNode("Delete Post")
+                buttonDelete.appendChild(textDelete)
 
-        divContainer.append(postParagraph,imgInPost,moreTextPara)
+            let buttonUpdate = document.createElement("button")
+                buttonUpdate.classList.add("btn","btn-warning")
+                buttonUpdate.setAttribute("type","button")
+                buttonUpdate.setAttribute("id", "updateButton")
+                    let textUpdate = document.createTextNode("Update Post")
+                buttonUpdate.appendChild(textUpdate)
+
+            buttonContainer.append(buttonDelete,buttonUpdate)    
+        divContainer.append(postParagraph,imgInPost,moreTextPara,buttonContainer)
     postSection.append(divContainer)
 
     return postSection
@@ -333,8 +347,6 @@ let cardWrapper = (postToView,key) => {
             test1.append(test5)
             
         
-        // console.log(emojisList)
-        // console.log(contenTags)
         let containerCard = document.createElement("div")
     containerCard.classList.add("card-cont","d-flex","justify-content-center")
 
@@ -344,7 +356,25 @@ return containerCard
 }
 
 let newCard = cardWrapper(postToView)
-console.log(newCard)
 
 let sectionLocation = document.getElementById("postView")
 sectionLocation.append(newCard)
+
+let buttonDelete = document.getElementById("deleteButton");
+let updateButton1 = document.getElementById("updateButton");
+
+buttonDelete.addEventListener("click", ()=> {
+    if (!idUserLoged){
+        buttonDelete.setAttribute("display","none")
+    }
+    let deleted = deletePost(idPost) 
+    window.location.replace("/index.html")
+    return deleted
+})
+
+updateButton1.addEventListener('click', () => {
+    localStorage.setItem('data',postToView.data._id)    
+    window.location.replace("./updatePost.html")
+})
+
+ 
