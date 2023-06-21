@@ -15,14 +15,9 @@ button.addEventListener('click', async () => {
     
     localStorage.setItem("token", userToLogin.data);
     if(userToLogin){
-        window.location.replace("/index.html");
-        window.setTimeout(() => {
-            let welcome = (`Binevenido`)
-            window.alert(welcome)
-        }, 100)        
+        window.location.replace("/index.html");        
     } else {
-        unauthorized = ("Las credenciales no son validas")
-        window.alert(unauthorized)
+        window.alert("unauthorized")
         window.window.location.replace("/login.html");
     }
 })

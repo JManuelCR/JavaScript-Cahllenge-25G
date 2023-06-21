@@ -1,4 +1,4 @@
-   import { createPost } from "./DataBase.js";
+import { createPost } from "./DataBase.js";
 
 
 
@@ -48,6 +48,7 @@ createButton.addEventListener('click',async () => {
     let newPost = getPosttInformation();
     createPost(newPost)
     clearForm()
+    window.location.replace("/index.html")
 })
 
 const getRamdomInt = max => Math.floor(Math.random() * max);

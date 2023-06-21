@@ -64,7 +64,6 @@ const createUser = async (data) => {
     },
   });
   let userCreated = await response.json();
-  console.log("response", response);
   return userCreated;
 };
 

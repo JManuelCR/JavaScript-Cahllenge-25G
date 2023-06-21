@@ -34,7 +34,7 @@
 }
 
 .user-data-space {
-    padding-left: 1.25rem;
+    padding-left: .5rem;
     padding-top: 1.25rem;
     display: flex;
     &__mini {
@@ -43,8 +43,9 @@
         align-items: center;
         a {
             img {
-                width: 2.5rem;
-                height: 2.5;
+                width: 3.2rem;
+                height: 3rem;
+                margin-bottom: .9rem;
             }
         }
     }
