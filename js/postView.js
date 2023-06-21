@@ -351,7 +351,7 @@ let cardWrapper = (postToView,key) => {
     containerCard.classList.add("card-cont","d-flex","justify-content-center")
 
         containerCard.append(imgContainer)
-    // sectionWrapperr.appendChild(containerCard)
+    
 return containerCard
 }
 

@@ -5,12 +5,11 @@ if(!token){
 };
 const payload = token.split(".")[1];
 const idUserLoged = JSON.parse(atob(payload)).id
-const postid = localStorage.getItem('data')
-const postToEdit = await getPostById(postid)
+const postId = localStorage.getItem('data')
+const postToEdit = await getPostById(postId)
 const postData = postToEdit.data
 let tags = [];
 
-console.log("el id del post ", postData);
 
  
  (() => {
@@ -24,11 +23,6 @@ console.log("el id del post ", postData);
  postlectureTimeInput.value = postData.time
 })();
 
-// (function () {
-//     // Código que se ejecuta automáticamente
-//   })();
-  
-/* submitButton */
 
 
 
@@ -65,12 +59,6 @@ const getPosttInformation = () => {
 };
 const createButton = document.getElementById("submitButton")
 
-createButton.addEventListener('click',async () => {
-  event.preventDefault();
-  let newPost = getPosttInformation();
-  createPost(newPost)
-  clearForm()
-})
 
 const getRamdomInt = max => Math.floor(Math.random() * max);
 
@@ -86,14 +74,7 @@ const createTagTableItem = (text,id) => {
   let tableDataItem = document.createElement("td");
   tableDataItem.setAttribute("id", `${id}`)
   let dataText = document.createTextNode(text);
-  // let buttonDelete = document.createElement("button");
-  // buttonDelete.classList.add("deleteButton", "btn", "btn-danger");
-  // buttonDelete.setAttribute("type", "button");
-  // buttonDelete.setAttribute("id", `item-${id}`);
-  // let closeMark = document.createTextNode("x");
-  // buttonDelete.appendChild(closeMark);
   tableDataItem.appendChild(dataText);
-  // tableDataItem.appendChild(buttonDelete);
   return tableDataItem;
 };
 
@@ -111,17 +92,7 @@ addTagsButton.addEventListener('click', () => {
   return tags;
 });
 
-// const deleteTagButton = (id) => {
-//   let itemToErase = document.getElementById(`item-${id}`);
-//   let arrayItem = itemToErase.innerText;
-//   const index = tags.indexOf(arrayItem);
-//   if (index !==  1) {
-//     tags.splice(index, 1);
-//   }
-//   deleteTagsList();
-//   createTagsTable(tags);
-//   return tags;
-// }
+
 const deleteTagsList = () => {
 let list = document.getElementById("tagsTable");
   while (list.firstChild) {
@@ -138,8 +109,7 @@ let postContentInput = document.getElementById("postContent");
 postContentInput.value = "";
 let postImageInput = document.getElementById("postImageUrl");
 postImageInput.value = "";
-// let postImageTitleInput = document.getElementById("postImageTitle");
-// postImageTitleInput.value = "";
+
 let postlectureTimeInput = document.getElementById("lectureTime");
 postlectureTimeInput.value = "";
 let postInput = document.getElementById("postTags");
@@ -159,19 +129,10 @@ return;
 
 document.addEventListener('click', previewImage);
 
-window.addEventListener('message', event => {
-let data = event.data;
+const editButton = document.getElementById("submitButton")
+editButton.addEventListener('click', () => {
+    let data = getPosttInformation()
+    editPost(postId, data);
+    clearForm();
+    window.location.replace(`../html/post.html?post=${postId}`)
 })
-
-// const postInfo = () => {
-//   let postTitleInput = document.getElementById("postTitle");
-//   postTitleInput.value = data.data.title;
-//  let postContentInput = document.getElementById("postContent");
-//  postContentInput.value = data.data.content
-//  let postImageInput = document.getElementById("postImageUrl");
-//  postImageInput.value = data.data.image;
-//  let postlectureTimeInput = document.getElementById("lectureTime");
-//  postlectureTimeInput.value;
-//  tags = data.data.tags
-// }
-

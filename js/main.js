@@ -2,22 +2,7 @@ import { card } from "./postCard.js";
 import { getPosts } from "./DataBase.js";
 import { filterTags } from "./asideRight.js";
 let isSomeUserLoged = localStorage.getItem('token')
-// let postInformation = {
-//     userProfileImg: "https://randomuser.me/api/portraits/women/65.jpg",
-//     userName: "Ana",
-//     postTitle: "7 tricks in typescript",
-//     postContend: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
-//     postImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--3644EhCg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/crpm3se7wbh1xywp78wt.jpg",
-//     postImageTitle: "una imagen random",
-//     postlectureTime: "5 minutos",
-//     postTags: ["#typescript","#randomtag2","#randomtag1"],
-//     date: "05-04-2022",
-//     heartReactions : "24",
-//     unicornReactions: "25",
-//     crazyManReactions: "25",
-//     hansReactions: "25",
-//     fireReactions: "25"
-// };
+
 
 const targetDinamic = (posts,key) => {
     let newCard = card(posts,key)
@@ -33,7 +18,6 @@ let Posts = async () => {
 let allPosts = await Posts()
 
 let printPost = async (posts) =>{
-    // const test1 = filterTags(posts)
     posts.forEach(element => {
         let cardPost = targetDinamic(element, element)
     });
@@ -98,9 +82,6 @@ const getTags = async (posts) =>{
 let test1 = await getTags(allPosts)
 
 let button = document.getElementById("buttonSearchForm");
-// let buttonMobile = document.getElementById("buttonSearchFormMobile");
-// let tagOneListings= document.getElementById("#tesla");
-// let tagTwoListings = document.getElementById("#windows");
 
 
 button.addEventListener('click', () => {
@@ -109,23 +90,6 @@ button.addEventListener('click', () => {
     searchByElement(allPosts)
 });
 
-// buttonMobile.addEventListener('click', () => {
-//     event.preventDefault()
-//     deletePosts()
-//     searchByElement(allPosts)
-// });
-
-// tagOneListings.addEventListener('click', () => {
-//     event.preventDefault()
-//     deletePosts()
-//     searchByTag("tesla", allPosts)
-// });
-
-// tagTwoListings.addEventListener('click', () => {
-//     event.preventDefault()
-//     deletePosts()
-//     searchByTag("Windows", allPosts)
-// });
 
 const searchByElement = allPosts => {
     const searchInput = document.getElementById("searchPost");
