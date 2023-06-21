@@ -8,9 +8,9 @@ const getPosts = async () => {
 
 const createPost = async (data) => {
   let response = await fetch(`http://localhost:8080/post`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -21,9 +21,9 @@ const createPost = async (data) => {
 
 const deletePost = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   let postToDelete = await response.json();
@@ -32,9 +32,9 @@ const deletePost = async (id) => {
 
 const editPost = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: 'PATCH',
+    method: "PATCH",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -45,9 +45,9 @@ const editPost = async (id, data) => {
 
 const getPostById = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   let post = await response.json();
@@ -57,7 +57,7 @@ const getPostById = async (id) => {
 const createUser = async (data) => {
   console.log("Esta es la data", data);
   let response = await fetch(`http://localhost:8080/`, {
-    method: 'POST',
+    method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const createUser = async (data) => {
 
 const login = async (data) => {
   let response = await fetch(`http://localhost:8080/auth`, {
-    method: 'POST',
+    method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": `application/json`,
@@ -81,9 +81,9 @@ const login = async (data) => {
 
 const addComment = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -100,7 +100,7 @@ export {
   createUser,
   login,
   addComment,
-  createPost
+  createPost,
 };
 // let getUsers = async ( ) => {
 //     let respomse = await fetch[
