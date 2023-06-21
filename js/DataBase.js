@@ -7,10 +7,10 @@ const getPosts = async () => {
 };
 
 const createPost = async (data) => {
-  let reponse = await fetch(`http://localhost:8080/post`, {
-    method: POST,
+  let response = await fetch(`http://localhost:8080/post`, {
+    method: "POST",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -21,9 +21,9 @@ const createPost = async (data) => {
 
 const deletePost = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: DELETE,
+    method: "DELETE",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   let postToDelete = await response.json();
@@ -32,9 +32,9 @@ const deletePost = async (id) => {
 
 const editPost = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
-    method: PATCH,
+    method: "PATCH",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -47,7 +47,7 @@ const getPostById = async (id) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
     method: "GET",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   let post = await response.json();
@@ -60,7 +60,7 @@ const createUser = async (data) => {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": `application/json`,
+      "Content-Type": "application/json",
     },
   });
   let userCreated = await response.json();
@@ -84,7 +84,7 @@ const addComment = async (id, data) => {
   let response = await fetch(`http://localhost:8080/post/${id}`, {
     method: "POST",
     headers: {
-      Autorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": `application/json`,
     },
     body: JSON.stringify(data),
@@ -101,7 +101,7 @@ export {
   createUser,
   login,
   addComment,
-  createPost
+  createPost,
 };
 
 

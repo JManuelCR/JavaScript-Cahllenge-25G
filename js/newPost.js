@@ -1,19 +1,7 @@
-import { createPost } from "./DataBase";
+   import { createPost } from "./DataBase.js";
 
-/**
- * console.log("estamos en profile");
-const token = localStorage.getItem("token") || "";
-// Regresarme a iniciar sesion
-if(token === "") {
-  window.location.replace("/login");
-}
-const payload = token.split(".")[1];
 
-const destructuracion = atob(payload);
-const id = JSON.parse(atob(payload)).id; // atob -> nos saca la data de la payload
-const nameUser = document.querySelector("#name-profile") // JSON.parse -> para parsearlo
-const ageUser = document.querySelector("#age-profile") // .id - > para acced
- */
+
 
 const token = localStorage.getItem('token');
 if(token === ""){
@@ -21,187 +9,29 @@ if(token === ""){
 };
 const payload = token.split(".")[1];
 const idUserLoged = JSON.parse(atob(payload)).id
-
 let tags = [];
-let users = [
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/19.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/19.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/19.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/89.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/89.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/89.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/87.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/87.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/8.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/8.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/8.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/64.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/64.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/64.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/5.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/5.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/5.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/30.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/30.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/30.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/72.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/72.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/72.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/84.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/84.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/84.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/82.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/82.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/82.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/9.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/9.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/9.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/5.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/5.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/5.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/26.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/26.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/26.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/36.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/36.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/36.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/44.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/44.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/44.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/88.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/88.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/88.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/57.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/57.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/57.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/46.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/46.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/46.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/men/40.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/men/40.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/40.jpg"
-    }
-  },
-  {
-    "picture": {
-      "large": "https://randomuser.me/api/portraits/women/52.jpg",
-      "medium": "https://randomuser.me/api/portraits/med/women/52.jpg",
-      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/52.jpg"
-    }
-  }
-];
-const getUserImgRamdom = (users) => {
-  const userId = getRamdomInt(0, users.length - 1);
-  let imgUser = users.filter((element, index) => index === userId);
-  return imgUser[0].picture.large;
-};
+
+
 
 const getPosttInformation = () => {
-    let nameInput = document.getElementById("postUserName");
-    let userName = nameInput.value;
-    let userLastnameInput = document.getElementById("postUserLastname");
-    let userLastname = userLastnameInput.value; 
-    let fullNme = `${userName} ${userLastname}`;
     let postTitleInput = document.getElementById("postTitle");
     let postTitle = postTitleInput.value;
-    let postContendInput = document.getElementById("postContend");
-    let postContend = postContendInput.value;
+    let postContentInput = document.getElementById("postContent");
+    let postContent = postContentInput.value;
     let postImageInput = document.getElementById("postImageUrl");
     let postImage = postImageInput.value;
-    let postImageTitleInput = document.getElementById("postImageTitle");
-    let postImageTitle = postImageTitleInput.value;
+    
     let postlectureTimeInput = document.getElementById("lectureTime");
     let postTags = tags;
     let postlectureTime = postlectureTimeInput.value;
     let creationDate = new Date();
     let heartReactions = getRamdomInt(100);
     let marksCount = getRamdomInt(100);
-    // let unicornReactions = getRamdomInt(100);
-    // let crazyManReactions = getRamdomInt(100);
-    // let hansReactions = getRamdomInt(100);
-    // let fireReactions = getRamdomInt(100);
-    // let userProfileImg =  getUserImgRamdom(users);
-    // let topCriterium = getRamdomInt(100);
+   
     let postInformation = {
       userCreatorId: idUserLoged,
-      userProfileImg: userProfileImg,
       title: postTitle, //title
-      contend: postContend,
+      content: postContent,
       image: postImage,
       time: postlectureTime,
       tags: postTags,
@@ -209,70 +39,17 @@ const getPosttInformation = () => {
       heartReactions : heartReactions,
       marks: marksCount 
     };
-    console.log(postInformation);
     return postInformation;
   };
-const addPostButton = async () => {
+const createButton = document.getElementById("submitButton")
+
+createButton.addEventListener('click',async () => {
     event.preventDefault();
-    let newProduct = getPosttInformation();
-    let pushToBD = await fetch(
-      `https://jschallenge-25g-default-rtdb.firebaseio.com/DevTo/userPost/.json`,
-      
-      {
-        method: "POST",
-        body: JSON.stringify(newProduct),
-      }
-    );
-    let data = await pushToBD.json();
-    clearForm();
-    return data;
-  };
-const getMonthName = date => {
-    let monntName;
-    let monthNumber = date.getMonth(); 
-    console.log(monthNumber);
-    switch (monthNumber){
-      case 0:
-        monntName = "Jan";
-      break;
-      case 1:
-        monntName = "Feb";
-      break;
-      case 2:
-        monntName = "Mar";
-      break;
-      case 3:
-        monntName = "Apr";
-      break;
-      case 4:
-        monntName = "Jun";
-      break;
-      case 5:
-        monntName = "Jul";
-      break;
-      case 6:
-        monntName = "Jan";
-      break;
-      case 7:
-        monntName = "Jan";
-      break;
-      case 8:
-        monntName = "Aug";
-      break;
-      case 9:
-        monntName = "Sep";
-      break;
-      case 10:
-        monntName = "Nov";
-      break;
-      case 11:
-        monntName = "Dec";
-      break;
-      default:
-        monntName = undefined;
-    }
-    return monntName;
-}
+    let newPost = getPosttInformation();
+    createPost(newPost)
+    clearForm()
+})
+
 const getRamdomInt = max => Math.floor(Math.random() * max);
 
 const createTagsTable = tags => {
@@ -285,19 +62,16 @@ const createTagsTable = tags => {
 };
 const createTagTableItem = (text,id) => {
     let tableDataItem = document.createElement("td");
-    tableDataItem.setAttribute("id", `item-${id}`)
+    tableDataItem.setAttribute("id", `${id}`)
     let dataText = document.createTextNode(text);
-    let buttonDelete = document.createElement("button");
-    buttonDelete.classList.add("deleteButton", "btn", "btn-danger");
-    buttonDelete.setAttribute("type", "button");
-    buttonDelete.setAttribute("onclick", `deleteTagButton(${id})`);
-    let closeMark = document.createTextNode("x");
-    buttonDelete.appendChild(closeMark);
+   
     tableDataItem.appendChild(dataText);
-    tableDataItem.appendChild(buttonDelete);
+    
     return tableDataItem;
 };
-const addTagsButton = () => {
+
+const addTagsButton = document.getElementById("buttonTags")
+addTagsButton.addEventListener('click', () => {
     event.preventDefault();
     deleteTagsList();
     let postTagsInput = document.getElementById("postTags");
@@ -308,53 +82,35 @@ const addTagsButton = () => {
     postInput.value = "";
     createTagsTable(tags);
     return tags;
-};
+});
 
-const deleteTagButton = (id) => {
-  let itemToErase = document.getElementById(`item-${id}`);
-  let arrayItem = itemToErase.innerText;
-  console.log(arrayItem);
-  const index = tags.indexOf(arrayItem);
-  if (index !==  1) {
-    tags.splice(index, 1);
-  }
-  console.log(tags);
-  deleteTagsList();
-  createTagsTable(tags);
-  return tags;
-}
+
 const deleteTagsList = () => {
-    let list = document.getElementById("tagsTable");
+  let list = document.getElementById("tagsTable");
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
-    return (id = 1);
+    return;
 };
 const clearForm = () => {
   deleteTagsList();
   tags = [];
-  let nameInput = document.getElementById("postUserName");
-  nameInput.value = "";
-  let userLastnameInput = document.getElementById("postUserLastname");
-  userLastnameInput.value = ""; 
   let postTitleInput = document.getElementById("postTitle");
   postTitleInput.value = "";
-  let postContendInput = document.getElementById("postContend");
-  postContendInput.value = "";
+  let postContentInput = document.getElementById("postContent");
+  postContentInput.value = "";
   let postImageInput = document.getElementById("postImageUrl");
   postImageInput.value = "";
-  let postImageTitleInput = document.getElementById("postImageTitle");
-  postImageTitleInput.value = "";
+  // let postImageTitleInput = document.getElementById("postImageTitle");
+  // postImageTitleInput.value = "";
   let postlectureTimeInput = document.getElementById("lectureTime");
   postlectureTimeInput.value = "";
   let postInput = document.getElementById("postTags");
   postInput.value = "";
 }
 const previewImage = () => {
-  console.log("it works");
   let postImageInput = document.getElementById("postImageUrl");
   let postImage = postImageInput.value;
-  console.log(postImage);
   let imgPreview = document.getElementById("imgPreview");
   if(postImage !== ""){
     imgPreview.setAttribute("src", `${postImage}` );
@@ -365,5 +121,10 @@ const previewImage = () => {
 }
 
 document.addEventListener('click', previewImage);
+
+window.addEventListener('message', event => {
+  let data = event.data;
+})
+
 
 
