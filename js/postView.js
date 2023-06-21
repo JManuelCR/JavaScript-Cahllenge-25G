@@ -222,8 +222,10 @@ let userDataOnPost = (postToView) => {
 
     return userNameSpace
 }
+console.log("estamos en el script postView")
 // almacena la imagen del creador del post
 let creatorProfilePicture = (postToView) => {
+    console.log("post to view", postToView)
     let creatorPicture = document.createElement("div")
         creatorPicture.classList.add("user-data-space--post")
 

@@ -72,7 +72,7 @@ const login = async (data) => {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": `application/json`,
+      "Content-Type": "application/json",
     },
   });
   let userLoged = await response.json();
@@ -102,6 +102,8 @@ export {
   addComment,
   createPost,
 };
+
+
 // let getUsers = async ( ) => {
 //     let respomse = await fetch[
 //         ``
